@@ -1,4 +1,24 @@
 /**
+  * checks the compatibility of the user browser engine
+  * @return a xmlHttpObject for the specific browser
+ */
+function CreateXmlHttpRequestObject( )
+{ 
+       // e sem tratamento de excepções
+    xmlHttpObj=null;
+    if (window.XMLHttpRequest) // IE 7 e Firefox
+    {
+        xmlHttpObj=new XMLHttpRequest()
+
+    }
+    else if (window.ActiveXObject) // IE 5 e 6
+    {
+        xmlHttpObj=new ActiveXObject("Microsoft.XMLHTTP")
+    }
+    return xmlHttpObj;
+}
+
+/**
   * checks if the field value string contains only non-digits
   * @param elem      element to be tested
   * @return          true is it's a valid name, false if it has at least one digit
@@ -445,5 +465,3 @@ function compareRegionDesc(a, b)
   }
   return 0;
 }
-
-
