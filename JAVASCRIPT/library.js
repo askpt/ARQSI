@@ -4,7 +4,6 @@
  */
 function CreateXmlHttpRequestObject( )
 { 
-       // e sem tratamento de excepções
     xmlHttpObj=null;
     if (window.XMLHttpRequest) // IE 7 e Firefox
     {
