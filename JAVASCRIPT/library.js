@@ -23,7 +23,7 @@ function CreateXmlHttpRequestObject( )
   * @return          true is it's a valid name, false if it has at least one digit
  */
 function hasNoDigits(elem)
- 
+{
     // saves string 
     var str = elem.value;
 
@@ -181,7 +181,7 @@ function hasDesiredMaxLength(elem, len)
       return false;
     }
   return true;
-}
+  }
 
 /**
  * creates a text node inside a given div element
