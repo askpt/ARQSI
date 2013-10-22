@@ -1,4 +1,24 @@
 /**
+  * Create new HTTP Call to the service indicated by the argument
+  * @param method the method that will specify the request type
+  * @param url    the url service where the calls will be made
+ */
+function MakeXMLHTTPCall(method, url)
+{     
+    xmlHttpObj = CreateXmlHttpRequestObject();
+
+    if (xmlHttpObj)
+    {
+
+  xmlHttpObj.open(method, url, true);
+
+  xmlHttpObj.onreadystatechange = stateHandler;
+  xmlHttpObj.send(null);
+  }
+
+}
+
+/**
   * checks the compatibility of the user browser engine
   * @return a xmlHttpObject for the specific browser
  */

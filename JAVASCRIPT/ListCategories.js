@@ -3,25 +3,6 @@ var categoriesList = [];
 var editorList = ["editora1", "editora2"];
 
 /**
-  * Create new HTTP Call to the service indicated by the argument
-  * @param url		the url service where the calls will be made
- */
-function MakeXMLHTTPCall(url)
-{     
-  	xmlHttpObj = CreateXmlHttpRequestObject();
-
-   	if (xmlHttpObj)
-   	{
-
-	xmlHttpObj.open("GET", url, true);
-
-	xmlHttpObj.onreadystatechange = stateHandler;
-	xmlHttpObj.send(null);
-	}
-
-}
-
-/**
   * Create new state handler for the HTTP call where we work the information received
  */
 function stateHandler()
@@ -71,6 +52,6 @@ function ListCategories ()
 	for (var i = 0; i < editorList.length; i++) 
 	{
 		url = "PHP/ListCategories.php?editor=" + editorList[i];
-		MakeXMLHTTPCall(url);
+		MakeXMLHTTPCall("GET", url);
 	};
 }
