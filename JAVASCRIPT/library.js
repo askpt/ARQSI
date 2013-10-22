@@ -2,48 +2,48 @@
   * Create new HTTP Call to the service indicated by the argument
   * @param method the method that will specify the request type
   * @param url    the url service where the calls will be made
- */
-function MakeXMLHTTPCall(method, url)
-{     
+  */
+  function MakeXMLHTTPCall(method, url)
+  {     
     xmlHttpObj = CreateXmlHttpRequestObject();
 
     if (xmlHttpObj)
     {
 
-  xmlHttpObj.open(method, url, true);
+      xmlHttpObj.open(method, url, true);
 
-  xmlHttpObj.onreadystatechange = stateHandler;
-  xmlHttpObj.send(null);
+      xmlHttpObj.onreadystatechange = stateHandler;
+      xmlHttpObj.send(null);
+    }
+
   }
-
-}
 
 /**
   * checks the compatibility of the user browser engine
   * @return a xmlHttpObject for the specific browser
- */
-function CreateXmlHttpRequestObject( )
-{ 
+  */
+  function CreateXmlHttpRequestObject( )
+  { 
     xmlHttpObj=null;
     if (window.XMLHttpRequest) // IE 7 e Firefox
     {
-        xmlHttpObj=new XMLHttpRequest()
+      xmlHttpObj=new XMLHttpRequest()
 
     }
     else if (window.ActiveXObject) // IE 5 e 6
     {
-        xmlHttpObj=new ActiveXObject("Microsoft.XMLHTTP")
+      xmlHttpObj=new ActiveXObject("Microsoft.XMLHTTP")
     }
     return xmlHttpObj;
-}
+  }
 
 /**
   * checks if the field value string contains only non-digits
   * @param elem      element to be tested
   * @return          true is it's a valid name, false if it has at least one digit
- */
-function hasNoDigits(elem)
-{
+  */
+  function hasNoDigits(elem)
+  {
     // saves string 
     var str = elem.value;
 
@@ -51,15 +51,15 @@ function hasNoDigits(elem)
     regExp = /^\D+$/;
 
     return regExp.test(str);
-}
+  }
 
 /** 
  * checks if the entry is a positive or negative number
  * @param elem      element to be tested
  * @return true is it's a valid number, false if it's not 
  */ 
-function isNumber(elem)
-{
+ function isNumber(elem)
+ {
   // saves entry text
   var str = elem.value;
 
@@ -80,32 +80,32 @@ function isNumber(elem)
     // allowing first char to be a minus sign
     if(oneCharacter == 45) 
     {
-        if(i == 0)
-        {
-            continue;
-        }
-        else
-        {
+      if(i == 0)
+      {
+        continue;
+      }
+      else
+      {
             //alert("minus sign must be the first character");
             return false;
+          }
         }
-    }
-                
+
     // allowing one decimal point only (can be either ',' or '.')
     if(oneCharacter == 46 || oneCharacter == 44)
     {
         // if we still didn't have any decimal character we accept it
         if(!decimalDetected)
         {
-            decimalDetected = true;
-            continue;
+          decimalDetected = true;
+          continue;
         }
         else
         {
           //alert("only one decimal placeholder is allowed");
           return false;
         }
-    }
+      }
 
     // allowing 0-9 range only
     if(oneCharacter < 48 || oneCharacter > 57)
@@ -124,40 +124,40 @@ function isNumber(elem)
   * @oaram max       top of the range
   * @return          true if number belongs to range
   */
-function numberIsInRange(elem, min, max)
-{
+  function numberIsInRange(elem, min, max)
+  {
     var str = elem.value;
-            
+
     // checks if it's a number
     if(!isNumber(elem))
     {
-        return false;
+      return false;
     }
 
     if(str >= min && str <= max)
     {
-        return true;
+      return true;
     }
-     else
+    else
     {
-        return false;
+      return false;
     }
-}
+  }
 
 /**
   * verifies if a given element is text-empty
   * @param elem      element to be tested 
   * @return          true if element is empty
   */
-function isEmpty(elem)
-{
-  /* getting the text */
-  var str = elem.value;
+  function isEmpty(elem)
+  {
+    /* getting the text */
+    var str = elem.value;
 
-  /* defining a regular expression for non-empty string */
-  var regExp = /.+/;
-  return !regExp.test(str);
-}
+    /* defining a regular expression for non-empty string */
+    var regExp = /.+/;
+    return !regExp.test(str);
+  }
 
 /**
   * verifies if it's a valid email address
@@ -177,15 +177,15 @@ function isEmpty(elem)
   * @param len       maximum length
   * @return          true if doesn't exceed maximum length
   */
-function hasDesiredMaxLength(elem, len)
-{
-  var str = elem.value;
-  if(str.length > len)
+  function hasDesiredMaxLength(elem, len)
   {
-    return false;
+    var str = elem.value;
+    if(str.length > len)
+    {
+      return false;
+    }
+    return true;
   }
-  return true;
-}
 
 /**
   * verifies if a field has at least a given length
@@ -200,7 +200,7 @@ function hasDesiredMaxLength(elem, len)
     {
       return false;
     }
-  return true;
+    return true;
   }
 
 /**
@@ -209,11 +209,11 @@ function hasDesiredMaxLength(elem, len)
  * @elem divId      div id attribute
  * @elemt withBreak   true to break from the previous line, false to write in the same line
  */
-function createTextInDivId(text, divId, withBreak)
-{
+ function createTextInDivId(text, divId, withBreak)
+ {
   var element = document.getElementById(divId);
   var textNode = document.createTextNode(text);
-      
+
   if(withBreak)
   {
     var addedBreak = document.createElement("br");
@@ -228,15 +228,15 @@ function createTextInDivId(text, divId, withBreak)
  * @elem node   node where count starts
  * @return    number tags
  */
-function tagCountInNode(node)
-{
+ function tagCountInNode(node)
+ {
   var sum = 0;
-      
+
   if(node.nodeType == 1)
   {
     sum ++;
   }
-      
+
   var allChildrenNodes = node.childNodes;
   for(var i = 0; i < allChildrenNodes.length; i++)
   {
@@ -251,8 +251,8 @@ function tagCountInNode(node)
  * @param text  replacement text
  * @param id  element id
  */
-function replaceWithTextInElementId(text, id)
-{
+ function replaceWithTextInElementId(text, id)
+ {
   var node = document.getElementById(id);
   while(node.firstChild)
   {
@@ -266,8 +266,8 @@ function replaceWithTextInElementId(text, id)
  * @param text    text to be displayed in the option element
  * @param selectId  select element id 
  */
-function addNewOptionToDropdownWithId(text, selectId)
-{
+ function addNewOptionToDropdownWithId(text, selectId)
+ {
     // getting the select element
     var element = document.getElementById(selectId);
 
@@ -280,15 +280,15 @@ function addNewOptionToDropdownWithId(text, selectId)
 
     // appending
     element.appendChild(newOption);
-}
+  }
 
 /**
  * creates one or more option elements into a select element
  * @param array   array of strings with text to be displayed in the option elements
  * @param selectId  select element id 
  */
-function createNewOptionFromArrayWithId(array, selectId)
-{
+ function createNewOptionFromArrayWithId(array, selectId)
+ {
   //sayHello();
   for(var i = 0; i < array.length; i++)
   {
@@ -299,14 +299,14 @@ function createNewOptionFromArrayWithId(array, selectId)
 /**
  * clears all elements in current node
  */
-function clearCurrentNode(node)
-{
+ function clearCurrentNode(node)
+ {
    while(node.firstChild)
-     {
-        node.removeChild(node.firstChild);
-     }
+   {
+    node.removeChild(node.firstChild);
+  }
 }
-      
+
 /*
 The following functions were made to be used in the dynamic sort of HTML tables;
 they are NOT generic, so their use implies proper adaptation 
@@ -317,7 +317,7 @@ function populateTable(tbodyId)
   var tr, td;
 
   tbody = document.getElementById(tbodyId);
-    
+
   // looping through data source
   for (var i = 0; i < sales.length; i++) 
   {
@@ -356,36 +356,36 @@ function sortTable(link)
   switch(link.getAttributeNode("title").nodeValue)
   {
     case "Sort by Year Asc":
-      sales.sort(compareYearAsc);
-      break;
+    sales.sort(compareYearAsc);
+    break;
 
     case "Sort by Year Desc":
-      sales.sort(compareYearDesc);
-      break;
+    sales.sort(compareYearDesc);
+    break;
 
     case "Sort by Period Asc":
-      sales.sort(comparePeriodAsc);
-      break;
+    sales.sort(comparePeriodAsc);
+    break;
 
     case "Sort by Period Desc":
-      sales.sort(comparePeriodDesc);
-      break;
+    sales.sort(comparePeriodDesc);
+    break;
 
     case "Sort by Region Asc":
-      sales.sort(compareRegionAsc);
-      break;
+    sales.sort(compareRegionAsc);
+    break;
 
     case "Sort by Region Desc":
-      sales.sort(compareRegionDesc);
-      break;
+    sales.sort(compareRegionDesc);
+    break;
 
     case "Sort by Total Sales Asc":
-      sales.sort(compareTotalsAsc);
-      break;
+    sales.sort(compareTotalsAsc);
+    break;
 
     case "Sort by Total Sales Desc":
-      sales.sort(compareTotalsDes);
-      break;
+    sales.sort(compareTotalsDes);
+    break;
   }
 
   // clearing existing table
@@ -437,8 +437,8 @@ function comparePeriodAsc(a, b)
   {
     return 1;
   }
-    return 0;
-  }
+  return 0;
+}
 
 function comparePeriodDesc(a, b)
 {
@@ -483,4 +483,20 @@ function compareRegionDesc(a, b)
     return 1;
   }
   return 0;
+}
+
+/*
+ * Check if a item exists in an array
+ * @param array   the array of items
+ * @param item    the item to be compared
+ * @returns       true if exists
+ */
+function checkIfExists(array, item)
+{
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] == item) {
+      return true;
+    };
+  };
+  return false;
 }
