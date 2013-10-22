@@ -500,3 +500,20 @@ function checkIfExists(array, item)
   };
   return false;
 }
+
+/**
+  * The function that will create the options for the select HTML tag
+  * @param array  the array with tag text
+  * @returns      the HTML code with the categories
+ */
+function CreateSelectHTML (array) 
+{
+  var temp = "";
+
+  for (var i = 0; i < array.length; i++) 
+  {
+    temp += "<option>" + array[i] + "</option>";
+  };
+
+  return temp;
+}
