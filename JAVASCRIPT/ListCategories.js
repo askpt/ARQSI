@@ -30,5 +30,5 @@ function stateHandler()
  */
 function ListCategories () 
 {
-	MakeXMLHTTPCall("GET", "PHP/ListCategories.php");
+	MakeXMLHTTPCall("GET", "PHP/EditorAPI.php?type=GetAllCategories");
 }
