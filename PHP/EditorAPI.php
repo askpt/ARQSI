@@ -28,6 +28,10 @@
 
 	}
 
+	function Error()
+	{
+		echo "Request Failed";
+	}
 
 
 	$type = $_GET['type'];
@@ -38,7 +42,7 @@
 		break;
 		
 		default:
-			# code...
+		Error();
 		break;
 	}
 	
