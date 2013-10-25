@@ -3,15 +3,19 @@
 <head>
 	<script type="text/javascript" src="JAVASCRIPT/library.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListCategories.js"></script>
+	<script type="text/javascript" src="JAVASCRIPT/ListBooksByCategory.js"></script>
 </head>
 <body onload="ListCategories();">
 	<h1>It works!</h1>
 	<p>This is the default web page for this server.</p>
 	<p>The web server software is running but no content has been added, yet.</p>
 	<div>
-		<select id="scategories">
+		<select id="scategories" onchange="ListBooksByCategory();">
 			<!-- local where categories will be loaded -->
 		</select>
+		<table id="tbooks">
+			<!-- local where books will be loaded -->
+		</table>
 	</div>
 </body>
 </html>
