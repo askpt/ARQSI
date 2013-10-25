@@ -34,7 +34,7 @@
 	}
 
 
-	$type = $_GET['type'];
+	$type = $_REQUEST['type'];
 
 	switch ($type) {
 		case 'GetAllCategories':
