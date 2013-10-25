@@ -31,10 +31,8 @@ class Editora1
 
 	public function GetBooksByCategory($category)
 	{
-		$return_array = array();
 
 		$url = self::$books_by_category	. $category;
-		$xmlparser = xml_parser_create();
 
 		$response_xml = file_get_contents($url);
 		

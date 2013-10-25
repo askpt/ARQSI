@@ -28,11 +28,23 @@
 
 	}
 
+	function GetBooksByCategory($category)
+	{
+		global $editor1;
+		global $editor2;
+
+		header('Content-type: text/xml; charset=utf-8');
+		echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
+		echo "<books>";	
+		echo $editor1->GetBooksByCategory($category);
+		echo $editor2->GetBooksByCategory($category);
+		echo "</books>";
+	}
+
 	function Error()
 	{
 		echo "Request Failed";
 	}
-
 
 	$type = $_REQUEST['type'];
 
@@ -41,6 +53,11 @@
 		GetCategories();
 		break;
 		
+		case 'GetBooksByCategory':
+		$category = $_REQUEST['category'];
+		GetBooksByCategory($category);
+		break;
+
 		default:
 		Error();
 		break;
