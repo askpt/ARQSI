@@ -18,7 +18,7 @@
 		
 		$categories	= array_unique($categories);
 
-		header('Content-type: text/xml; charset=utf-8');
+		header('Content-type: text/xml; charset=ISO-8859-1');
 		echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
 		echo "<categorias>";
 		for ($i=0; $i < count($categories); $i++) { 
@@ -33,7 +33,7 @@
 		global $editor1;
 		global $editor2;
 
-		header('Content-type: text/xml; charset=utf-8');
+		header('Content-type: text/xml; charset=ISO-8859-1');
 		echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
 		echo "<books>";	
 		echo $editor1->GetBooksByCategory($category);
