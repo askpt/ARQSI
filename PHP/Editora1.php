@@ -9,6 +9,7 @@ class Editora1
 	private static $name = "Editora1";
 	private static $all_categories = "http://phpdev2.dei.isep.ipp.pt/~arqsi/trabalho1/editora1.php?categoria=todas";
 	private static $books_by_category = "http://phpdev2.dei.isep.ipp.pt/~arqsi/trabalho1/editora1.php?categoria=";
+	private static $n_books = "http://phpdev2.dei.isep.ipp.pt/~arqsi/trabalho1/editora1.php?numero=";
 
 	
 	public function GetCategories()
@@ -26,7 +27,7 @@ class Editora1
 			}
 		}
 
-		return($return_array);
+		return $return_array;
 	}
 
 	public function GetBooksByCategory($category)
@@ -36,7 +37,17 @@ class Editora1
 
 		$response_xml = file_get_contents($url);
 		
-		return($response_xml);
+		return $response_xml;
 	}
+
+	public function GetNBooks($number)
+	{
+		$url = self::$n_books . $number;
+
+		$response_xml = file_get_contents($url);
+
+		return $response_xml;
+	}
+
 }
 ?>
