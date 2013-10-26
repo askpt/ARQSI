@@ -51,6 +51,17 @@ function GetNBooks($editor, $number)
 	echo "</books>";
 }
 
+function GetBook($book, $editor)
+{
+	global $editors;
+
+	header('Content-type: text/xml; charset=ISO-8859-1');
+	echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
+	echo "<books>";
+	echo $editors[$editor]->GetBook($book);
+	echo "</books>";
+}
+
 function Error()
 {
 	echo "Request Failed";
@@ -72,6 +83,12 @@ switch ($type) {
 	$editor = $_REQUEST['editor'];
 	$number = $_REQUEST['number'];
 	GetNBooks($editor, $number);
+	break;
+
+	case 'GetBook':
+	$book = $_REQUEST['title'];
+	$editor = $_REQUEST['editor'];
+	GetBook($book, $editor);
 	break;
 
 	default:
