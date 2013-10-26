@@ -50,10 +50,10 @@ function GetNBooks($editor, $number)
 	echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
 	echo "<books>";
 	switch ($editor) {
-		case 'Editora1':
+		case 'Editora 1':
 		echo $editor1->GetNBooks($number);
 		break;
-		case 'Editora2':
+		case 'Editora 2':
 		echo $editor2->GetNBooks($number);
 		break;
 

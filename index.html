@@ -4,6 +4,7 @@
 	<script type="text/javascript" src="JAVASCRIPT/library.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListCategories.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListBooksByCategory.js"></script>
+	<script type="text/javascript" src="JAVASCRIPT/ListNBooks.js"></script>
 </head>
 <body onload="ListCategories();">
 	<h1>It works!</h1>
@@ -16,6 +17,18 @@
 		<table id="tbooks">
 			<!-- local where books will be loaded -->
 		</table>
+		<form method="get" action="" onsubmit="return GetNBooks();">
+			<select id="seditors">
+				<option>Editora 1</option>
+				<option>Editora 2</option>
+			</select>
+			<input id="tnumber" size="3" type="number"/>			
+
+			<input value="Send" type="submit"/>
+			<div id="dbooks">	
+				<!-- local where books will be loaded -->
+			</div>
+		</form>
 	</div>
 </body>
 </html>
