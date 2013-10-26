@@ -12,7 +12,11 @@ function stateHandlerListBooksByCategory()
     	var docxml = xmlHttpObj.responseXML;
     	var nodelist = docxml.getElementsByTagName("title");
 
-    	for (var i = 0; i < nodelist.length; i++) {
+      var size = document.getElementById("tnumberbooks").value;
+
+      size = ((size != "") ? size : nodelist.length);
+
+    	for (var i = 0; i < size && i < nodelist.length; i++) {
     		var value = nodelist[i].textContent;
 
     		document.getElementById("tbooks").innerHTML += "<tr><td>" + value + "</td></tr>";
