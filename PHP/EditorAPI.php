@@ -3,18 +3,17 @@
 include 'Editora1.php';
 include 'Editora2.php';
 
-$editor1 = new Editora1();
-$editor2 = new Editora2();
+$editors = array('Editora 1' => new Editora1(), 'Editora 2' => new Editora2());
 
 function GetCategories()
 {
-	global $editor1;
-	global $editor2;
+	global $editors;
 
 	$categories = array();
 
-	$categories = array_merge($categories, $editor1->GetCategories());
-	$categories = array_merge($categories, $editor2->GetCategories());
+	foreach ($editors as $key => $value) {
+		$categories = array_merge($categories, $value->GetCategories());
+	}
 
 	$categories	= array_unique($categories);
 
@@ -30,37 +29,25 @@ function GetCategories()
 
 function GetBooksByCategory($category)
 {
-	global $editor1;
-	global $editor2;
+	global $editors;
 
 	header('Content-type: text/xml; charset=ISO-8859-1');
 	echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
 	echo "<books>";	
-	echo $editor1->GetBooksByCategory($category);
-	echo $editor2->GetBooksByCategory($category);
+	foreach ($editors as $key => $value) {
+		echo $categories, $value->GetBooksByCategory($category);
+	}
 	echo "</books>";
 }
 
 function GetNBooks($editor, $number)
 {
-	global $editor1;
-	global $editor2;
+	global $editors;
 
 	header('Content-type: text/xml; charset=ISO-8859-1');
 	echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
 	echo "<books>";
-	switch ($editor) {
-		case 'Editora 1':
-		echo $editor1->GetNBooks($number);
-		break;
-		case 'Editora 2':
-		echo $editor2->GetNBooks($number);
-		break;
-
-		default:
-		echo "editor not found";
-		break;
-	}	
+	echo $editors[$editor]->GetNBooks($number);
 	echo "</books>";
 }
 
