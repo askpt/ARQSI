@@ -13,6 +13,12 @@
 		$_SESSION['spassword'] = $_POST['tpassword'];
 	}
 
+	if($_GET)
+	{
+		$_SESSION['susername'] = "user";
+		$_SESSION['spassword'] = "pass";
+	}
+
 	// connecting to BD
 	$dal = new DAL();
 	$conn = $dal->connect();

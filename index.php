@@ -3,14 +3,6 @@
 	include("PHP/DAL.php");
 ?>
 
-<?php
-
-	include("PHP/Authentication.php");
-	echo "<br><br>Welcome ".$_SESSION['susername'];
-
-	include("PHP/Navigation.php");
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +11,16 @@
 	<script type="text/javascript" src="JAVASCRIPT/ListBooksByCategory.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListNBooks.js"></script>
 </head>
+
+<?php
+
+	include("PHP/Authentication.php");
+	echo "<br><br>Welcome ".$_SESSION['susername'];
+
+	include("PHP/Navigation.php");
+?>
+
+
 <body onload="ListCategories();">
 	<h1>It works!</h1>
 	<p>This is the default web page for this server.</p>
