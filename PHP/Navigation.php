@@ -5,6 +5,6 @@
 	<br><br> 
 
 	<a href=index.php>Home</a> | 
-	<a href=logout.php>Logout</a> 
+	<a href=PHP/Logout.php>Logout</a> 
 
 	<br><br> 
