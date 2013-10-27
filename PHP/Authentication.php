@@ -31,9 +31,7 @@
 
 // closing php tag to start HTML code
 ?>
-
-	<!-- replave action for index.php when done -->
-	<form method="POST" action="teste.php">
+	<form method="POST" action="index.php">
 		Username: <input type="text" name="tusername">
 		<br>
 		Password: <input type="password" name="tpassword">
