@@ -11,4 +11,5 @@
 	echo "HOMEPAGE";
 	echo "<br><br>User: ".$_SESSION['susername'];
 
+
 ?>

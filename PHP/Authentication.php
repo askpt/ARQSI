@@ -47,4 +47,6 @@
 		// exit to avoid showing the rest of index.php when user is not logged in
 		exit;
 	}
+
+	$dal->close();
 ?>

@@ -89,6 +89,14 @@ class DAL
 
 
 	/**
+	 * closes MYSQL connection
+	 */
+	public function close()
+	{
+		mysql_close();
+	}
+
+	/**
 	 * test function
 	 */
 	public function hello() 
