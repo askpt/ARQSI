@@ -1,5 +1,8 @@
 var xmlHttpObj;
 
+// global variable used in pagination
+var page;
+
 /**
   * Create new state handler for the HTTP call where we work the information received
  */
@@ -12,11 +15,18 @@ function stateHandlerGetNBooks()
     	var docxml = xmlHttpObj.responseXML;
     	var nodelist = docxml.getElementsByTagName("title");
 
+
+      document.getElementById("dbooks").innerHTML += "<h4>With Pagination</h4>";
+      enablePagination(nodelist);
+
+
+
+      document.getElementById("dbooks").innerHTML += "<h4>Without Pagination</h4>";
     	for (var i = 0; i < nodelist.length; i++) {
     		var value = nodelist[i].textContent;
-
     		document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
     	};
+      
 
     			
     }
@@ -52,4 +62,87 @@ function GetNBooks()
   var number = document.getElementById('tnumber').value;
 	MakeXMLHTTPCallGetNBooks("GET", "PHP/EditorAPI.php?type=GetNBooks&editor=" + editor + "&number=" + number);
   return false;
+}
+
+
+/**
+ * enables pagination
+ * @param node (a node from a XML document)
+ */
+function enablePagination(node)
+{
+  // if we have results in node we apply pagination
+  if(node.length)
+  {
+    // results per page (hard-coded)
+    var resultsPerPage = 3;
+
+    // if page is not defined we set page to 1
+    if(!page)
+    {
+      page = 1;
+    }
+
+    // determining current, previous and next pages
+    var previousPage = page - 1;
+    var nextPage = page + 1;
+    var currentPage = (resultsPerPage * page) - resultsPerPage;
+
+    // total items to display
+    var totalItems = node.length;
+
+    // feedback to user
+    var feedback = "<b>Total books matching your request: " + totalItems + ".</b>"
+    document.getElementById("dbooks").innerHTML += feedback;
+
+    // calculating the total number of pages
+    if(totalItems <= resultsPerPage)
+    {
+      var totalPages = 1;
+    }
+    else if(totalItems % resultsPerPage == 0)
+    {
+      var totalPages = totalItems / resultsPerPage;
+    }
+    else
+    {
+      var totalPages = totalItems / resultsPerPage + 1;
+    }
+
+    // printing items for current page only
+    for(var i = resultsPerPage * currentPage; i < (resultsPerPage * currentPage) + resultsPerPage; i++)
+    {
+      var value = node[i].textContent;
+      document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
+    }
+
+    // showing page naviagation
+    for(var i = 1; i < totalPages; i++)
+    {
+      if(i != page)
+      {
+        var temp = "<a href=\"#\" onclick=\"enablePagination(node);\">" + i + "</a>" + " | ";
+        //alert(temp);
+        document.getElementById("dbooks").innerHTML += temp;
+      }
+      else
+      {
+        document.getElementById("dbooks").innerHTML += i + " | ";
+      }
+    }
+
+    /*
+    var pagina = "Pagina = "+page;
+    alert(pagina);
+    var tamanho = "Total livros = "+node.length;
+    alert(tamanho);
+    var paginas = "Prev: "+previousPage+"-- Current: "+currentPage+"-- Next Page:"+nextPage+"-- total pages: "+totalPages;
+    alert(paginas);
+    */
+  }
+  else
+  {
+    alert("empty XML")
+  }
+
 }
