@@ -21,13 +21,13 @@ function stateHandlerGetNBooks()
       enablePagination(1);
 
       // below we have code used before paging
-      
+      /*
       document.getElementById("dbooks").innerHTML += "<h4>Without Pagination</h4>";
     	for (var i = 0; i < nodelist.length; i++) {
     		var value = nodelist[i].textContent;
     		document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
     	};
-      			
+      */		
     }
 }
 
@@ -116,7 +116,6 @@ function enablePagination(page)
         document.getElementById("dbooks").innerHTML += "<p><a href=\"PHP/Book.php?editor=" + editor + "&title=" + value + "\">"+value+"</a>";
         //document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
       }
-        
     }
 
     // showing page navigation
@@ -132,6 +131,25 @@ function enablePagination(page)
       {
         document.getElementById("dbooks").innerHTML += i + " | ";
       }
+    }
+
+    // enhancing pagination with PREVIOUS, NEXT and PAGE NUMBER
+    document.getElementById("dbooks").innerHTML += "<p>"
+    // adding PREVIOUS link (only if we have a previous page)
+    if(previousPage && page > 1)
+    {
+      var temp = "<a href=\"#\" onclick=\"enablePagination(" + (page - 1) + ");\">PREV</a>";
+      document.getElementById("dbooks").innerHTML += temp;
+    }
+
+    var currentPageString = "<b>- Page " + page + " -</b>";
+    document.getElementById("dbooks").innerHTML += currentPageString;
+
+    // adding NEXT link (only if we have a next page)
+    if((page + 1) <= totalPages)
+    {
+      var temp = "<a href=\"#\" onclick=\"enablePagination(" + (page + 1) + ");\">NEXT</a>";
+      document.getElementById("dbooks").innerHTML += temp;
     }
   }
   else
