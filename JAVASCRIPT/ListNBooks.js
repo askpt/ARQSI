@@ -2,6 +2,7 @@ var xmlHttpObj;
 
 // global variable used in pagination
 var tempNode;
+var editor;
 
 /**
   * Create new state handler for the HTTP call where we work the information received
@@ -56,7 +57,7 @@ function stateHandlerGetNBooks()
 function GetNBooks() 
 {
   var index = document.getElementById("seditors").selectedIndex;
-  var editor = document.getElementById("seditors").options[index].text;
+  editor = document.getElementById("seditors").options[index].text;
   var number = document.getElementById('tnumber').value;
 	MakeXMLHTTPCallGetNBooks("GET", "PHP/EditorAPI.php?type=GetNBooks&editor=" + editor + "&number=" + number);
   return false;
@@ -109,10 +110,11 @@ function enablePagination(page)
     for(var i = currentPage; i <= currentPage + resultsPerPage; i++)
     {
       var value = node[i].textContent;
-      document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
+      document.getElementById("dbooks").innerHTML += "<p><a href=\"PHP/Book.php?editor=" + editor + "&title=" + value + "\">"+value+"</a>";
+      //document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
     }
 
-    // showing page naviagation
+    // showing page navigation
     for(var i = 1; i <= totalPages; i++)
     {
       if(i != page)
