@@ -1,6 +1,6 @@
 var xmlHttpObj;
 
-// global variable used in pagination
+// global variables used in pagination
 var tempNode;
 var editor;
 
@@ -21,13 +21,13 @@ function stateHandlerGetNBooks()
       enablePagination(1);
 
       // below we have code used before paging
-      /*
+      
       document.getElementById("dbooks").innerHTML += "<h4>Without Pagination</h4>";
     	for (var i = 0; i < nodelist.length; i++) {
     		var value = nodelist[i].textContent;
     		document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
     	};
-      */			
+      			
     }
 }
 
@@ -66,7 +66,7 @@ function GetNBooks()
 
 /**
  * enables pagination
- * @param node (a node from a XML document)
+ * @param page (initial page to be displayed)
  */
 function enablePagination(page)
 {
@@ -107,11 +107,16 @@ function enablePagination(page)
     }
 
     // printing items for current page only
-    for(var i = currentPage; i <= currentPage + resultsPerPage; i++)
+    for(var i = currentPage; i < currentPage + resultsPerPage; i++)
     {
-      var value = node[i].textContent;
-      document.getElementById("dbooks").innerHTML += "<p><a href=\"PHP/Book.php?editor=" + editor + "&title=" + value + "\">"+value+"</a>";
-      //document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
+      // we need this condition to make sure this function doesn't crash when looking for a node[i] that does not exist
+      if(i < totalItems)
+      {
+        var value = node[i].textContent;
+        document.getElementById("dbooks").innerHTML += "<p><a href=\"PHP/Book.php?editor=" + editor + "&title=" + value + "\">"+value+"</a>";
+        //document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
+      }
+        
     }
 
     // showing page navigation
@@ -133,5 +138,4 @@ function enablePagination(page)
   {
     document.getElementById("dbooks").innerHTML = "No books to display";
   }
-
 }
