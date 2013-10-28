@@ -34,7 +34,8 @@ class Editora2
 	public function GetBooksByCategory($category)
 	{
 
-		$url = self::$books_by_category	. $category;
+		$url = self::$books_by_category. $category;
+
 
 		$response_xml = file_get_contents($url);
 		
@@ -53,6 +54,8 @@ class Editora2
 	public function GetBook($title)
 	{
 		$url = self::$book . $title;
+
+		$url = str_replace(' ', '%20', $url);
 
 		$response_xml = file_get_contents($url);
 

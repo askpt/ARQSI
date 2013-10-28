@@ -54,6 +54,8 @@ class Editora1
 	{
 		$url = self::$book . $title;
 
+		$url = str_replace(' ', '%20', $url);
+
 		$response_xml = file_get_contents($url);
 
 		return $response_xml;
