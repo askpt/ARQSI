@@ -1,5 +1,5 @@
 {
-	"book":{
+	"book1":{
 		"title":"The Da Vinci Code",
 		"author":"Dan Brown",
 		"category":"fiction",
@@ -7,7 +7,7 @@
 		"publicacao":2002,
 		"news":"nao"
 	},
-	"book":{
+	"book2":{
 		"title":"Programacao com PHP 5.3",
 		"author":"Carlos Serrao",
 		"category":"Informatica",
@@ -15,7 +15,7 @@
 		"publicacao":2012,
 		"news":"nao"
 	},
-	"book":{
+	"book3":{
 		"title":"The physiology and biochemistry of Prokaryotes",
 		"author":"George Whie",
 		"category":"Biology",
