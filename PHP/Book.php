@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Book</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-16" >
 </head>
 <body>
 <?php 
@@ -25,7 +26,28 @@ $editor = $_REQUEST['editor'];
 
 $response_xml = SendRequest("http://uvm061.dei.isep.ipp.pt/~askpt/ARQSI/PHP/EditorAPI.php", 'POST', array('type' => 'GetBook', 'title' => $title, 'editor' => $editor));
 
-echo $response_xml;
+$array = array();
+$xmlparser = xml_parser_create();
+
+xml_parse_into_struct($xmlparser, $response_xml, $values);
+
+for ($i=0; $i < count($values); $i++) { 
+	if ($values[$i]["tag"] == "TITLE") {
+		echo "<p>title " . $values[$i]["value"];
+	}
+	if ($values[$i]["tag"] == "AUTHOR") {
+		echo "<p>author " . $values[$i]["value"];
+	}
+	if ($values[$i]["tag"] == "CATEGORY") {
+		echo "<p>CATEGORY " . $values[$i]["value"];
+	}
+	if ($values[$i]["tag"] == "ISBN") {
+		echo "<p>ISBN " . $values[$i]["value"];
+	}
+	if ($values[$i]["tag"] == "PUBLICACAO") {
+		echo "<p>PUBLICACAO " . $values[$i]["value"];
+	}
+}
 
 
  ?>
