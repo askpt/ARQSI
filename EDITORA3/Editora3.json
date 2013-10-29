@@ -1,0 +1,26 @@
+{
+	"book":{
+		"title":"The Da Vinci Code",
+		"author":"Dan Brown",
+		"category":"fiction",
+		"isbn":789235798,
+		"publicacao":2002,
+		"news":"nao"
+	},
+	"book":{
+		"title":"Programacao com PHP 5.3",
+		"author":"Carlos Serrao",
+		"category":"Informatica",
+		"isbn":8905689036,
+		"publicacao":2012,
+		"news":"nao"
+	},
+	"book":{
+		"title":"The physiology and biochemistry of Prokaryotes",
+		"author":"George Whie",
+		"category":"Biology",
+		"isbn":920527923,
+		"publicacao":2002,
+		"news":"nao"
+	}
+}
