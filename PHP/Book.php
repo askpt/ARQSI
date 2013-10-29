@@ -9,6 +9,8 @@
 
 session_start();
 
+include("Navigation2.php");
+
 function SendRequest( $url, $method = 'GET', $data = array(), $headers = array('Content-type: application/x-www-form-urlencoded') )
 {
 	$context = stream_context_create(array
