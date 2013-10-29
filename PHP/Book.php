@@ -7,6 +7,8 @@
 <body>
 <?php 
 
+session_start();
+
 function SendRequest( $url, $method = 'GET', $data = array(), $headers = array('Content-type: application/x-www-form-urlencoded') )
 {
 	$context = stream_context_create(array
@@ -24,7 +26,7 @@ function SendRequest( $url, $method = 'GET', $data = array(), $headers = array('
 $title = $_REQUEST['title'];
 $editor = $_REQUEST['editor'];
 
-$response_xml = SendRequest("http://uvm061.dei.isep.ipp.pt/~askpt/ARQSI/PHP/EditorAPI.php", 'POST', array('type' => 'GetBook', 'title' => $title, 'editor' => $editor));
+$response_xml = SendRequest("http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/PHP/EditorAPI.php", 'POST', array('type' => 'GetBook', 'title' => $title, 'editor' => $editor));
 
 $array = array();
 $xmlparser = xml_parser_create();
@@ -49,6 +51,8 @@ for ($i=0; $i < count($values); $i++) {
 	}
 }
 
+// this include will load the script responsible to save user request to database
+include("SaveRequest.php");
 
  ?>
 </body>
