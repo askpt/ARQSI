@@ -32,6 +32,7 @@ $response_xml = SendRequest("http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/PHP/Edito
 
 $array = array();
 $xmlparser = xml_parser_create();
+$isbn;
 
 xml_parse_into_struct($xmlparser, $response_xml, $values);
 
@@ -47,11 +48,20 @@ for ($i=0; $i < count($values); $i++) {
 	}
 	if ($values[$i]["tag"] == "ISBN") {
 		echo "<p>ISBN " . $values[$i]["value"];
+		$isbn = $values[$i]["value"];
 	}
 	if ($values[$i]["tag"] == "PUBLICACAO") {
 		echo "<p>PUBLICACAO " . $values[$i]["value"];
 	}
 }
+
+$title = str_replace(" ", "+", $_GET["title"]);
+   
+$response_json = file_get_contents("https://www.googleapis.com/books/v1/volumes?q=isbn:" . $isbn);
+$object = json_decode($response_json,true);
+
+echo "<p>Descri&ccedil;&atilde;o: " . $object["items"][0]["volumeInfo"]["description"];
+    echo "<p>Imagem: <img src=\"" . $object["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"] . "\"></img>";
 
 // this include will load the script responsible to save user request to database
 include("SaveRequest.php");
