@@ -7,10 +7,6 @@
 <body>
 <?php 
 
-session_start();
-
-include("Navigation2.php");
-
 function SendRequest( $url, $method = 'GET', $data = array(), $headers = array('Content-type: application/x-www-form-urlencoded') )
 {
 	$context = stream_context_create(array
@@ -55,16 +51,11 @@ for ($i=0; $i < count($values); $i++) {
 	}
 }
 
-$title = str_replace(" ", "+", $_GET["title"]);
-   
 $response_json = file_get_contents("https://www.googleapis.com/books/v1/volumes?q=isbn:" . $isbn);
 $object = json_decode($response_json,true);
 
 echo "<p>Descri&ccedil;&atilde;o: " . $object["items"][0]["volumeInfo"]["description"];
     echo "<p>Imagem: <img src=\"" . $object["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"] . "\"></img>";
-
-// this include will load the script responsible to save user request to database
-include("SaveRequest.php");
 
  ?>
 </body>
