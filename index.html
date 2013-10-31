@@ -51,7 +51,7 @@
 			font-family:garamond,times-new-roman,serif;
 		}
 		.panel p{
-			text-align:center;
+			text-align:left;
 		}
 		.slide {
 			margin:0;
@@ -81,6 +81,7 @@
 			-moz-border-bottom-right-radius:5px;
 			border-bottom-left-radius:5px;
 			border-bottom-right-radius:5px;
+			text-align: center;
 		}
 		.pull-me p {
 			text-align:center;
@@ -89,8 +90,13 @@
 		#widget {
 			margin:0 auto;
 			padding:0;
-			width:1000px;
+			width:700px;
 			text-align:left;
+		}
+
+		.panel {
+			font-size: 10px;
+			text-align: left;
 		}
 
 	</style>
@@ -131,16 +137,15 @@
 				</div>
 			</div>
 		</div>
-		<p class="slide"><a id="pull"href="#" class="pull-me">Slide Up/Down</a></p>
+		<p class="slide"><a href="#" class="pull-me">Slide Up/Down</a></p>
+		<div id="dialog" title="Book Info"></div>
 	</div>
 
 	<h1>It works!</h1>
 	<p>This is the default web page for this server.</p>
 	<p>The web server software is running but no content has been added, yet.</p>
 
-	<div id="dialog" title="Book Info">
-		
-	</div>
+	
 	
 	<a onclick="Click('Editora 1', 'Tabacaria');">Tabacaria</a>
 	
