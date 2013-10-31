@@ -3,6 +3,13 @@
 	/**
 	 * Editora3 webservice
 	 * this webservice provides JSON response, based on the data available in Editora3.json
+	 * 
+	 * Currently available requests:
+	 * 1) a book with a given title
+	 * 2) the first n books 
+	 * 3) all books marked with 'yes' or 'no' for news
+	 * 4) all books of a given category
+	 * 5) all available categories
 	 */
 
 	// url for original JSON data file
@@ -11,7 +18,7 @@
 	// decoding data file
 	$jsonDecoded = json_decode(file_get_contents($jsonDataFile), true);
 	
-	// array to respond JSON
+	// array to respond with JSON
 	$jsonResponse = array();
 
 
@@ -78,16 +85,33 @@
 	// looking for books by category
 	else if(isset($_GET["categoria"]))
 	{
-		foreach ($jsonDecoded["book"] as $key => $value) 
+		// it request is "todas" then responds with json of all categories (avoiding duplicates)
+		if(strcmp($_GET["categoria"], "todas") == 0)
 		{
-			if(strcmp($_GET["categoria"], $value["category"]) == 0)
+			foreach ($jsonDecoded["book"] as $key => $value) 
 			{
-				$jsonResponse[] = $value;
+				if(!in_array($value["category"], $jsonResponse))
+				{
+					$jsonResponse[] = $value["category"];
+				}
 			}
+			respondWithJson();			
 		}
-		respondWithJson();
+		// else it's a request looking for a specific category
+		else
+		{
+			foreach ($jsonDecoded["book"] as $key => $value) 
+			{
+				if(strcmp($_GET["categoria"], $value["category"]) == 0)
+				{
+					$jsonResponse[] = $value;
+				}
+			}
+			respondWithJson();
+		}
 	}
 
+	// none of the above means the request is not valid
 	else
 	{
 		header('Content-type: application/json');
