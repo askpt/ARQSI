@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="JAVASCRIPT/ListCategories.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListBooksByCategory.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListNBooks.js"></script>
+	<script type="text/javascript" src="JAVASCRIPT/BookInfo"></script>
 
 	<!--JQuery UI-->
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -22,6 +23,7 @@
 			});
 
 			$( "#opener" ).click(function() {
+				BookInfo("Editora 1", "Tabacaria");
 				$( "#dialog" ).dialog( "open" );
 			});
 		});
@@ -125,7 +127,7 @@
 	<p>The web server software is running but no content has been added, yet.</p>
 
 	<div id="dialog" title="Book Info">
-		<p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+		
 	</div>
 	<button id="opener">Open Dialog</button>
 
