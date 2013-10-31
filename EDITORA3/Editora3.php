@@ -23,14 +23,17 @@
 			{
 				$jsonResponse[] = $value;	
 			}
-			
 		}
 		
-		// returning no results
+		// returning results
+		header('Content-type: application/json');
 		if(empty($jsonResponse))
 		{
-			header('Content-type: application/json');
 			echo json_encode(array('pesquisa'=>'vazio'));
+		}
+		else
+		{
+			echo json_encode($jsonResponse);
 		}
 	}
 	else
