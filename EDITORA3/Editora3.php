@@ -14,6 +14,22 @@
 	// array to respond JSON
 	$jsonResponse = array();
 
+
+	function respondWithJson()
+	{
+		global $jsonResponse;
+
+		header('Content-type: application/json');
+		if(empty($jsonResponse))
+		{
+			echo json_encode(array('pesquisa'=>'vazio'));
+		}
+		else
+		{
+			echo json_encode($jsonResponse);
+		}
+	}
+
 	// looking for a book with a given title
 	if(isset($_GET["titulo"]))
 	{
@@ -25,16 +41,7 @@
 			}
 		}
 		
-		// returning results
-		header('Content-type: application/json');
-		if(empty($jsonResponse))
-		{
-			echo json_encode(array('pesquisa'=>'vazio'));
-		}
-		else
-		{
-			echo json_encode($jsonResponse);
-		}
+		respondWithJson();
 	}
 
 	// looking for the first n books
@@ -54,15 +61,7 @@
 			}		
 		}
 
-		header('Content-type: application/json');
-		if(empty($jsonResponse))
-		{
-			echo json_encode(array('pesquisa'=>'vazio'));
-		}
-		else
-		{
-			echo json_encode($jsonResponse);
-		}
+		respondWithJson();
 
 	}
 	else
