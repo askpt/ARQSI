@@ -13,7 +13,7 @@
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	<script>
 
-		$(function() {
+		function Click(editor, book){
 			$( "#dialog" ).dialog({
 				autoOpen: false,
 				show: {
@@ -22,15 +22,10 @@
 				},
 			});
 
-			$( "#opener" ).click(function() {
-				
-				var editor = $(this).data('ed');
-				var book = $(this).data('tl');
-				BookInfo(editor, book);
-				$( "#dialog" ).dialog( "open" );
-			});
-		});
+			BookInfo(editor, book);
+			$( "#dialog" ).dialog( "open" );
 
+		};
 		
 		$(document).ready(function(){
 			$('#menu').accordion();
@@ -132,7 +127,8 @@
 	<div id="dialog" title="Book Info">
 		
 	</div>
-	<button id="opener" data-ed="Editora 1" data-tl="Memorial do Convento">Open Dialog</button>
+	
+	<a onclick="Click('Editora 1', 'Tabacaria');">Tabacaria</a>
 	
 </body>
 </html>
