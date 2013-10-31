@@ -113,7 +113,9 @@ function enablePagination(page)
       if(i < totalItems)
       {
         var value = node[i].textContent;
-        document.getElementById("dbooks").innerHTML += "<p><a href=\"PHP/Book.php?editor=" + editor + "&title=" + value + "\">"+value+"</a>";
+ 
+        var link = "<p><a onclick=\"Click('"+ editor + "', '" +  value + "');\">" +  value + "</a>"
+        document.getElementById("dbooks").innerHTML += link;
         //document.getElementById("dbooks").innerHTML += "<p>" + value + "</p>";
       }
     }

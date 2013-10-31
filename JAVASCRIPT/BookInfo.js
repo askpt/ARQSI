@@ -71,7 +71,7 @@ function stateHandlerGoogleInfo () {
    var json = eval('(' + docJSON + ')');
 
    if (json.totalItems === 0) {
-    alert("desc:");
+    
    }else{
     document.getElementById("dialog").innerHTML += "<p>" + json.items[0].volumeInfo.description;
     document.getElementById("dialog").innerHTML += "<p><img src=\"" + json.items[0].volumeInfo.imageLinks.thumbnail + "\"></img>";
