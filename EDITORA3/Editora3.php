@@ -40,7 +40,6 @@
 				$jsonResponse[] = $value;	
 			}
 		}
-		
 		respondWithJson();
 	}
 
@@ -60,10 +59,35 @@
 				break;
 			}		
 		}
-
 		respondWithJson();
-
 	}
+
+	// looking for all news and non-news
+	else if(isset($_GET["news"]))
+	{
+		foreach ($jsonDecoded["book"] as $key => $value) 
+		{
+			if(strcmp($_GET["news"], $value["news"]) == 0)
+			{
+				$jsonResponse[] = $value;
+			}
+		}
+		respondWithJson();
+	}
+
+	// looking for books by category
+	else if(isset($_GET["categoria"]))
+	{
+		foreach ($jsonDecoded["book"] as $key => $value) 
+		{
+			if(strcmp($_GET["categoria"], $value["category"]) == 0)
+			{
+				$jsonResponse[] = $value;
+			}
+		}
+		respondWithJson();
+	}
+
 	else
 	{
 		header('Content-type: application/json');
