@@ -35,7 +35,10 @@ function GetBooksByCategory($category)
 	echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
 	echo "<books>";	
 	foreach ($editors as $key => $value) {
-		echo $categories, $value->GetBooksByCategory($category);
+		echo "<editor>";
+		echo $key;
+		echo $value->GetBooksByCategory($category);
+		echo "</editor>";
 	}
 	echo "</books>";
 }
