@@ -23,7 +23,10 @@
 			});
 
 			$( "#opener" ).click(function() {
-				BookInfo("Editora 1", "Memorial do Convento");
+				
+				var editor = $(this).data('ed');
+				var book = $(this).data('tl');
+				BookInfo(editor, book);
 				$( "#dialog" ).dialog( "open" );
 			});
 		});
@@ -129,9 +132,7 @@
 	<div id="dialog" title="Book Info">
 		
 	</div>
-	<button id="opener">Open Dialog</button>
-
-
-
+	<button id="opener" data-ed="Editora 1" data-tl="Memorial do Convento">Open Dialog</button>
+	
 </body>
 </html>
