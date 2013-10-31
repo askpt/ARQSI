@@ -36,6 +36,35 @@
 			echo json_encode($jsonResponse);
 		}
 	}
+
+	// looking for the first n books
+	else if(isset($_GET["numero"]))
+	{
+		// counter
+		$cont = 0;
+		foreach ($jsonDecoded["book"] as $key => $value) 
+		{
+			$cont++;
+			$jsonResponse[] = $value;
+
+			// stops adding books to response array when desired number is reached
+			if($cont == intval($_GET["numero"]))
+			{
+				break;
+			}		
+		}
+
+		header('Content-type: application/json');
+		if(empty($jsonResponse))
+		{
+			echo json_encode(array('pesquisa'=>'vazio'));
+		}
+		else
+		{
+			echo json_encode($jsonResponse);
+		}
+
+	}
 	else
 	{
 		header('Content-type: application/json');
