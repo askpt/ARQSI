@@ -13,11 +13,11 @@ function stateHandlerBookInfo()
    var isbn = docxml.getElementsByTagName("isbn")[0].textContent;
    var edition = docxml.getElementsByTagName("publicacao")[0].textContent;
 
-   document.getElementById("dialog").innerHTML = "<p>" + title;
-   document.getElementById("dialog").innerHTML += "<p>" + author;
-   document.getElementById("dialog").innerHTML += "<p>" + category;
-   document.getElementById("dialog").innerHTML += "<p>" + isbn;
-   document.getElementById("dialog").innerHTML += "<p>" + edition;
+   document.getElementById("dialog").innerHTML = "<p><b>Title: </b>" + title;
+   document.getElementById("dialog").innerHTML += "<p><b>Author: </b>" + author;
+   document.getElementById("dialog").innerHTML += "<p><b>Category: </b>" + category;
+   document.getElementById("dialog").innerHTML += "<p><b>ISBN: </b>" + isbn;
+   document.getElementById("dialog").innerHTML += "<p><b>Edition: </b>" + edition;
 
    GetGoogleBookInfo(isbn);
  }
@@ -73,8 +73,8 @@ function stateHandlerGoogleInfo () {
    if (json.totalItems === 0) {
     
    }else{
-    document.getElementById("dialog").innerHTML += "<p>" + json.items[0].volumeInfo.description;
-    document.getElementById("dialog").innerHTML += "<p><img src=\"" + json.items[0].volumeInfo.imageLinks.thumbnail + "\"></img>";
+    document.getElementById("dialog").innerHTML += "<p><b>Description: </b>" + json.items[0].volumeInfo.description;
+    document.getElementById("dialog").innerHTML += "<center><p><img src=\"" + json.items[0].volumeInfo.imageLinks.thumbnail + "\"></img></center>";
    }
 
  }
