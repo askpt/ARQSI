@@ -59,7 +59,7 @@
 			border-top:solid 2px #cc0000;
 		}
 
-		#pull:hover{
+		.pull-me:hover{
 			-webkit-box-shadow: 0 0 8px #FFD700;
 			-moz-box-shadow: 0 0 8px #FFD700;
 			box-shadow: 0 0 8px #FFD700;
@@ -69,7 +69,7 @@
 		.pull-me {
 			display:block;
 			position:relative;
-			right:-25px;
+			right:-265px;
 			width:150px;
 			height:20px;
 			font-family:arial,sans-serif;
@@ -107,8 +107,12 @@
 		#dialog p 
 		{ 
 			font-size: 10px; 
+			padding-top: 10px;
 		}
 
+		.ui-dialog-title {
+    		font-size:14px !important;
+		}
 		
 	</style>
 
@@ -139,8 +143,9 @@
 							<option>Editora 2</option>
 						</select>
 						<input id="tnumber" size="3" type="number"/>			
-
+						
 						<input value="Send" type="submit"/>
+						<p />
 						<div id="dbooks">	
 							<!-- local where books will be loaded -->
 						</div>
