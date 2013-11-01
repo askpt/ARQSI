@@ -6,6 +6,7 @@
 	<script type="text/javascript" src="JAVASCRIPT/ListBooksByCategory.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListNBooks.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/BookInfo.js"></script>
+	<script type="text/javascript" src="JAVASCRIPT/LoadEditors.js"></script>
 
 	<!--JQuery UI-->
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -34,6 +35,13 @@
 				$('.panel').slideToggle('slow');
 			});
 		});
+
+		function LoadDocument () {
+			ListEditors();
+			ListCategories();
+			ListBooksByCategory();
+		}
+
 	</script>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 	<style>
@@ -118,7 +126,7 @@
 
 </head>
 
-<body onload="ListCategories();">
+<body onload="LoadDocument();">
 	<div id="widget">
 		<div class="panel">
 			<div id="tabs">
@@ -138,9 +146,7 @@
 				<div id="tabs-2">
 					<form method="get" action="" onsubmit="return GetNBooks();">
 						<select id="seditors">
-							<option>Editora 1</option>
-							<option>Editora 2</option>
-							<option>Editora 3</option>
+							<!-- local where editors will be loaded -->
 						</select>
 						<input id="tnumber" size="3" type="number"/>			
 						

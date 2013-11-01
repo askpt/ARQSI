@@ -22,7 +22,7 @@ function stateHandlerListCategories()
     	};
 
     	document.getElementById("scategories").innerHTML += CreateSelectHTML(categoriesList);
-      ListBooksByCategory(); 		
+      ListBooksByCategory();
     }
 }
 
