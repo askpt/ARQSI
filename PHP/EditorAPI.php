@@ -67,6 +67,19 @@ function GetBook($book, $editor)
 	echo "</books>";
 }
 
+function GetEditors()
+{
+	global $editors;
+
+	header('Content-type: text/xml; charset=ISO-8859-1');
+	echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
+	echo "<editors>";
+	foreach ($editors as $key => $value) {
+		echo "<editor>" . $key . "</editor>";
+	}
+	echo "</editors>";
+}
+
 function Error()
 {
 	echo "Request Failed";
@@ -94,6 +107,10 @@ switch ($type) {
 	$book = $_REQUEST['title'];
 	$editor = $_REQUEST['editor'];
 	GetBook($book, $editor);
+	break;
+
+	case 'GetEditors':
+	GetEditors();
 	break;
 
 	default:
