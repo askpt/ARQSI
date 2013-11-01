@@ -21,7 +21,8 @@ function stateHandlerListCategories()
     		};
     	};
 
-    	document.getElementById("scategories").innerHTML += CreateSelectHTML(categoriesList);		
+    	document.getElementById("scategories").innerHTML += CreateSelectHTML(categoriesList);
+      ListBooksByCategory(); 		
     }
 }
 

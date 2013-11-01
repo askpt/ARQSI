@@ -111,14 +111,14 @@
 		}
 
 		.ui-dialog-title {
-    		font-size:14px !important;
+			font-size:14px !important;
 		}
 		
 	</style>
 
 </head>
 
-<body onload="ListCategories();ListBooksByCategory();">
+<body onload="ListCategories();">
 	<div id="widget">
 		<div class="panel">
 			<div id="tabs">
@@ -129,7 +129,6 @@
 				</ul>
 				<div id="tabs-1">
 					<select id="scategories" onchange="ListBooksByCategory();">
-						<!-- local where categories will be loaded -->
 					</select>
 					<input id="tnumberbooks" size="3" type="number"/>
 					<table id="tbooks">
