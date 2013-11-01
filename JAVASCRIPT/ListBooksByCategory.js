@@ -12,7 +12,7 @@ var xmlHttpObj;
       var docxml = xmlHttpObj.responseXML;
       var editors = docxml.getElementsByTagName("editor");
 
-      var allBooks = document.getElementsByTagName("title").length;
+      var allBooks = docxml.getElementsByTagName("title").length;
       var size = document.getElementById("tnumberbooks").value;
 
       size = ((size != "") ? size : allBooks);
