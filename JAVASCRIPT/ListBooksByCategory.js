@@ -25,7 +25,8 @@ var xmlHttpObj;
         for (var y = 0; size > 0 && y < sizeEditor; y++) {
           var value = nodelist[y].textContent;
           
-          var link = "<p><a onclick=\"Click('"+ editor + "', '" +  value + "');\">" +  value + "</a>"
+          var link = "<p><a onclick=\"Click('"+ editor + "', '" +  value + "');\">" +  value +  " <b>(" + editor
+            + ")</b>" + "</a>"
           document.getElementById("tbooks").innerHTML += link;
           size--;
         };
