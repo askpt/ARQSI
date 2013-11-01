@@ -2,8 +2,9 @@
 
 include 'Editora1.php';
 include 'Editora2.php';
+include 'Editora3.php';
 
-$editors = array('Editora 1' => new Editora1(), 'Editora 2' => new Editora2());
+$editors = array('Editora 1' => new Editora1(), 'Editora 2' => new Editora2(), 'Editora 3' => new Editora3());
 
 function GetCategories()
 {
@@ -20,9 +21,10 @@ function GetCategories()
 	header('Content-type: text/xml; charset=ISO-8859-1');
 	echo "<?xml version='1.0' encoding='ISO-8859-1'?>";
 	echo "<categorias>";
-	for ($i=0; $i < count($categories); $i++) { 
-		echo "<categoria>$categories[$i]</categoria>";
+	foreach ($categories as $key => $value) {
+		echo "<categoria>$value</categoria>";
 	}
+	
 	echo "</categorias>";
 
 }
