@@ -15,6 +15,11 @@ var xmlHttpObj;
       var allBooks = docxml.getElementsByTagName("title").length;
       var size = document.getElementById("tnumberbooks").value;
 
+      if (!(!isNaN(parseFloat(size)) && isFinite(size)) && size != "") {
+        alert("Inserted Value Isn't a Correct Number!");
+        size = "";
+      };
+
       size = ((size != "") ? size : allBooks);
 
       for (var i = 0; i < editors.length; i++) {
