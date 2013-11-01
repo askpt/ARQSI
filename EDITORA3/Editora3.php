@@ -93,9 +93,11 @@
 				if(!in_array($value["category"], $jsonResponse))
 				{
 					$jsonResponse[] = $value["category"];
+					//echo json_encode(array('book'=>$value));
 				}
 			}
-			respondWithJson();			
+			respondWithJson();
+			//echo json_encode(array('categories'=>$jsonResponse));			
 		}
 		// else it's a request looking for a specific category
 		else
@@ -104,10 +106,12 @@
 			{
 				if(strcmp($_GET["categoria"], $value["category"]) == 0)
 				{
-					$jsonResponse[] = $value;
+					$jsonResponse[] = $value["category"];
+					//echo json_encode(array('book'=>$value));
 				}
 			}
 			respondWithJson();
+			//echo json_encode(array('categories'=>$jsonResponse));
 		}
 	}
 

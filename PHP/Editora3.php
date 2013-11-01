@@ -2,33 +2,26 @@
 
 /**
  * Editora3
+ *	this class deals with Editora3 webservice, receiving JSON data from there and in turn responding 
+ * 	with xml
  */
 
 class Editora3
 {
 	private static $name = "Editora3";
-	public $urlToFile = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.json";
+	private static $allCategoriesUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?categoria=todas";
+	private static $booksByCategoryUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?categoria=";
+	private static $firstNBooksUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?numero=";
+	private static $specificBookUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?titulo=";
 
-	/**
-	 * prints all books on the screen
-	 */
-	public function showAllBooks()
+	public function GetCategories()
 	{
-		$json = json_decode(file_get_contents($this->urlToFile), true);
-	
-		foreach($json as $key => $value)
-		{
-			echo "<br><br>Livro: ";
-			if(is_array($value))
-			{
-				foreach($value as $key2 => $value2)
-				{
-					echo "<br>$key2: ".$value2;
-				}
-			}
-		}
+  		$requestJson = file_get_contents(self::$allCategoriesUrl);
+		$returnArray = json_decode($requestJson,true);
+  		return $returnArray;
 	}
 
+	
 }
 
 
