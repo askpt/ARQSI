@@ -22,7 +22,7 @@ var xmlHttpObj;
         var editor = editors[i].firstChild.nodeValue;
         var sizeEditor = editors[i].getElementsByTagName("title").length;
 
-        for (var y = 0; size > 0 && i < sizeEditor; y++) {
+        for (var y = 0; size > 0 && y < sizeEditor; y++) {
           var value = nodelist[y].textContent;
           
           var link = "<p><a onclick=\"Click('"+ editor + "', '" +  value + "');\">" +  value + "</a>"
