@@ -1,7 +1,6 @@
 <?php
 
 include 'DBLayer.php';
-
 include 'Editora1.php';
 include 'Editora2.php';
 include 'Editora3.php';
@@ -87,6 +86,66 @@ function Error()
 	echo "Request Failed";
 }
 
+
+function saveCategoryRequest($category)
+{
+	// current date
+	$dateTime = new DateTime();
+	$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+	// saving request in DB
+	$dal = new DBLayer();
+	$conn = $dal->connect();
+	$dal->selectDB($conn);
+
+	// inserting info into table requests
+	$stat = "insert into CATEGORY_REQUEST(timeStamp, category) VALUES ('".$dateTimeFormatted."','".$category."');";
+	$result = $dal->executeQuery($stat);
+	mysql_free_result($result);
+
+	$dal->close();
+}
+
+
+function saveBookRequest($book, $editor)
+{
+	// current date
+	$dateTime = new DateTime();
+	$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+	// saving request in DB
+	$dal = new DBLayer();
+	$conn = $dal->connect();
+	$dal->selectDB($conn);
+
+	// inserting info into table requests
+	$stat = "insert into BOOK_REQUEST(timeStamp, bookTitle, editorName) VALUES ('".$dateTimeFormatted."','".$book."','".$editor."');";
+	$result = $dal->executeQuery($stat);
+	mysql_free_result($result);
+
+	$dal->close();
+}
+
+
+function saveEditorRequest($editor, $number)
+{
+	// current date
+	$dateTime = new DateTime();
+	$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+	// saving request in DB
+	$dal = new DBLayer();
+	$conn = $dal->connect();
+	$dal->selectDB($conn);
+
+	// inserting info into table requests
+	$stat = "insert into EDITOR_REQUEST(timeStamp, editorName, requestedBooks) VALUES ('".$dateTimeFormatted."','".$editor."','".$number."');";
+	$result = $dal->executeQuery($stat);
+	mysql_free_result($result);
+
+	$dal->close();
+}
+
 $type = $_REQUEST['type'];
 
 switch ($type) {
@@ -96,18 +155,24 @@ switch ($type) {
 
 	case 'GetBooksByCategory':
 	$category = $_REQUEST['category'];
+	//saving to DB
+	saveCategoryRequest($category);
 	GetBooksByCategory($category);
 	break;
 
 	case 'GetNBooks':
 	$editor = $_REQUEST['editor'];
 	$number = $_REQUEST['number'];
+	// saving to DB
+	saveEditorRequest($editor, $number);
 	GetNBooks($editor, $number);
 	break;
 
 	case 'GetBook':
 	$book = $_REQUEST['title'];
 	$editor = $_REQUEST['editor'];
+	// saving to DB
+	saveBookRequest($book, $editor);
 	GetBook($book, $editor);
 	break;
 
