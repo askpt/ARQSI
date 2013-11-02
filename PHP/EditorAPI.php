@@ -1,5 +1,7 @@
 <?php
 
+include 'DBLayer.php';
+
 include 'Editora1.php';
 include 'Editora2.php';
 include 'Editora3.php';
