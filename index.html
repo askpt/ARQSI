@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ed="http://www.dei.isep.ipp.pt/arqsi/editoras#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    lang="pt">
+
 <head>
 	<script type="text/javascript" src="JAVASCRIPT/library.js"></script>
 	<script type="text/javascript" src="JAVASCRIPT/ListCategories.js"></script>
@@ -39,7 +44,6 @@
 		function LoadDocument () {
 			ListEditors();
 			ListCategories();
-		
 		}
 
 	</script>
@@ -160,7 +164,11 @@
 			</div>
 		</div>
 		<p class="slide"><a href="#" class="pull-me">Slide Up/Down</a></p>
-		<div id="dialog" title="Book Info"></div>
+		<div id="dialog" title="Book Info">
+			<div id="test">
+				
+			</div>
+		</div>
 	</div>
 
 	<h1>It works!</h1>
@@ -171,5 +179,15 @@
 	
 	<a onclick="Click('Editora 1', 'Tabacaria');">Tabacaria</a>
 	
+	<div id="semantic">
+		<span typeof='ed:book' resource='#book1.1'>
+		<span property='ed:title'> title</span>
+		<span property='ed:author'>author</span>
+		<span property='ed:category'>category</span>
+		<span property='ed:isbn'>isbn</span>
+		<span property='ed:edition'>edition</span>
+		</span>
+
+	</div>
 </body>
 </html>

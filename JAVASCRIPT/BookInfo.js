@@ -1,5 +1,6 @@
 var xmlHttpObj;
 var jsonHttpObjG;
+var editor;
 
 function stateHandlerBookInfo()
 { 
@@ -13,11 +14,13 @@ function stateHandlerBookInfo()
    var isbn = docxml.getElementsByTagName("isbn")[0].textContent;
    var edition = docxml.getElementsByTagName("publicacao")[0].textContent;
 
-   document.getElementById("dialog").innerHTML = "<p><b>Title: </b>" + title;
-   document.getElementById("dialog").innerHTML += "<p><b>Author: </b>" + author;
-   document.getElementById("dialog").innerHTML += "<p><b>Category: </b>" + category;
-   document.getElementById("dialog").innerHTML += "<p><b>ISBN: </b>" + isbn;
-   document.getElementById("dialog").innerHTML += "<p><b>Edition: </b>" + edition;
+   document.getElementById("test").innerHTML = "<span typeof='ed:book' resource='#book1.1'>";
+   document.getElementById("test").innerHTML += "<p><b>Title: </b><span property='ed:title'>" + title + "</span>";
+   document.getElementById("test").innerHTML += "<p><b>Author: </b><span property='ed:author'>" + author + "</span>";
+   document.getElementById("test").innerHTML += "<p><b>Category: </b><span property='ed:category'>" + category + "</span>";
+   document.getElementById("test").innerHTML += "<p><b>ISBN: </b><span property='ed:isbn'>" + isbn + "</span>";
+   document.getElementById("test").innerHTML += "<p><b>Edition: </b><span property='ed:edition'>" + edition + "</span>";
+   document.getElementById("test").innerHTML += "</span>";
 
    GetGoogleBookInfo(isbn);
  }
@@ -40,8 +43,9 @@ function MakeXMLHTTPCallBookInfo(method, url)
 
 
 
-function BookInfo (editor, book) 
+function BookInfo (ed, book) 
 {
+  editor = ed;
   var url = "PHP/EditorAPI.php?type=GetBook&editor=" + editor + "&title=" + book;
   MakeXMLHTTPCallBookInfo("GET", url);
 }
@@ -71,11 +75,11 @@ function stateHandlerGoogleInfo () {
    var json = eval('(' + docJSON + ')');
 
    if (json.totalItems === 0) {
-    
-   }else{
-    document.getElementById("dialog").innerHTML += "<p><b>Description: </b>" + json.items[0].volumeInfo.description;
-    document.getElementById("dialog").innerHTML += "<center><p><img src=\"" + json.items[0].volumeInfo.imageLinks.thumbnail + "\"></img></center>";
-   }
 
- }
+   }else{
+    document.getElementById("test").innerHTML += "<p><b>Description: </b>" + json.items[0].volumeInfo.description;
+    document.getElementById("test").innerHTML += "<center><p><img src=\"" + json.items[0].volumeInfo.imageLinks.thumbnail + "\"></img></center>";
+  }
+
+}
 }
