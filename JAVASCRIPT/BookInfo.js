@@ -14,13 +14,13 @@ function stateHandlerBookInfo()
    var isbn = docxml.getElementsByTagName("isbn")[0].textContent;
    var edition = docxml.getElementsByTagName("publicacao")[0].textContent;
 
-   document.getElementById("test").innerHTML = "<span typeof='ed:book' resource='#book1.1'>";
-   document.getElementById("test").innerHTML += "<p><b>Title: </b><span property='ed:title'>" + title + "</span>";
-   document.getElementById("test").innerHTML += "<p><b>Author: </b><span property='ed:author'>" + author + "</span>";
-   document.getElementById("test").innerHTML += "<p><b>Category: </b><span property='ed:category'>" + category + "</span>";
-   document.getElementById("test").innerHTML += "<p><b>ISBN: </b><span property='ed:isbn'>" + isbn + "</span>";
-   document.getElementById("test").innerHTML += "<p><b>Edition: </b><span property='ed:edition'>" + edition + "</span>";
-   document.getElementById("test").innerHTML += "</span>";
+   document.getElementById("dbookinfo").innerHTML = "<span typeof='ed:book' resource='#book1.1'>";
+   document.getElementById("dbookinfo").innerHTML += "<p><b>Title: </b><span property='ed:title'>" + title + "</span>";
+   document.getElementById("dbookinfo").innerHTML += "<p><b>Author: </b><span property='ed:author'>" + author + "</span>";
+   document.getElementById("dbookinfo").innerHTML += "<p><b>Category: </b><span property='ed:category'>" + category + "</span>";
+   document.getElementById("dbookinfo").innerHTML += "<p><b>ISBN: </b><span property='ed:isbn'>" + isbn + "</span>";
+   document.getElementById("dbookinfo").innerHTML += "<p><b>Edition: </b><span property='ed:edition'>" + edition + "</span>";
+   document.getElementById("dbookinfo").innerHTML += "</span>";
 
    GetGoogleBookInfo(isbn);
  }
@@ -77,9 +77,16 @@ function stateHandlerGoogleInfo () {
    if (json.totalItems === 0) {
 
    }else{
-    document.getElementById("test").innerHTML += "<p><b>Description: </b>" + json.items[0].volumeInfo.description;
-    document.getElementById("test").innerHTML += "<center><p><img src=\"" + json.items[0].volumeInfo.imageLinks.thumbnail + "\"></img></center>";
-  }
+    var description = json.items[0].volumeInfo.description;
+    var image = json.items[0].volumeInfo.imageLinks.thumbnail;
+    if (description != undefined) {
+     document.getElementById("dbookinfo").innerHTML += "<p><b>Description: </b>" + description;
+   };
+   if (image != undefined) {
+     document.getElementById("dbookinfo").innerHTML += "<center><p><img src=\"" + image + "\"></img></center>";
+   };
+   
+ }
 
 }
 }
