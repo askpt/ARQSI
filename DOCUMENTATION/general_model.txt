@@ -10,7 +10,6 @@ node "Server"{
 	[Editor1.php]
 	[Editor2.php]
 	[Editor3.php]
-	[Persistance.php]
 }
 
 database "MYSQL"{
@@ -27,8 +26,15 @@ cloud {
 	[Editora3 webservice]
 }
 
+cloud "Google" {
+	[Google API]
+}
+
 [index.html] --> [EditorAPI.php] : AJAX
 [EditorAPI.php] --> [index.html] : HTTP
+
+[index.html] --> [Google API] : AJAX
+[Google API] --> [index.html] : JSON
 
 [EditorAPI.php] --> [Editor1.php] : HTTP
 [EditorAPI.php] --> [Editor2.php] : HTTP
@@ -38,13 +44,11 @@ cloud {
 [Editor2.php] --> [EditorAPI.php] : XML
 [Editor3.php] --> [EditorAPI.php] : XML
 
-[Editor1.php] ..> [Persistance.php] 
-[Editor2.php] ..> [Persistance.php] 
-[Editor3.php] ..> [Persistance.php] 
+[EditorAPI.php] -> [BDLayer.php] 
 
-[Persistance.php] ..> [CATEGORY_REQUESTS]
-[Persistance.php] ..> [EDITOR_REQUESTS]
-[Persistance.php] ..> [BOOK_REQUESTS]
+[BDLayer.php] ..> [CATEGORY_REQUESTS]
+[BDLayer.php] ..> [EDITOR_REQUESTS]
+[BDLayer.php] ..> [BOOK_REQUESTS]
 
 [Editora1 webservice] --> [Editor1.php] : XML
 [Editora2 webservice] --> [Editor2.php] : XML
