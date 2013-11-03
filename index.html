@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ed="http://www.dei.isep.ipp.pt/arqsi/editoras#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    lang="pt">
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ed="http://www.dei.isep.ipp.pt/arqsi/editoras#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+lang="pt">
 
 <head>
 	<script type="text/javascript" src="JAVASCRIPT/library.js"></script>
@@ -30,7 +30,6 @@
 
 			BookInfo(editor, book);
 			$( "#dialog" ).dialog( "open" );
-
 		};
 
 		$(document).ready(function(){
@@ -175,17 +174,15 @@
 	<p>This is the default web page for this server.</p>
 	<p>The web server software is running but no content has been added, yet.</p>
 
-	
-	
 	<a onclick="Click('Editora 1', 'Tabacaria');">Tabacaria</a>
 	
 	<div id="semantic">
 		<span typeof='ed:book' resource='#book1.1'>
-		<span property='ed:title'> title</span>
-		<span property='ed:author'>author</span>
-		<span property='ed:category'>category</span>
-		<span property='ed:isbn'>isbn</span>
-		<span property='ed:edition'>edition</span>
+			<span property='ed:title'> Tabacaria</span>
+			<span property='ed:author'>&Aacute;lvaro de Campos</span>
+			<span property='ed:category'>Poesia</span>
+			<span property='ed:isbn'>9789726172413</span>
+			<span property='ed:edition'>2011</span>
 		</span>
 
 	</div>
