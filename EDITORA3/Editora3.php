@@ -40,53 +40,84 @@
 	// looking for a book with a given title
 	if(isset($_GET["titulo"]))
 	{
-		foreach ($jsonDecoded["book"] as $key => $value) 
+		if(strcmp(isset($_GET["titulo"]), ""))
 		{
-			if(strcmp($_GET["titulo"], $value["title"]) == 0)
-			{
-				$jsonResponse[] = $value;	
-			}
+			header('Content-type: application/json');
+			echo json_encode(array('comando'=>'invalido'));
 		}
-		respondWithJson();
+		else
+		{
+			foreach ($jsonDecoded["book"] as $key => $value) 
+			{
+				if(strcmp($_GET["titulo"], $value["title"]) == 0)
+				{
+					$jsonResponse[] = $value;	
+				}
+			}
+			respondWithJson();
+		}
 	}
 
 	// looking for the first n books
 	else if(isset($_GET["numero"]))
 	{
-		// counter
-		$cont = 0;
-		foreach ($jsonDecoded["book"] as $key => $value) 
+		if(strcmp(isset($_GET["numero"]), ""))
 		{
-			$cont++;
-			$jsonResponse[] = $value;
-
-			// stops adding books to response array when desired number is reached
-			if($cont == intval($_GET["numero"]))
-			{
-				break;
-			}		
+			header('Content-type: application/json');
+			echo json_encode(array('comando'=>'invalido'));
 		}
-		respondWithJson();
+		else
+		{
+			// counter
+			$cont = 0;
+			foreach ($jsonDecoded["book"] as $key => $value) 
+			{
+				$cont++;
+				$jsonResponse[] = $value;
+
+				// stops adding books to response array when desired number is reached
+				if($cont == intval($_GET["numero"]))
+				{
+					break;
+				}		
+			}
+			respondWithJson();
+		}
 	}
 
 	// looking for all news and non-news
 	else if(isset($_GET["news"]))
 	{
-		foreach ($jsonDecoded["book"] as $key => $value) 
+		if(strcmp(isset($_GET["news"]), ""))
 		{
-			if(strcmp($_GET["news"], $value["news"]) == 0)
-			{
-				$jsonResponse[] = $value;
-			}
+			header('Content-type: application/json');
+			echo json_encode(array('comando'=>'invalido'));
 		}
-		respondWithJson();
+
+		else
+		{
+			foreach ($jsonDecoded["book"] as $key => $value) 
+			{
+				if(strcmp($_GET["news"], $value["news"]) == 0)
+				{
+					$jsonResponse[] = $value;
+				}
+			}
+			respondWithJson();
+		}
 	}
 
 	// looking for books by category
 	else if(isset($_GET["categoria"]))
 	{
+		if(strcmp(isset($_GET["categoria"]), ""))
+		{
+			header('Content-type: application/json');
+			echo json_encode(array('comando'=>'invalido'));
+		}
+
 		// it request is "todas" then responds with json of all categories (avoiding duplicates)
-		if(strcmp($_GET["categoria"], "todas") == 0)
+		else if(strcmp($_GET["categoria"], "todas") == 0)
 		{
 			foreach ($jsonDecoded["book"] as $key => $value) 
 			{
