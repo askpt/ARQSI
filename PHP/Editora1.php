@@ -4,7 +4,7 @@
 /**
 * 
 */
-class Editora1 implements Persistence
+class Editora1
 {
 	private $name = "Editora1";
 	private static $all_categories = "http://phpdev2.dei.isep.ipp.pt/~arqsi/trabalho1/editora1.php?categoria=todas";
@@ -70,27 +70,6 @@ class Editora1 implements Persistence
 	public function getterBook()
 	{
 		return $this->book;
-	}
-
-	// implemeting interface methods
-
-	public function saveBookRequest($book)
-	{
-		// saving request in DB
-		$dal = new DBLayer();
-		$editor = $this->name;
-		$url = $this->book.$book;
-		$dal->saveBook($book, $editor, $url);
-	}
-
-
-	public function saveEditorRequest($number)
-	{
-		// saving request in DB
-		$dal = new DBLayer();
-		$editor = $this->name;
-		$url = $this->n_books.$number;
-		$dal->saveEditor($number, $editor, $url);
 	}
 
 }

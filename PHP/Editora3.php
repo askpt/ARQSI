@@ -6,7 +6,7 @@
  * 	with xml
  */
 
-class Editora3 implements Persistence
+class Editora3
 {
 	private $name = "Editora3";
 	private static $allCategoriesUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?categoria=todas";
@@ -102,27 +102,6 @@ class Editora3 implements Persistence
 	public function getterBook()
 	{
 		return $this->specificBookUrl;
-	}
-
-
-	// implementing interface methods
-
-	public function saveBookRequest($book)
-	{
-		// saving request in DB
-		$dal = new DBLayer();
-		$editor = $this->name;
-		$url = $this->specificBookUrl.$book;
-		$dal->saveBook($book, $editor, $url);
-	}
-
-	public function saveEditorRequest($number)
-	{
-		// saving request in DB
-		$dal = new DBLayer();
-		$editor = $this->name;
-		$url = $this->firstNBooksUrl.$number;
-		$dal->saveEditor($number, $editor, $url);
 	}
 }
 
