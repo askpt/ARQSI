@@ -1,0 +1,57 @@
+@startuml
+title General Architecture - Widget
+
+node "Client"{
+	[index.html]
+}
+
+node "Server"{
+	[EditorAPI.php]
+	[Editor1.php]
+	[Editor2.php]
+	[Editor3.php]
+	[Persistance.php]
+}
+
+database "MYSQL"{
+	folder "tables"{
+		[CATEGORY_REQUESTS]
+		[EDITOR_REQUESTS]
+		[BOOK_REQUESTS]
+	}
+}
+
+cloud {
+	[Editora1 webservice]
+	[Editora2 webservice]
+	[Editora3 webservice]
+}
+
+[index.html] --> [EditorAPI.php] : AJAX
+[EditorAPI.php] --> [index.html] : HTTP
+
+[EditorAPI.php] --> [Editor1.php] : HTTP
+[EditorAPI.php] --> [Editor2.php] : HTTP
+[EditorAPI.php] --> [Editor3.php] : HTTP
+
+[Editor1.php] --> [EditorAPI.php] : XML
+[Editor2.php] --> [EditorAPI.php] : XML
+[Editor3.php] --> [EditorAPI.php] : XML
+
+[Editor1.php] ..> [Persistance.php] 
+[Editor2.php] ..> [Persistance.php] 
+[Editor3.php] ..> [Persistance.php] 
+
+[Persistance.php] ..> [CATEGORY_REQUESTS]
+[Persistance.php] ..> [EDITOR_REQUESTS]
+[Persistance.php] ..> [BOOK_REQUESTS]
+
+[Editora1 webservice] --> [Editor1.php] : XML
+[Editora2 webservice] --> [Editor2.php] : XML
+[Editora3 webservice] --> [Editor3.php] : JSON
+
+[Editor1.php] --> [Editora1 webservice] : GET
+[Editor2.php] --> [Editora2 webservice] : GET
+[Editor3.php] --> [Editora3 webservice] : GET
+
+@enduml
