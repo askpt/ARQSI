@@ -52,7 +52,7 @@ function BookInfo (ed, book)
 
 
 function GetGoogleBookInfo (isbn) {
-  var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn;
+  var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn + "&key=AIzaSyBhVQraXKFaqSgMX30dXVmXRPI4TujhKU4";
 
   jsonHttpObjG = CreateXmlHttpRequestObject();
 
