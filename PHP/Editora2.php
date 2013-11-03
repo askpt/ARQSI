@@ -62,6 +62,15 @@ class Editora2 implements Persistence
 		return $response_xml;
 	}
 
+	public function getterNBooks()
+	{
+		return $this->n_books;
+	}
+
+	public function getterBook()
+	{
+		return $this->book;
+	}
 
 	// implementing interface methods
 

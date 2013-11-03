@@ -94,6 +94,17 @@ class Editora3 implements Persistence
 	}
 
 
+	public function getterNBooks()
+	{
+		return $this->firstNBooksUrl;
+	}
+
+	public function getterBook()
+	{
+		return $this->specificBookUrl;
+	}
+
+
 	// implementing interface methods
 
 	public function saveBookRequest($book)

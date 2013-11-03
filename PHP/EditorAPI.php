@@ -95,6 +95,20 @@ function saveCategoryRequest($category)
 	$dal->saveCategory($category);
 }
 
+function saveEditorRequest($number, $editor, $url)
+{
+	// saving request in DB
+	$dal = new DBLayer();
+	$dal->saveEditor($number, $editor, $url.$number);
+}
+
+function saveBookRequest($book, $editor, $url)
+{
+	// saving request in DB
+	$dal = new DBLayer();
+	$dal->saveBook($book, $editor, $url.$book);
+}
+
 
 $type = $_REQUEST['type'];
 
@@ -115,7 +129,8 @@ switch ($type) {
 	$number = $_REQUEST['number'];
 	GetNBooks($editor, $number);
 	// saving to DB
-	$editors[$editor] -> saveEditorRequest($number);
+	$url = $editors[$editor]->getterNBooks();
+	saveEditorRequest($number, $editor, $url);
 	break;
 
 	case 'GetBook':
@@ -123,7 +138,8 @@ switch ($type) {
 	$editor = $_REQUEST['editor'];
 	GetBook($book, $editor);
 	// save to DB
-	$editors[$editor] -> saveBookRequest($book);
+	$url = $editors[$editor]->getterBook();
+	saveBookRequest($book, $editor, $url);
 	break;
 
 	case 'GetEditors':
