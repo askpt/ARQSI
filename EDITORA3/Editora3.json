@@ -1,155 +1,51 @@
 {
     "book": [
       {
-        "title": "Memorial do Convento",
-        "author": "Jose Saramago",
-        "category": "Romance",
-        "isbn": "9789722100267",
-        "publicacao": "1981",
+        "title": "The Physiology and Biochemistry of Prokaryotes",
+        "author": "David White",
+        "category": "Microbiology",
+        "isbn": "0195125797",
+        "publicacao": "2000",
         "news": "nao"
       },
       {
-        "title": "Mancha Humana",
-        "author": "Philip Roth",
-        "category": "Romance",
-        "isbn": "9789722025775",
-        "publicacao": "2004",
-        "news": "sim"
-      },
-      {
-        "title": "Ficciones",
-        "author": "Jorge Luis Borges",
-        "category": "Romance",
-        "isbn": "9788499089508",
-        "publicacao": "2011",
+        "title": "Genes VII",
+        "author": "Benjamin Lewin",
+        "category": "Genetics",
+        "isbn": "0198792778",
+        "publicacao": "2000",
         "news": "nao"
       },
       {
-        "title": "Os Maias",
-        "author": "Eça de Queirós",
+        "title": "Introduction to Genetic Analysis",
+        "author": "Terence Brown",
+        "category": "Genetics",
+        "isbn": "0716768879",
+        "publicacao": "2012",
+        "news": "nao"
+      },
+      {
+        "title": "Molecular Biology of the Cell",
+        "author": "Bruce Albers",
         "category": "Romance",
-        "isbn": "9789720049575",
-        "publicacao": "2011",
+        "isbn": "0815341113",
+        "publicacao": "2008",
         "news": "nao"
       },
       {
-        "title": "Campanha Alegre",
-        "author": "Eça de Queirós",
-        "category": "Romance",
-        "isbn": "9789723817775",
-        "publicacao": "2011",
+        "title": "Brock Biology of Microorganisms",
+        "author": "John Martinko",
+        "category": "Microbiology",
+        "isbn": "0321778359",
+        "publicacao": "2012",
         "news": "nao"
       },
       {
-        "title": "Era Bom que Trocassemos Umas Ideias sobre o Assunto",
-        "author": "Mário de Carvalhos",
-        "category": "Romance",
-        "isbn": "789722110198",
-        "publicacao": "1999",
-        "news": "nao"
-      },
-      {
-        "title": "Liberdade",
-        "author": "Jonathan Frazen",
-        "category": "Romance",
-        "isbn": "9789722045254",
-        "publicacao": "2011",
-        "news": "sim"
-      },
-      {
-        "title": "Liberdade",
-        "author": "Jonathan Frazen",
-        "category": "Terror",
-        "isbn": "9789722045254",
-        "publicacao": "2011",
-        "news": "sim"
-      },
-      {
-        "title": "O Pintor de Batalhas",
-        "author": "Arturo Pérez-Reverte",
-        "category": "Romance",
-        "isbn": "9789724150000",
-        "publicacao": "2011",
-        "news": "sim"
-      },
-      {
-        "title": "Patterns of Enterprise Application",
-        "author": "Martin Fowler",
-        "category": "Software",
-        "isbn": "9780321127426",
-        "publicacao": "2002",
-        "news": "nao"
-      },
-      {
-        "title": "Applying UML and Patterns",
-        "author": "Craig Larman",
-        "category": "Software",
-        "isbn": "0131489062",
-        "publicacao": "2002",
-        "news": "nao"
-      },
-      {
-        "title": " Domain-driven design",
-        "author": "Eric Evans",
-        "category": "Software",
-        "isbn": "0321125215",
-        "publicacao": "2004",
-        "news": "nao"
-      },
-      {
-        "title": "Design Patterns",
-        "author": "Erich Gamma",
-        "category": "Software",
-        "isbn": "0201633612",
-        "publicacao": "1994",
-        "news": "nao"
-      },
-      {
-        "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
-        "author": "Robert C. Martin",
-        "category": "Software",
-        "isbn": "0132350882",
-        "publicacao": "2009",
-        "news": "sim"
-      },
-      {
-        "title": "Joel on Software",
-        "author": "Joel Spolsky",
-        "category": "Software",
-        "isbn": "1590593898",
-        "publicacao": "2009",
-        "news": "sim"
-      },
-      {
-        "title": "A Sombra do Vento",
-        "author": "Carlos Ruiz Zafón",
-        "category": "Romance",
-        "isbn": "9789722027090",
-        "publicacao": "2005",
-        "news": "nao"
-      },
-      {
-        "title": "Atonement",
-        "author": "Ian Mcewan",
-        "category": "Romance",
-        "isbn": "9780099429791",
-        "publicacao": "2001",
-        "news": "nao"
-      },
-      {
-        "title": "House of Meetings",
-        "author": "Martin Amis",
-        "category": "Romance",
-        "isbn": "9781400096015",
-        "publicacao": "2001",
-        "news": "nao"
-      },
-      {
-        "title": "The New York Trilogy",
-        "author": "Paul Auster",
-        "category": "Romance",
-        "isbn": "0140131558",
-        "publicacao": "1990",
+        "title": "Almanaque do Benfica",
+        "author": "Rui Tovar",
+        "category": "Desporto",
+        "isbn": "9892320875",
+        "publicacao": "2013",
         "news": "nao"
       }
     ]
