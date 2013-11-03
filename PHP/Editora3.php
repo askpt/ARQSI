@@ -6,13 +6,13 @@
  * 	with xml
  */
 
-class Editora3
+class Editora3 implements Persistence
 {
-	private static $name = "Editora3";
+	private $name = "Editora3";
 	private static $allCategoriesUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?categoria=todas";
 	private static $booksByCategoryUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?categoria=";
-	private static $firstNBooksUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?numero=";
-	private static $specificBookUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?titulo=";
+	private $firstNBooksUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?numero=";
+	private $specificBookUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?titulo=";
 
 
 	public function GetCategories()
@@ -48,7 +48,7 @@ class Editora3
 
 	public function GetNBooks($number)
 	{
-		$requestJson = file_get_contents(self::$firstNBooksUrl.$number);
+		$requestJson = file_get_contents($this->firstNBooksUrl.$number);
 		$jsonDecoded = json_decode($requestJson,true);
 		$responseXml = "";
 		
@@ -71,7 +71,7 @@ class Editora3
 
 	public function GetBook($title)
 	{
-		$url = self::$specificBookUrl.$title;
+		$url = $this->specificBookUrl.$title;
 		$url = str_replace(' ', '%20', $url);
 		$requestJson = file_get_contents($url);
 		$jsonDecoded = json_decode($requestJson,true);
@@ -91,6 +91,53 @@ class Editora3
 		}
 
 		return $responseXml;
+	}
+
+
+	// implementing interface methods
+
+	public function saveBookRequest($book)
+	{
+		// current date
+		$dateTime = new DateTime();
+		$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+		// saving request in DB
+		$dal = new DBLayer();
+		$conn = $dal->connect();
+		$dal->selectDB($conn);
+
+		$editor = $this->name;
+		$url = $this->specificBookUrl.$book;
+
+		// inserting info into table requests
+		$stat = "insert into BOOK_REQUEST(timeStamp, bookTitle, editorName, urlPath) VALUES ('".$dateTimeFormatted."','".$book."','".$editor."','".$url."');";
+		$result = $dal->executeQuery($stat);
+		mysql_free_result($result);
+
+		$dal->close();
+	}
+
+	public function saveEditorRequest($number)
+	{
+		// current date
+		$dateTime = new DateTime();
+		$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+		// saving request in DB
+		$dal = new DBLayer();
+		$conn = $dal->connect();
+		$dal->selectDB($conn);
+
+		$editor = $this->name;
+		$url = $this->firstNBooksUrl.$number;
+
+		// inserting info into table requests
+		$stat = "insert into EDITOR_REQUEST(timeStamp, editorName, requestedBooks, urlPath) VALUES ('".$dateTimeFormatted."','".$editor."','".$number."','".$url."');";
+		$result = $dal->executeQuery($stat);
+		mysql_free_result($result);
+
+		$dal->close();
 	}
 }
 

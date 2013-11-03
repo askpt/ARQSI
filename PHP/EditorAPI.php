@@ -1,6 +1,7 @@
 <?php
 
 include 'DBLayer.php';
+include 'Persistence.php';
 include 'Editora1.php';
 include 'Editora2.php';
 include 'Editora3.php';
@@ -106,7 +107,7 @@ function saveCategoryRequest($category)
 	$dal->close();
 }
 
-
+/*
 function saveBookRequest($book, $editor)
 {
 	// current date
@@ -125,8 +126,9 @@ function saveBookRequest($book, $editor)
 
 	$dal->close();
 }
+*/
 
-
+/*
 function saveEditorRequest($editor, $number)
 {
 	// current date
@@ -145,6 +147,7 @@ function saveEditorRequest($editor, $number)
 
 	$dal->close();
 }
+*/
 
 $type = $_REQUEST['type'];
 
@@ -155,25 +158,25 @@ switch ($type) {
 
 	case 'GetBooksByCategory':
 	$category = $_REQUEST['category'];
+	GetBooksByCategory($category);
 	//saving to DB
 	saveCategoryRequest($category);
-	GetBooksByCategory($category);
 	break;
 
 	case 'GetNBooks':
 	$editor = $_REQUEST['editor'];
 	$number = $_REQUEST['number'];
-	// saving to DB
-	saveEditorRequest($editor, $number);
 	GetNBooks($editor, $number);
+	// saving to DB
+	$editors[$editor] -> saveEditorRequest($number);
 	break;
 
 	case 'GetBook':
 	$book = $_REQUEST['title'];
 	$editor = $_REQUEST['editor'];
-	// saving to DB
-	saveBookRequest($book, $editor);
 	GetBook($book, $editor);
+	// save to DB
+	$editors[$editor] -> saveBookRequest($book);
 	break;
 
 	case 'GetEditors':
