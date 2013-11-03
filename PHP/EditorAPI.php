@@ -90,64 +90,11 @@ function Error()
 
 function saveCategoryRequest($category)
 {
-	// current date
-	$dateTime = new DateTime();
-	$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
-
 	// saving request in DB
 	$dal = new DBLayer();
-	$conn = $dal->connect();
-	$dal->selectDB($conn);
-
-	// inserting info into table requests
-	$stat = "insert into CATEGORY_REQUEST(timeStamp, category) VALUES ('".$dateTimeFormatted."','".$category."');";
-	$result = $dal->executeQuery($stat);
-	mysql_free_result($result);
-
-	$dal->close();
+	$dal->saveCategory($category);
 }
 
-/*
-function saveBookRequest($book, $editor)
-{
-	// current date
-	$dateTime = new DateTime();
-	$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
-
-	// saving request in DB
-	$dal = new DBLayer();
-	$conn = $dal->connect();
-	$dal->selectDB($conn);
-
-	// inserting info into table requests
-	$stat = "insert into BOOK_REQUEST(timeStamp, bookTitle, editorName) VALUES ('".$dateTimeFormatted."','".$book."','".$editor."');";
-	$result = $dal->executeQuery($stat);
-	mysql_free_result($result);
-
-	$dal->close();
-}
-*/
-
-/*
-function saveEditorRequest($editor, $number)
-{
-	// current date
-	$dateTime = new DateTime();
-	$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
-
-	// saving request in DB
-	$dal = new DBLayer();
-	$conn = $dal->connect();
-	$dal->selectDB($conn);
-
-	// inserting info into table requests
-	$stat = "insert into EDITOR_REQUEST(timeStamp, editorName, requestedBooks) VALUES ('".$dateTimeFormatted."','".$editor."','".$number."');";
-	$result = $dal->executeQuery($stat);
-	mysql_free_result($result);
-
-	$dal->close();
-}
-*/
 
 $type = $_REQUEST['type'];
 

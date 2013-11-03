@@ -67,46 +67,20 @@ class Editora2 implements Persistence
 
 	public function saveBookRequest($book)
 	{
-		// current date
-		$dateTime = new DateTime();
-		$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
-
 		// saving request in DB
 		$dal = new DBLayer();
-		$conn = $dal->connect();
-		$dal->selectDB($conn);
-
 		$editor = $this->name;
 		$url = $this->book.$book;
-
-		// inserting info into table requests
-		$stat = "insert into BOOK_REQUEST(timeStamp, bookTitle, editorName, urlPath) VALUES ('".$dateTimeFormatted."','".$book."','".$editor."','".$url."');";
-		$result = $dal->executeQuery($stat);
-		mysql_free_result($result);
-
-		$dal->close();
+		$dal->saveBook($book, $editor, $url);
 	}
 
 	public function saveEditorRequest($number)
 	{
-		// current date
-		$dateTime = new DateTime();
-		$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
-
 		// saving request in DB
 		$dal = new DBLayer();
-		$conn = $dal->connect();
-		$dal->selectDB($conn);
-
 		$editor = $this->name;
 		$url = $this->n_books.$number;
-
-		// inserting info into table requests
-		$stat = "insert into EDITOR_REQUEST(timeStamp, editorName, requestedBooks, urlPath) VALUES ('".$dateTimeFormatted."','".$editor."','".$number."','".$url."');";
-		$result = $dal->executeQuery($stat);
-		mysql_free_result($result);
-
-		$dal->close();
+		$dal->saveEditor($number, $editor, $url);
 	}
 
 }

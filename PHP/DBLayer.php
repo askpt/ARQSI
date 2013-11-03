@@ -86,7 +86,7 @@ class DBLayer
 	/**
 	 * closes MYSQL connection
 	 */
-	public function close()
+	public function closeConnection()
 	{
 		mysql_close();
 	}
@@ -98,6 +98,63 @@ class DBLayer
   	{  
     	echo "DAL.php <br>";
   	} 
+
+
+  	public function saveCategory($category)
+	{
+		// current date
+		$dateTime = new DateTime();
+		$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+		$conn = $this->connect();
+		$this->selectDB($conn);
+
+		// inserting info into table requests
+		$stat = "insert into CATEGORY_REQUEST(timeStamp, category) VALUES ('".$dateTimeFormatted."','".$category."');";
+		$result = $this->executeQuery($stat);
+		mysql_free_result($result);
+
+		$this->closeConnection();
+	}
+
+
+	public function saveBook($book, $editor, $url)
+	{
+		// current date
+		$dateTime = new DateTime();
+		$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+		// saving request in DB
+		$conn = $this->connect();
+		$this->selectDB($conn);
+
+		// inserting info into table requests
+		$stat = "insert into BOOK_REQUEST(timeStamp, bookTitle, editorName, urlPath) VALUES ('".$dateTimeFormatted."','".$book."','".$editor."','".$url."');";
+		$result = $this->executeQuery($stat);
+	
+		mysql_free_result($result);
+
+		$this->closeConnection();
+	}
+
+
+	public function saveEditor($number, $editor, $url)
+	{
+		// current date
+		$dateTime = new DateTime();
+		$dateTimeFormatted = $dateTime->format('Y-m-d H:i:s');
+
+		// saving request in DB
+		$conn = $this->connect();
+		$this->selectDB($conn);
+
+		// inserting info into table requests
+		$stat = "insert into EDITOR_REQUEST(timeStamp, editorName, requestedBooks, urlPath) VALUES ('".$dateTimeFormatted."','".$editor."','".$number."','".$url."');";
+		$result = $this->executeQuery($stat);
+		mysql_free_result($result);
+
+		$this->closeConnection();
+	}
 
 
 
