@@ -40,7 +40,7 @@
 	// looking for a book with a given title
 	if(isset($_GET["titulo"]))
 	{
-		if(strcmp($_GET["titulo"]), "")
+		if(strcmp($_GET["titulo"], "") == 0)
 		{
 			header('Content-type: application/json');
 			echo json_encode(array('comando'=>'invalido'));
@@ -61,7 +61,7 @@
 	// looking for the first n books
 	else if(isset($_GET["numero"]))
 	{
-		if(strcmp($_GET["numero"]), "")
+		if(strcmp($_GET["numero"], "") == 0)
 		{
 			header('Content-type: application/json');
 			echo json_encode(array('comando'=>'invalido'));
@@ -88,7 +88,7 @@
 	// looking for all news and non-news
 	else if(isset($_GET["news"]))
 	{
-		if(strcmp($_GET["news"]), "")
+		if(strcmp($_GET["news"], "") == 0)
 		{
 			header('Content-type: application/json');
 			echo json_encode(array('comando'=>'invalido'));
@@ -110,7 +110,7 @@
 	// looking for books by category
 	else if(isset($_GET["categoria"]))
 	{
-		if(strcmp($_GET["categoria"]), "")
+		if(strcmp($_GET["categoria"], "") == 0)
 		{
 			header('Content-type: application/json');
 			echo json_encode(array('comando'=>'invalido'));
