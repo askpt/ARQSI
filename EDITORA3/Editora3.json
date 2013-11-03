@@ -47,6 +47,22 @@
         "isbn": "9892320875",
         "publicacao": "2013",
         "news": "nao"
+      },
+      {
+        "title": "Descida ao inferno",
+        "author": "Carolina Salgado",
+        "category": "Romance",
+        "isbn": "9722050176",
+        "publicacao": "2012",
+        "news": "nao"
+      },
+      {
+        "title": "God of War II",
+        "author": "Robert E. Vardeman",
+        "category": "Terror",
+        "isbn": "8580447690",
+        "publicacao": "2013",
+        "news": "nao"
       }
     ]
 }

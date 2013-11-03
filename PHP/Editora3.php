@@ -9,10 +9,10 @@
 class Editora3
 {
 	private $name = "Editora3";
-	private static $allCategoriesUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?categoria=todas";
-	private static $booksByCategoryUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?categoria=";
-	private $firstNBooksUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?numero=";
-	private $specificBookUrl = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.php?titulo=";
+	private static $allCategoriesUrl = "http://uvm061.dei.isep.ipp.pt/EDITORA3/Editora3.php?categoria=todas";
+	private static $booksByCategoryUrl = "http://uvm061.dei.isep.ipp.pt/EDITORA3/Editora3.php?categoria=";
+	private $firstNBooksUrl = "http://uvm061.dei.isep.ipp.pt/EDITORA3/Editora3.php?numero=";
+	private $specificBookUrl = "http://uvm061.dei.isep.ipp.pt/EDITORA3/Editora3.php?titulo=";
 
 
 	public function GetCategories()

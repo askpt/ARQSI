@@ -13,7 +13,7 @@
 	 */
 
 	// url for original JSON data file
-	$jsonDataFile = "http://uvm061.dei.isep.ipp.pt/~joao/ARQSI/EDITORA3/Editora3.json";
+	$jsonDataFile = "Editora3.json";
 	
 	// decoding data file
 	$jsonDecoded = json_decode(file_get_contents($jsonDataFile), true);
