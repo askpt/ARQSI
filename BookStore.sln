@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Widget", "Widget", "{BF02CCA8-1655-42DE-B0E6-6E32B84E64AB}"
+	ProjectSection(SolutionItems) = preProject
+		Widget\index.html = Widget\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOCUMENTATION", "DOCUMENTATION", "{BABBBDBE-8A51-4030-B5E1-3660327AD7E1}"
+	ProjectSection(SolutionItems) = preProject
+		DOCUMENTATION\DataModel.png = DOCUMENTATION\DataModel.png
+		DOCUMENTATION\general_model.txt = DOCUMENTATION\general_model.txt
+		DOCUMENTATION\model.png = DOCUMENTATION\model.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WidgetAPI", "WidgetAPI", "{114B835A-EF7B-4E34-B9C4-285E6D006113}"
+	ProjectSection(SolutionItems) = preProject
+		Widget\WidgetAPI\DBLayer.php = Widget\WidgetAPI\DBLayer.php
+		Widget\WidgetAPI\Editora1.php = Widget\WidgetAPI\Editora1.php
+		Widget\WidgetAPI\Editora2.php = Widget\WidgetAPI\Editora2.php
+		Widget\WidgetAPI\Editora3.php = Widget\WidgetAPI\Editora3.php
+		Widget\WidgetAPI\EditorAPI.php = Widget\WidgetAPI\EditorAPI.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WidgetDocs", "WidgetDocs", "{F8D1937F-485D-49B3-B291-80BE240FCC43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DATABASE_BAK", "DATABASE_BAK", "{320BADF8-9350-4D20-9E95-DD35BFA15DEC}"
+	ProjectSection(SolutionItems) = preProject
+		Widget\WidgetDocs\DATABASE_BAK\mySQL.bak = Widget\WidgetDocs\DATABASE_BAK\mySQL.bak
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDITORA3", "EDITORA3", "{4D240E43-D146-47A6-A5AC-8B829C1C97D3}"
+	ProjectSection(SolutionItems) = preProject
+		Widget\WidgetDocs\EDITORA3\Editora3.json = Widget\WidgetDocs\EDITORA3\Editora3.json
+		Widget\WidgetDocs\EDITORA3\Editora3.json.bak = Widget\WidgetDocs\EDITORA3\Editora3.json.bak
+		Widget\WidgetDocs\EDITORA3\Editora3.php = Widget\WidgetDocs\EDITORA3\Editora3.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WidgetJS", "WidgetJS", "{D01D87FD-05D0-4DD6-90BC-9B7FA3DA55F4}"
+	ProjectSection(SolutionItems) = preProject
+		Widget\WidgetJS\BookInfo.js = Widget\WidgetJS\BookInfo.js
+		Widget\WidgetJS\library.js = Widget\WidgetJS\library.js
+		Widget\WidgetJS\ListBooksByCategory.js = Widget\WidgetJS\ListBooksByCategory.js
+		Widget\WidgetJS\ListCategories.js = Widget\WidgetJS\ListCategories.js
+		Widget\WidgetJS\ListNBooks.js = Widget\WidgetJS\ListNBooks.js
+		Widget\WidgetJS\LoadEditors.js = Widget\WidgetJS\LoadEditors.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{114B835A-EF7B-4E34-B9C4-285E6D006113} = {BF02CCA8-1655-42DE-B0E6-6E32B84E64AB}
+		{F8D1937F-485D-49B3-B291-80BE240FCC43} = {BF02CCA8-1655-42DE-B0E6-6E32B84E64AB}
+		{D01D87FD-05D0-4DD6-90BC-9B7FA3DA55F4} = {BF02CCA8-1655-42DE-B0E6-6E32B84E64AB}
+		{320BADF8-9350-4D20-9E95-DD35BFA15DEC} = {F8D1937F-485D-49B3-B291-80BE240FCC43}
+		{4D240E43-D146-47A6-A5AC-8B829C1C97D3} = {F8D1937F-485D-49B3-B291-80BE240FCC43}
+	EndGlobalSection
+EndGlobal
