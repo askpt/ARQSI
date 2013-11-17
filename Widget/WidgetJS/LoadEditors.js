@@ -47,5 +47,5 @@ function stateHandlerListEditors()
  */
 function ListEditors () 
 {
-	MakeXMLHTTPCallListEditors("GET", "PHP/EditorAPI.php?type=GetEditors");
+	MakeXMLHTTPCallListEditors("GET", "http://uvm061.dei.isep.ipp.pt/ARQSI/Widget/WidgetAPI/EditorAPI.php?type=GetEditors");
 }

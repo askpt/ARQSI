@@ -46,7 +46,7 @@ function MakeXMLHTTPCallBookInfo(method, url)
 function BookInfo (ed, book) 
 {
   editor = ed;
-  var url = "PHP/EditorAPI.php?type=GetBook&editor=" + editor + "&title=" + book;
+  var url = "http://uvm061.dei.isep.ipp.pt/ARQSI/Widget/WidgetAPI/EditorAPI.php?type=GetBook&editor=" + editor + "&title=" + book;
   MakeXMLHTTPCallBookInfo("GET", url);
 }
 

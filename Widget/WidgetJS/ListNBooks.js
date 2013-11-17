@@ -59,7 +59,7 @@ function GetNBooks()
   var index = document.getElementById("seditors").selectedIndex;
   editor = document.getElementById("seditors").options[index].text;
   var number = document.getElementById('tnumber').value;
-	MakeXMLHTTPCallGetNBooks("GET", "PHP/EditorAPI.php?type=GetNBooks&editor=" + editor + "&number=" + number);
+	MakeXMLHTTPCallGetNBooks("GET", "http://uvm061.dei.isep.ipp.pt/ARQSI/Widget/WidgetAPI/EditorAPI.php?type=GetNBooks&editor=" + editor + "&number=" + number);
   return false;
 }
 

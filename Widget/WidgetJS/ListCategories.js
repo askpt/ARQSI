@@ -51,5 +51,5 @@ function stateHandlerListCategories()
  */
 function ListCategories () 
 {
-	MakeXMLHTTPCallListCategories("GET", "PHP/EditorAPI.php?type=GetAllCategories");
+	MakeXMLHTTPCallListCategories("GET", "http://uvm061.dei.isep.ipp.pt/ARQSI/Widget/WidgetAPI/EditorAPI.php?type=GetAllCategories");
 }

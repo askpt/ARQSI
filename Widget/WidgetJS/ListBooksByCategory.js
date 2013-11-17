@@ -68,5 +68,5 @@ var xmlHttpObj;
   {
     var index = document.getElementById("scategories").selectedIndex;
     var category = document.getElementById("scategories").options[index].text;
-    MakeXMLHTTPCallListBooksByCategory("GET", "PHP/EditorAPI.php?type=GetBooksByCategory&category=" + category);
+    MakeXMLHTTPCallListBooksByCategory("GET", "http://uvm061.dei.isep.ipp.pt/ARQSI/Widget/WidgetAPI/EditorAPI.php?type=GetBooksByCategory&category=" + category);
   }
