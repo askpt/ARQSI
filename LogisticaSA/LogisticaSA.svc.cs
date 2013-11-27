@@ -8,26 +8,55 @@ using System.Text;
 
 namespace LogisticaSA
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class LogisticaSA : ILogisticaSA
     {
-        public string GetData(int value)
+        public float GetShipmentValue(float weight, string type)
         {
-            return string.Format("You entered: {0}", value);
+            if (type == "National")
+            {
+                return GetShipmentValue(weight);
+            }
+
+            if (type == "International")
+            {
+                return GetShipmentValue(weight) * 2;
+            }
+            if (type == "National Urgent")
+            {
+                return GetShipmentValue(weight) + 1.5f;
+            }
+            if (type == "International Urgent")
+            {
+                return (GetShipmentValue(weight) + 1.5f) * 2;
+            }
+
+            return -1;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        private float GetShipmentValue(float weight)
         {
-            if (composite == null)
+            if (weight > 0 && weight < 0.5) 
             {
-                throw new ArgumentNullException("composite");
+                return 2;
             }
-            if (composite.BoolValue)
+            if (weight >= 0.5 && weight < 1)
             {
-                composite.StringValue += "Suffix";
+                return 4.5f;
             }
-            return composite;
+            if (weight >= 1 && weight < 5)
+            {
+                return 15;
+            }
+            if (weight >= 5 && weight < 15)
+            {
+                return 35;
+            }
+            if (weight >= 15)
+            {
+                return 60;
+            }
+
+            return -1;
         }
     }
 }
