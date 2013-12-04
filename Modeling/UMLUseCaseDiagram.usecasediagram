@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="fd91261d-140f-4a99-9aab-4b4fd69f0232" name="UMLUseCaseDiagram" linkedPackageId="b7b5bb14-99cc-4d4b-95f0-5ce73506a28c" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="86490bfa-f28f-4454-b76a-4da0393fce61">
+      <elementDefinition Id="ab92c0a3-7cea-40a8-9bef-a05053da5d2a" />
+      <body>Customer only R,U,D itself</body>
+      <annotatedElements>
+        <useCaseMoniker Id="fe12f415-8cad-4110-b4d7-1243eb26f280" LastKnownName="RUD User" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f88821e4-cff8-483a-955a-63ce2338c38f">
+      <profileInstance Id="55dfd198-71d9-4c0d-8705-8f04850585d4" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="af464c4e-dee3-443c-8095-80dce9d6fad1">
+      <profileInstance Id="41fcb4a6-f909-4b4e-8c7d-5a160d6a55d2" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="c1cf41d4-0ed2-40dd-a51f-4388b7c90296" name="Customer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="37760d1b-711a-4fe2-b3f7-f2d14d4e617c" />
+        <generalsInternal>
+          <generalization Id="7703174a-de46-4086-a3a2-ff52716aaba5" isSubstitutable="false">
+            <actorMoniker Id="abd78d81-02cf-4da8-8ed4-ce2abafaf735" LastKnownName="User" />
+            <elementDefinition Id="41d1b561-2ca0-4fbd-88f9-4d43dfbfe6a1" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="ed265c11-8389-4add-8d8e-aaee93e44be4" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="R Books" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2ee95c68-e80b-4b78-842f-0708460131c4" LastKnownName="R Books" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="01fbd275-07e5-4085-9d0d-f5d82e3a4acc" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8c582d9e-2324-47ce-af2c-0a0083719dcb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cf9839ba-d0c7-4452-9bf1-94834d9741d9" name="R Books" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="45cc18ab-0166-4228-a5c3-4e4dd5f2bde3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1d224c6d-d653-4095-8c22-fca91c424f4c" />
+          </association>
+          <association Id="a942dfe4-499b-4b3e-b1d1-a4b9b508ad8d" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="CUD Orders" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="974b1947-2547-4e6a-8f7a-0b42a1925605" LastKnownName="CRUD Orders" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="408e7a13-5957-4e8b-9af9-f49557e34e87" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3e8c5e43-ab2c-4baa-8c85-df89ad0f35ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dd1f24a9-39ea-4bf6-915a-df5e46437df8" name="CUD Orders" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2aaf7801-8ff6-4009-836d-66e60307ecf4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="99b7760d-55de-4894-b772-b8dba82529da" />
+          </association>
+          <association Id="d65ff633-e717-42ef-b1ff-147d4eda40dd" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="RUD User" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fe12f415-8cad-4110-b4d7-1243eb26f280" LastKnownName="RUD User" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7d59e69a-83a7-4958-a3a3-e4acf1a715fd" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2e805975-2632-4252-8e4d-41dc4f0e9c8e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a2ce089b-5830-4338-8ae9-06fb7989d63b" name="RUD User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4aea17d3-4a75-4e6d-8220-11b4f2d27f85" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b683f5e9-9ac0-4ee3-8c24-24c31ddde685" />
+          </association>
+          <association Id="df4fd399-cc99-45a1-9e8d-b664807fd15a" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="CRUD Cart" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2330c096-56b8-4481-92b5-1ddf873d24da" LastKnownName="CRUD Cart" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9ce736c4-dbd5-48f2-8f6c-49c0f825b8f5" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2e9c316b-9250-4dc4-82f8-526b053ffaf2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4c4e8e58-0f76-4e89-bfc9-48fa3b986ad8" name="CRUD Cart" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b219ce41-582b-4238-abd1-c5ad8619571b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="651852ca-dc9b-450b-b366-8ec5c8f5348a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="ebcfc23f-7e42-430a-83fb-951004732fba" name="Administrator" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="776bb144-c3ae-47c5-825b-2656be0414be" />
+        <generalsInternal>
+          <generalization Id="280fdb1e-7e7f-42f7-bb8b-6b72897f50ee" isSubstitutable="false">
+            <actorMoniker Id="abd78d81-02cf-4da8-8ed4-ce2abafaf735" LastKnownName="User" />
+            <elementDefinition Id="19c2d845-c393-4c5e-b35d-e1081b4e2bfa" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="521c3369-cc47-4b52-afbf-6f85cad3e165" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="Set Roles" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1029c3e2-5218-4779-a471-c08b1fa5b60a" LastKnownName="Set Roles" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d76a3611-ad23-47e6-b824-fbdf377876c8" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2b6cd179-f2a6-419a-8922-863ce1e5a5f9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="804ebb85-34a4-4ff7-813d-d8d1d34878c7" name="Set Roles" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="679cdab4-5df1-4bfd-a214-0b31934a8f5d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="577818be-6f82-4637-b44b-3f21c5ea4174" />
+          </association>
+          <association Id="c70d4469-49b3-4f8b-a893-7c945290df6c" isDerived="false" sourceEndRoleName="Administrator" targetEndRoleName="RUD User" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fe12f415-8cad-4110-b4d7-1243eb26f280" LastKnownName="RUD User" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1b38ed8a-6358-415e-baf2-2d05d62e7cec" name="Administrator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a4d1a4c2-bc72-42ac-96da-4c82f022138b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b31070e0-9b95-4824-ba11-14498ea68d12" name="RUD User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c82544d8-bb36-4d79-a40c-0c18693aaf8a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b48cfb95-571b-43ec-81fe-3e06e9b0aee4" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="32eda87f-208b-4f83-b935-4f72a4d4ce18" name="Manager" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="90fba426-fd56-4d7c-a982-29883380add4" />
+        <generalsInternal>
+          <generalization Id="2b56e97b-1e1b-47c6-be84-0bcb8594ac23" isSubstitutable="false">
+            <actorMoniker Id="abd78d81-02cf-4da8-8ed4-ce2abafaf735" LastKnownName="User" />
+            <elementDefinition Id="dcb65cb9-0f01-476f-85ac-e55cdabf8899" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="8fe55826-e459-4f3e-b08b-f4785482dc80" isDerived="false" sourceEndRoleName="Manager" targetEndRoleName="CUD Books" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6896e0ed-fd5c-4713-9e51-02e356219ae6" LastKnownName="CUD Books" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="78d06efe-2c78-4b7d-92e5-6dcab85f4a4d" name="Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dbee7c11-4807-4330-803d-4c9b82d8929b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9c92e040-d7d4-430a-862c-53dedd424653" name="CUD Books" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2b6c95c3-6925-48b3-b674-fc57c9639ca0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="088c4036-6abf-4217-9773-a599aa6ca9c6" />
+          </association>
+          <association Id="86e752d4-ca62-443a-8ea5-5764a565fb90" isDerived="false" sourceEndRoleName="Manager" targetEndRoleName="R Books" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2ee95c68-e80b-4b78-842f-0708460131c4" LastKnownName="R Books" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="53ffd69b-8927-4632-a04a-d9aa7a1e4f50" name="Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1d1be2e3-8bab-4fd6-acad-8c693bd6da48" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f82d7d83-56ef-4461-be1f-5aee76f40051" name="R Books" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f99af521-d412-498d-80d6-1911c9e3015c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="80fac236-60ee-46ee-80aa-3855a3e7e945" />
+          </association>
+          <association Id="c41521f9-4442-4b1d-94fb-708facdf86e5" isDerived="false" sourceEndRoleName="Manager" targetEndRoleName="CUD Orders" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="974b1947-2547-4e6a-8f7a-0b42a1925605" LastKnownName="CRUD Orders" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5551733d-219d-4e34-ab5b-51188f88dbea" name="Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8d8854b6-22e8-4bf5-aa85-c25c2106564e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6912631a-4203-4f22-9dd6-713344c04758" name="CUD Orders" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bb3730d8-8693-44a0-a265-6a76734c82ef" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9c219443-4245-45e7-9e67-40eb110291de" />
+          </association>
+          <association Id="29631e2d-ef78-4e18-82ba-1d797b648993" isDerived="false" sourceEndRoleName="Manager" targetEndRoleName="RUD User" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fe12f415-8cad-4110-b4d7-1243eb26f280" LastKnownName="RUD User" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0a2741d-b7c6-4896-abe2-195826707bda" name="Manager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ca47b8ae-4516-4630-b916-835ffe1cef16" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e407eeca-3016-40e5-859d-ed84543c1b97" name="RUD User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="76488c4c-f7fb-42d3-9d13-74dfef17fb08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="14bfbb5f-4370-4b93-ad56-71138806b5a2" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="abd78d81-02cf-4da8-8ed4-ce2abafaf735" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0b3938d6-7fb5-4e0b-b492-d1aebffbde0f" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d41952fe-2013-48ba-b0b3-ab18edda50d2" name="C User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f8bf920b-92c1-46f4-911c-2cf15c02eda2" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="76322d29-1865-43fb-9880-050d52231e6b" name="Anonymous" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f4bc3179-0eec-4d00-b60a-7983123f4252" />
+        <targetEnds>
+          <association Id="d07b9e88-67e9-4a85-89fa-ad6b4c49d62f" isDerived="false" sourceEndRoleName="Anonymous" targetEndRoleName="Create User" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d41952fe-2013-48ba-b0b3-ab18edda50d2" LastKnownName="C User" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="59cf5c4f-2afd-429f-a643-a247256bbe27" name="Anonymous" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="13b95fd3-03e3-4243-a8ad-132148562dd2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4520939c-1dc9-4567-8438-9736e62249ff" name="Create User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d592a3bf-94a4-4e41-a7b2-69c8f6c1e70c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0e5bb650-c662-4bf6-9b55-fce35a53004d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1029c3e2-5218-4779-a471-c08b1fa5b60a" name="Set Roles" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e0a83598-1625-4590-b43b-ce14a8685e78" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6896e0ed-fd5c-4713-9e51-02e356219ae6" name="CUD Books" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33a0deb7-ed3d-4fd6-8b83-96d90d068976" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2ee95c68-e80b-4b78-842f-0708460131c4" name="R Books" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6bdfc658-c22a-4bca-8f83-e70037f99c37" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="974b1947-2547-4e6a-8f7a-0b42a1925605" name="CRUD Orders" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="db9cd4f2-c0d4-4a8d-b1bf-1ca43e5e9fdf" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fe12f415-8cad-4110-b4d7-1243eb26f280" name="RUD User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="743483be-3897-4159-b7c6-c7eb69b13dca" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2330c096-56b8-4481-92b5-1ddf873d24da" name="CRUD Cart" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="583e7114-e2cd-4f26-a698-7909e87f70b7" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="b7b5bb14-99cc-4d4b-95f0-5ce73506a28c" name="Modeling">
+    <elementDefinition Id="1beba76b-40eb-43f3-9cbe-db2a77800d32" />
+  </package>
+</useCaseModelRoot>
