@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="cf389bae-b50e-487d-b6df-65650cb81f7b" name="DomainModel" linkedPackageId="252c0f53-0523-4968-9b72-fbb29c71c69e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="18572eda-00e8-40c3-bc45-935f04d13a3f">
+      <profileInstance Id="741eca08-3604-4536-9b60-4c8cc3bfbb76" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="67216731-3ebf-4b56-9f96-97bd81e5b370">
+      <profileInstance Id="943f0d3e-c840-4309-a01f-53aee6c1309b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cdebc76d-27d1-4180-9cda-8994781185fa" name="Author" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="892e3d5f-268a-4ce1-9957-15389c4d0074" />
+        <targetEnds>
+          <association Id="0d0f1f3d-a88f-4ac3-80e6-0c28138e589e" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1d41e3fb-ec8a-408f-8225-17ec08216345" LastKnownName="Book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="303782e8-8c6f-4578-8dce-7e85803bbc4a" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="fb739dfd-f32f-40c4-a670-efa25e4bf24f" name="Lower" value="*">
+                      <elementDefinition Id="85ec88d5-09be-4a0d-a42c-dec88ae0c343" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="58dd8600-3e95-4597-99f0-e8ad2a663fa3" name="Upper" value="*">
+                      <elementDefinition Id="934a1c08-b8f9-4d69-b8a8-4ef53d642208" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="1855d126-ce64-4b6e-8f48-b4f451426026" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a389237d-1307-46bf-a4d2-3b2bec947bfc" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="45c64554-fb8f-41d9-bc1b-ed4f93678c70" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="15c8ee9b-5ae2-4d0e-ae6d-caa69451e611" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1d41e3fb-ec8a-408f-8225-17ec08216345" name="Book" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="813404dd-2f2f-4283-b925-0e3c3b679921" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="62a0cb24-d35f-42d5-af71-fe55e15abda9" name="Editor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="285b3275-3f44-48ad-bdf8-5081d5b4b6a3" />
+        <targetEnds>
+          <association Id="14fcf7f4-e8fa-47ac-8ec6-69b2335f56ae" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1d41e3fb-ec8a-408f-8225-17ec08216345" LastKnownName="Book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5bd97da-86c2-4940-9925-3a48a32288aa" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="7f52742c-5870-4e14-b431-240747d5e483" name="Lower" value="*">
+                      <elementDefinition Id="39ebca34-8f6b-46d1-8342-bd76d4d370d9" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="de758754-270a-47f1-a234-8ef39b4cab4d" name="Upper" value="*">
+                      <elementDefinition Id="5f3307f0-29a7-4163-84b9-5243630b40fe" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="8a083703-38a8-4443-8249-ddc2c5b69bf6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a66a4329-af96-4aba-8e97-c3f02c3570bc" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c9f33504-6891-4ce3-aa5d-aafe46f6466b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="37760019-4979-4be3-a216-f9f319e92640" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5fcb6202-6424-4bc1-bdfd-a67229958689" name="CartDetail" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a21324a8-3a52-432d-b867-a81091f13fc0" />
+        <targetEnds>
+          <association Id="50ddf96c-ba3b-4a03-9399-215f0a2d57f0" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1d41e3fb-ec8a-408f-8225-17ec08216345" LastKnownName="Book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eefbfc42-7f91-4222-ad2a-660e3f71535c" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="9a1c64f1-424b-478e-9a88-ce6b7f3778ce" name="Lower" value="*">
+                      <elementDefinition Id="6359016d-3d83-46f1-8a2a-e785e96109e1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="bea1f2e0-5b0d-4662-bb1c-5b02aee778f9" name="Upper" value="*">
+                      <elementDefinition Id="4fac0a7e-95c5-436a-b51f-d8bf956b0185" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="c4eade6d-4f90-49aa-a762-dc39873c2ae3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2390eaf1-08ee-41b0-8aff-e467db9dbce7" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9404bf4e-d491-49fb-a9f8-ed280ea1931d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="de0eb448-87a7-4f6f-9933-0b2770990ce0" />
+          </association>
+          <association Id="887c139b-83de-4898-a0dd-47b113a13d56" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8f3fdc62-6e29-464d-ad47-f6331fcb4b02" LastKnownName="Cart" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f5a69bf-8a57-4838-b6de-3ea5a7a7faff" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="f6eb4ee5-bbe1-46c5-ba9d-8263659f2480" name="Lower" value="*">
+                      <elementDefinition Id="7c748b9b-5b28-47ac-b562-460f19f81226" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="a8b4955f-c520-4904-ae74-009dca221473" name="Upper" value="*">
+                      <elementDefinition Id="0aeca45d-c4e0-4b2e-b4f2-413385524ff7" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="252034b0-0d66-4547-a1a1-8ed7bc9c6a86" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fb9148af-3e12-4144-ae02-9c76738e1f32" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3823ff23-88dc-448f-bd4c-c2861ea6a3c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e8374ed8-e1af-44e0-a4d7-a0b9e8da9932" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8f3fdc62-6e29-464d-ad47-f6331fcb4b02" name="Cart" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c5d9e580-5616-46a1-b400-484dc3e9d2c7" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="11d5671c-35b9-4b45-bec3-413f2b088364" name="Order Detail" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="65956598-30d9-4399-9242-b40e8205dbf1" />
+        <targetEnds>
+          <association Id="cddc0ac5-2ad3-4a33-8ad9-d801ee58c104" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="1d41e3fb-ec8a-408f-8225-17ec08216345" LastKnownName="Book" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="73ba6dec-1f81-4840-913d-4a05d33bb6ff" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="3fae70f0-fb05-43f6-9658-2a25b7343382" name="Lower" value="*">
+                      <elementDefinition Id="983eb475-0e9f-494b-8007-d4efd2c1c503" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="64fcc6a0-59c3-4049-913a-311a1c714ca3" name="Upper" value="*">
+                      <elementDefinition Id="0a7c3fa4-5e63-40a0-85ea-9899a4832a24" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="d537582c-88b5-4594-86a1-cc521028a0fa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c93aa955-7501-4cdb-ba63-2550c5822ec4" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8b9be0a4-9147-4d7a-83e3-8b3b80473266" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1e04047d-c6b9-4734-ab4a-c5700286929c" />
+          </association>
+          <association Id="2e512216-ee90-4a99-aaef-81b60f4032ed" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4c70cb96-0c5e-4c92-8bfe-580a5d4fc300" LastKnownName="Order" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="af1ac208-8f38-4aff-872e-83bf3a92ab61" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="bf633d5b-68c3-4eaf-9332-21bf27127ad7" name="Lower" value="*">
+                      <elementDefinition Id="6eb71fe7-92d1-4d20-b7a9-0c6dba193f14" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="f8cae7bb-3f04-4e55-96eb-9138b62f27a0" name="Upper" value="*">
+                      <elementDefinition Id="36caedf9-a160-495d-a8e4-ef7d0bf114db" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="51165985-ba0b-443f-895d-76baa3b350b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dd64c91f-fde0-495c-9d15-7a67501b5746" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="96815182-35ea-498d-9f99-04a174bbae32" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="12bdd4a9-0a7b-497a-930b-19a4e3b475ba" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4c70cb96-0c5e-4c92-8bfe-580a5d4fc300" name="Order" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="afcfa288-15c4-4073-ae1a-6b75a2f929a9" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f29afef4-510d-40f6-98ee-aef814663677" name="User" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="15abfefc-4b8c-44be-b87e-29e3c7de01fc" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="252c0f53-0523-4968-9b72-fbb29c71c69e" name="Modeling">
+    <elementDefinition Id="1beba76b-40eb-43f3-9cbe-db2a77800d32" />
+  </package>
+</logicalClassDesignerModel>
