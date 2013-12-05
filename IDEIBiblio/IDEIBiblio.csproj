@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +168,14 @@
     <Compile Include="Migrations\201312051455441_InitialCreate.cs" />
     <Compile Include="Migrations\201312051455441_InitialCreate.Designer.cs">
       <DependentUpon>201312051455441_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051545420_InitialCreate1.cs" />
+    <Compile Include="Migrations\201312051545420_InitialCreate1.Designer.cs">
+      <DependentUpon>201312051545420_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051550410_AddedEditors.cs" />
+    <Compile Include="Migrations\201312051550410_AddedEditors.Designer.cs">
+      <DependentUpon>201312051550410_AddedEditors.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -235,6 +244,11 @@
     <Content Include="Views\Author\Details.cshtml" />
     <Content Include="Views\Author\Edit.cshtml" />
     <Content Include="Views\Author\Index.cshtml" />
+    <Content Include="Views\Editor\Create.cshtml" />
+    <Content Include="Views\Editor\Delete.cshtml" />
+    <Content Include="Views\Editor\Details.cshtml" />
+    <Content Include="Views\Editor\Edit.cshtml" />
+    <Content Include="Views\Editor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -249,6 +263,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201312051455441_InitialCreate.resx">
       <DependentUpon>201312051455441_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051545420_InitialCreate1.resx">
+      <DependentUpon>201312051545420_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051550410_AddedEditors.resx">
+      <DependentUpon>201312051550410_AddedEditors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
