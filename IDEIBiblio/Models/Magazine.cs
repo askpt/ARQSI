@@ -5,13 +5,7 @@ using System.Web;
 
 namespace IDEIBiblio.Models
 {
-    public enum Category
-    {
-        Romance,
-        Terror
-    }
-
-    public class Book : IProduct
+    public class Magazine : IProduct
     {
         public IList<Author> Authors { get; set; }
         public Category Category { get; set; }

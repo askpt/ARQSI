@@ -7,7 +7,7 @@ namespace IDEIBiblio.Models
 {
     public class CartDetail
     {
-        public Book Book { get; set; }
+        public IProduct Product { get; set; }
         public Cart Cart { get; set; }
         public int NumberOfItems { get; set; }
         public float PriceUn { get; set; }

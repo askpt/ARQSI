@@ -9,6 +9,6 @@ namespace IDEIBiblio.Models
     {
         public string CartDetails { get; set; }
         public DateTime DateCreated { get; set; }
-        public IList<CartDetail> BookList { get; set; }
+        public IList<CartDetail> ProductList { get; set; }
     }
 }
