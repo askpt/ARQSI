@@ -5,20 +5,19 @@ using System.Web;
 
 namespace IDEIBiblio.Models
 {
-    public enum Category
-    {
-        Romance,
-        Terror
-    }
-
     public class Book : IProduct
     {
-        public IList<Author> Authors { get; set; }
+        public int BookID { get; set; }
+        public int AuthorID { get; set; }
+        public virtual Author Author { get; set; }
+        public int CategoryID { get; set; }
         public Category Category { get; set; }
-        public Editor Editor { get; set; }
+        public int EditorID { get; set; }
+        public virtual Editor Editor { get; set; }
         public float Price { get; set; }
         public string Title { get; set; }
         public int Year { get; set; }
         public int ISBN { get; set; }
+
     }
 }
