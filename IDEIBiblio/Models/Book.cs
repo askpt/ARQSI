@@ -11,7 +11,7 @@ namespace IDEIBiblio.Models
         public int AuthorID { get; set; }
         public virtual Author Author { get; set; }
         public int CategoryID { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public int EditorID { get; set; }
         public virtual Editor Editor { get; set; }
         public float Price { get; set; }
