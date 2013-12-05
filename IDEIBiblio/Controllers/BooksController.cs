@@ -19,6 +19,7 @@ namespace IDEIBiblio.Controllers
         public ActionResult Index()
         {
             var books = db.Books.Include(b => b.Editor);
+            books = db.Books.Include(b => b.Category);
             return View(books.ToList());
         }
 
