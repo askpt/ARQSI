@@ -13,5 +13,7 @@ namespace IDEIBiblio.DAL
         }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Editor> Editors { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

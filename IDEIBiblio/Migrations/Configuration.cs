@@ -31,24 +31,56 @@ namespace IDEIBiblio.Migrations
             //
 
             // initializing DB with Editors
+
+            context.Editors.AddOrUpdate(
+                    p => p.Name,
+                    new Editor { Name = "Fruta Lda", Address = "Estadio das Antas", Email = "antas_a_arder@fruta.com", Phone = 222424671 },
+                    new Editor { Name = "Bertrand", Address = "Rua das Flores 41", Email = "info@bertrand.pt", Phone = 21387430 }
+            );
+
+
+            context.Authors.AddOrUpdate(
+                p => p.Name,
+                new Author{Name="Pinto da Costa"},
+                new Author{Name="Jorge Jesus"},
+                new Author{Name="Pedro Proença"},
+                new Author{Name="Hugo Miguel"}
+            );
+
+           context.Categories.AddOrUpdate(
+               c => c.Name,
+                new Category{Name="Terror"},
+                new Category{Name="Sports"},
+                new Category{Name="Romance"}
+            );
+
+
+            /*
             var editors = new List<Editor>
             {
                 new Editor{Name="Fruta Lda", Address="Estadio das Antas", Email="antas_a_arder@fruta.com", Phone=222424671},
                 new Editor{Name="Bertrand", Address="Rua das Flores, 41", Email="info@bertrand.pt", Phone=21387430}
             };
-            editors.ForEach(s => context.Editors.Add(s));
-            context.SaveChanges();
+            editors.ForEach(s => context.Editors.AddOrUpdate(s));*/
 
             // initializing DB with authors
-            var authors = new List<Author>
+            /*var authors = new List<Author>
             {
                 new Author{Name="Pinto da Costa"},
                 new Author{Name="Jorge Jesus"},
                 new Author{Name="Pedro Proença"},
                 new Author{Name="Hugo Miguel"}
             };
-            authors.ForEach(s => context.Authors.Add(s));
-            context.SaveChanges();
+            authors.ForEach(s => context.Authors.AddOrUpdate(s));
+
+            var categories = new List<Category>
+            {
+                new Category{Name="Terror"},
+                new Category{Name="Sports"},
+                new Category{Name="Romance"}
+            };
+
+            categories.ForEach(s => context.Categories.AddOrUpdate(s));*/
         }
     }
 }

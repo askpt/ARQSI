@@ -173,6 +173,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\BookStoreInitializer.cs" />
@@ -191,6 +192,18 @@
     <Compile Include="Migrations\201312051550410_AddedEditors.Designer.cs">
       <DependentUpon>201312051550410_AddedEditors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312052130441_AddedBooks.cs" />
+    <Compile Include="Migrations\201312052130441_AddedBooks.Designer.cs">
+      <DependentUpon>201312052130441_AddedBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312052149144_AddedBooksWithSingleAuthor.cs" />
+    <Compile Include="Migrations\201312052149144_AddedBooksWithSingleAuthor.Designer.cs">
+      <DependentUpon>201312052149144_AddedBooksWithSingleAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312052223387_AddedCategories-UpdatedBooks.cs" />
+    <Compile Include="Migrations\201312052223387_AddedCategories-UpdatedBooks.Designer.cs">
+      <DependentUpon>201312052223387_AddedCategories-UpdatedBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -198,6 +211,7 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartDetail.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Editor.cs" />
     <Compile Include="DAL\ApplicationDbContext.cs" />
     <Compile Include="Models\IProduct.cs" />
@@ -270,6 +284,11 @@
     <Content Include="Views\Editor\Details.cshtml" />
     <Content Include="Views\Editor\Edit.cshtml" />
     <Content Include="Views\Editor\Index.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,6 +306,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312051550410_AddedEditors.resx">
       <DependentUpon>201312051550410_AddedEditors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312052130441_AddedBooks.resx">
+      <DependentUpon>201312052130441_AddedBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312052149144_AddedBooksWithSingleAuthor.resx">
+      <DependentUpon>201312052149144_AddedBooksWithSingleAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312052223387_AddedCategories-UpdatedBooks.resx">
+      <DependentUpon>201312052223387_AddedCategories-UpdatedBooks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
