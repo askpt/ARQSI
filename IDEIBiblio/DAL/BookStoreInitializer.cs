@@ -31,10 +31,7 @@ namespace IDEIBiblio.DAL
             };
             authors.ForEach(s => context.Authors.Add(s));
             context.SaveChanges();
-
-
-
-
+            
             // it's necessary to add a new context element to the entityFramework element in Web.config file
         }
     }
