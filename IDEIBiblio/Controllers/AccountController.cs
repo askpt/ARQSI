@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
+using IDEIBiblio.DAL;
 using IDEIBiblio.Models;
 
 namespace IDEIBiblio.Controllers

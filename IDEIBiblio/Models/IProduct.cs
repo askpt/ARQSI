@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IDEIBiblio.Models
 {
-    interface IProduct
+    public interface IProduct
     {
     }
 }
