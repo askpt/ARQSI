@@ -4,6 +4,7 @@
 	$server = new soap_server();
 
 	$server->configureWSDL('ShippingAllWS', 'urn:ShippingAllWS');
+	$server->soap_defencoding = 'UTF-8';
 
 	$in = array('quantity' => 'xsd:int', 
 				'type' => 'xsd:string');
