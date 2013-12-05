@@ -85,7 +85,9 @@ namespace IDEIBiblio.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Address", book.EditorID);
+            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Name", book.EditorID);
+            ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "Name", book.AuthorID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", book.CategoryID);
             return View(book);
         }
 
@@ -94,15 +96,18 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Category,EditorID,AuthorID,CategoryID,Editor,Author,Category,Price,Title,Year,ISBN")] Book book)
+        public ActionResult Edit([Bind(Include = "BookID,Category,EditorID,AuthorID,CategoryID,Price,Title,Year,ISBN")] Book book)
         {
             if (ModelState.IsValid)
             {
+                
                 db.Entry(book).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Address", book.EditorID);
+            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Name", book.EditorID);
+            ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "Name", book.AuthorID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", book.CategoryID);
             return View(book);
         }
 

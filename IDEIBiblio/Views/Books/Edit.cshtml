@@ -18,18 +18,26 @@
         @Html.HiddenFor(model => model.BookID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Category, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CategoryID, "Category", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Category)
-                @Html.ValidationMessageFor(model => model.Category)
+                @Html.DropDownList("CategoryID", String.Empty)
+                @Html.ValidationMessageFor(model => model.CategoryID)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EditorID, "EditorID", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EditorID, "Editor", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("EditorID", String.Empty)
                 @Html.ValidationMessageFor(model => model.EditorID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuthorID, "Author", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("AuthorID", String.Empty)
+                @Html.ValidationMessageFor(model => model.AuthorID)
             </div>
         </div>
 
