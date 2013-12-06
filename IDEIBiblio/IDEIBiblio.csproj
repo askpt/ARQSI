@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201312052223387_AddedCategories-UpdatedBooks.Designer.cs">
       <DependentUpon>201312052223387_AddedCategories-UpdatedBooks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312061021110_AddPeriodicity.cs" />
+    <Compile Include="Migrations\201312061021110_AddPeriodicity.Designer.cs">
+      <DependentUpon>201312061021110_AddPeriodicity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312052223387_AddedCategories-UpdatedBooks.resx">
       <DependentUpon>201312052223387_AddedCategories-UpdatedBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312061021110_AddPeriodicity.resx">
+      <DependentUpon>201312061021110_AddPeriodicity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
