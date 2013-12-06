@@ -11,7 +11,7 @@ using IDEIBiblio.DAL;
 
 namespace IDEIBiblio.Controllers
 {
-    public class BooksController : Controller
+    public class BookController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
