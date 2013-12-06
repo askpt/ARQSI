@@ -273,6 +273,8 @@ namespace IDEIBiblio.Controllers
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+                        // setting all social logins as costumers
+                        await UserManager.AddToRoleAsync(user.Id, "CostumerRole");
                         await SignInAsync(user, isPersistent: false);
                         return RedirectToLocal(returnUrl);
                     }
