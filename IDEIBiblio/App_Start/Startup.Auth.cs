@@ -32,7 +32,8 @@ namespace IDEIBiblio
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication();
+            // enabling Google account authentication
+            app.UseGoogleAuthentication();
         }
     }
 }

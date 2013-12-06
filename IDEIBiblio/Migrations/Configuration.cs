@@ -7,12 +7,44 @@ namespace IDEIBiblio.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+    // membership API
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
     internal sealed class Configuration : DbMigrationsConfiguration<IDEIBiblio.DAL.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "IDEIBiblio.DAL.ApplicationDbContext";
+        }
+
+
+        // this method adds users and roles when Seed is called
+        bool AddUserAndRole(IDEIBiblio.DAL.ApplicationDbContext context)
+        {
+            IdentityResult identityResult;
+
+            // creating a role
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            identityResult = roleManager.Create(new IdentityRole("CostumerRole"));
+
+            // creating a user
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var user1 = new ApplicationUser()
+            {
+                UserName = "Costumer1",
+            };
+            identityResult = userManager.Create(user1, "Passw0rd1");
+
+            // associating created user with role
+            if (identityResult.Succeeded == false)
+            {
+                return identityResult.Succeeded;
+            }
+            identityResult = userManager.AddToRole(user1.Id, "CostumerRole");
+
+            return identityResult.Succeeded;
         }
 
         protected override void Seed(IDEIBiblio.DAL.ApplicationDbContext context)
@@ -31,6 +63,9 @@ namespace IDEIBiblio.Migrations
             //
 
             // initializing DB with Editors
+
+            // calling test user(s) and role(s)
+            AddUserAndRole(context);
 
             context.Editors.AddOrUpdate(
                     p => p.Name,
