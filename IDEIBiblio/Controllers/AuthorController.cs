@@ -16,12 +16,14 @@ namespace IDEIBiblio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Author/
+        [Authorize(Roles = "ManagerRole,CostumerRole")]
         public ActionResult Index()
         {
             return View(db.Authors.ToList());
         }
 
         // GET: /Author/Details/5
+        [Authorize(Roles = "ManagerRole,CostumerRole")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Author/Create
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,7 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create([Bind(Include="AuthorID,Name")] Author author)
         {
             if (ModelState.IsValid)
@@ -60,6 +64,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Author/Edit/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +84,7 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit([Bind(Include="AuthorID,Name")] Author author)
         {
             if (ModelState.IsValid)
@@ -91,6 +97,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Author/Delete/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace IDEIBiblio.Controllers
         // POST: /Author/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult DeleteConfirmed(int id)
         {
             Author author = db.Authors.Find(id);
