@@ -16,12 +16,12 @@ namespace IDEIBiblio.Models
         public int EditorID { get; set; }
         public virtual Editor Editor { get; set; }
 
-        [DataType(DataType.Currency)]
+        [Range(1, 999), DataType(DataType.Currency)]
         public float Price { get; set; }
         public string Title { get; set; }
         
         [UIHint("Datepicker")]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Publish { get; set; }
         public string Issue { get; set; }
         public string Number { get; set; }
