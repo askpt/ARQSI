@@ -176,6 +176,7 @@
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MagazineController.cs" />
     <Compile Include="Controllers\PeriodicityController.cs" />
     <Compile Include="DAL\BookStoreInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -304,6 +305,11 @@
     <Content Include="Views\Periodicity\Details.cshtml" />
     <Content Include="Views\Periodicity\Edit.cshtml" />
     <Content Include="Views\Periodicity\Index.cshtml" />
+    <Content Include="Views\Magazine\Create.cshtml" />
+    <Content Include="Views\Magazine\Delete.cshtml" />
+    <Content Include="Views\Magazine\Details.cshtml" />
+    <Content Include="Views\Magazine\Edit.cshtml" />
+    <Content Include="Views\Magazine\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

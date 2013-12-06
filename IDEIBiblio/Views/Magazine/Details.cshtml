@@ -1,0 +1,90 @@
+﻿@model IDEIBiblio.Models.Magazine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Magazine</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Author.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Editor.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Editor.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodicy.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodicy.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Issue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Issue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MagazineID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
