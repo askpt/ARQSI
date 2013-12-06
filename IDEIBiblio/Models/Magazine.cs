@@ -7,12 +7,19 @@ namespace IDEIBiblio.Models
 {
     public class Magazine : IProduct
     {
-        public IList<Author> Authors { get; set; }
-        public Category Category { get; set; }
-        public Editor Editor { get; set; }
+        public int MagazineID { get; set; }
+        public int AuthorID { get; set; }
+        public virtual Author Author { get; set; }
+        public int CategoryID { get; set; }
+        public virtual Category Category { get; set; }
+        public int EditorID { get; set; }
+        public virtual Editor Editor { get; set; }
         public float Price { get; set; }
         public string Title { get; set; }
-        public int Year { get; set; }
-        public int ISBN { get; set; }
+        public DateTime Publish { get; set; }
+        public string Issue { get; set; }
+        public string Number { get; set; }
+        public int PeriodicityID { get; set; }
+        public virtual Periodicity Periodicy { get; set; }
     }
 }
