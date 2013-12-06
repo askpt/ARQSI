@@ -41,46 +41,30 @@ namespace IDEIBiblio.Migrations
 
             context.Authors.AddOrUpdate(
                 p => p.Name,
-                new Author{Name="Pinto da Costa"},
-                new Author{Name="Jorge Jesus"},
-                new Author{Name="Pedro Proença"},
-                new Author{Name="Hugo Miguel"}
+                new Author { Name = "Pinto da Costa" },
+                new Author { Name = "Jorge Jesus" },
+                new Author { Name = "Pedro Proença" },
+                new Author { Name = "Hugo Miguel" }
             );
 
-           context.Categories.AddOrUpdate(
-               c => c.Name,
-                new Category{Name="Terror"},
-                new Category{Name="Sports"},
-                new Category{Name="Romance"}
-            );
+            context.Categories.AddOrUpdate(
+                c => c.Name,
+                 new Category { Name = "Terror" },
+                 new Category { Name = "Sports" },
+                 new Category { Name = "Romance" }
+             );
 
+            context.Books.AddOrUpdate(
+                b => b.ISBN,
+                new Book { Title = "O Meu Apito Dourado", AuthorID = 3, EditorID = 1, Price = 15.99f, CategoryID = 1, ISBN = 1233122134, Year = 2012 },
+                new Book { Title = "Páginas Amarelas de Um Árbitro", AuthorID = 1, EditorID = 1, Price = 15.99f, CategoryID = 1, ISBN = 1253122134, Year = 2011 }
+                );
 
-            /*
-            var editors = new List<Editor>
-            {
-                new Editor{Name="Fruta Lda", Address="Estadio das Antas", Email="antas_a_arder@fruta.com", Phone=222424671},
-                new Editor{Name="Bertrand", Address="Rua das Flores, 41", Email="info@bertrand.pt", Phone=21387430}
-            };
-            editors.ForEach(s => context.Editors.AddOrUpdate(s));*/
-
-            // initializing DB with authors
-            /*var authors = new List<Author>
-            {
-                new Author{Name="Pinto da Costa"},
-                new Author{Name="Jorge Jesus"},
-                new Author{Name="Pedro Proença"},
-                new Author{Name="Hugo Miguel"}
-            };
-            authors.ForEach(s => context.Authors.AddOrUpdate(s));
-
-            var categories = new List<Category>
-            {
-                new Category{Name="Terror"},
-                new Category{Name="Sports"},
-                new Category{Name="Romance"}
-            };
-
-            categories.ForEach(s => context.Categories.AddOrUpdate(s));*/
+            context.Periodicities.AddOrUpdate(
+                p => p.Name,
+                new Periodicity { Name = "Weekly", NumberofDays = 7 },
+                new Periodicity { Name = "Montly", NumberofDays = 30 }
+                );
         }
     }
 }
