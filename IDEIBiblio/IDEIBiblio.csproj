@@ -214,6 +214,14 @@
     <Compile Include="Migrations\201312061057353_AddedMagazines.Designer.cs">
       <DependentUpon>201312061057353_AddedMagazines.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312061156127_AddAspNetUsers_AspNetRoles.cs" />
+    <Compile Include="Migrations\201312061156127_AddAspNetUsers_AspNetRoles.Designer.cs">
+      <DependentUpon>201312061156127_AddAspNetUsers_AspNetRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312061223273_UpdateAspNetUsers_AspNetRoles.cs" />
+    <Compile Include="Migrations\201312061223273_UpdateAspNetUsers_AspNetRoles.Designer.cs">
+      <DependentUpon>201312061223273_UpdateAspNetUsers_AspNetRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -342,6 +350,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312061057353_AddedMagazines.resx">
       <DependentUpon>201312061057353_AddedMagazines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312061156127_AddAspNetUsers_AspNetRoles.resx">
+      <DependentUpon>201312061156127_AddAspNetUsers_AspNetRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312061223273_UpdateAspNetUsers_AspNetRoles.resx">
+      <DependentUpon>201312061223273_UpdateAspNetUsers_AspNetRoles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
