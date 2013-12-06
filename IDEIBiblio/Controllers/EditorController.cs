@@ -16,12 +16,14 @@ namespace IDEIBiblio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Editor/
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Index()
         {
             return View(db.Editors.ToList());
         }
 
         // GET: /Editor/Details/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Editor/Create
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,7 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create([Bind(Include="EditorID,Address,Email,Name,Phone")] Editor editor)
         {
             if (ModelState.IsValid)
@@ -60,6 +64,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Editor/Edit/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +84,7 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit([Bind(Include="EditorID,Address,Email,Name,Phone")] Editor editor)
         {
             if (ModelState.IsValid)
@@ -91,6 +97,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Editor/Delete/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace IDEIBiblio.Controllers
         // POST: /Editor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult DeleteConfirmed(int id)
         {
             Editor editor = db.Editors.Find(id);
