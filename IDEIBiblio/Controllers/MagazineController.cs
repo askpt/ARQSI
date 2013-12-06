@@ -16,6 +16,7 @@ namespace IDEIBiblio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Magazine/
+         [Authorize(Roles = "ManagerRole,CostumerRole")]
         public ActionResult Index()
         {
             var magazines = db.Magazines.Include(m => m.Author).Include(m => m.Category).Include(m => m.Editor).Include(m => m.Periodicy);
@@ -23,6 +24,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Magazine/Details/5
+         [Authorize(Roles = "ManagerRole,CostumerRole")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Magazine/Create
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create()
         {
             ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "Name");
@@ -52,6 +55,7 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create([Bind(Include="MagazineID,AuthorID,CategoryID,EditorID,Price,Title,Publish,Issue,Number,PeriodicityID")] Magazine magazine)
         {
             if (ModelState.IsValid)
@@ -69,6 +73,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Magazine/Edit/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,6 +97,7 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit([Bind(Include="MagazineID,AuthorID,CategoryID,EditorID,Price,Title,Publish,Issue,Number,PeriodicityID")] Magazine magazine)
         {
             if (ModelState.IsValid)
@@ -108,6 +114,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Magazine/Delete/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -125,6 +132,7 @@ namespace IDEIBiblio.Controllers
         // POST: /Magazine/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult DeleteConfirmed(int id)
         {
             Magazine magazine = db.Magazines.Find(id);
