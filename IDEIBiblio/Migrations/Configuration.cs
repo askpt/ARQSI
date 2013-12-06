@@ -65,6 +65,12 @@ namespace IDEIBiblio.Migrations
                 new Periodicity { Name = "Weekly", NumberofDays = 7 },
                 new Periodicity { Name = "Montly", NumberofDays = 30 }
                 );
+            context.Magazines.AddOrUpdate(
+                m => m.Title,
+                new Magazine { Title="A Mística", AuthorID=2, CategoryID=2, EditorID=2, Issue="Ano 2013", Number="2", PeriodicityID=2, Price=3.99f, Publish= new DateTime(2013,2,19)},
+                new Magazine { Title="Almanaque da Arbitragem", AuthorID=4, CategoryID=3, EditorID=1, Issue="Ano 2012", Number="30", PeriodicityID=1, Price=1.99f, Publish= new DateTime(2012,5,20)}
+
+                );
         }
     }
 }
