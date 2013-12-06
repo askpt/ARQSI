@@ -12,7 +12,15 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Author.Name)
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
         </dt>
 
         <dd>
@@ -20,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Category.Name)
+            @Html.DisplayNameFor(model => model.Category)
         </dt>
 
         <dd>
@@ -28,15 +36,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Editor.Address)
+            @Html.DisplayNameFor(model => model.Editor)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Editor.Address)
+            @Html.DisplayFor(model => model.Editor.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Periodicy.Name)
+            @Html.DisplayNameFor(model => model.Periodicy)
         </dt>
 
         <dd>
@@ -49,14 +57,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
         </dd>
 
         <dt>

@@ -15,14 +15,17 @@ namespace IDEIBiblio.Models
         public virtual Category Category { get; set; }
         public int EditorID { get; set; }
         public virtual Editor Editor { get; set; }
+
+        [DataType(DataType.Currency)]
         public float Price { get; set; }
         public string Title { get; set; }
+        
+        [UIHint("Datepicker")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Publish { get; set; }
         public string Issue { get; set; }
         public string Number { get; set; }
         public int PeriodicityID { get; set; }
-
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public virtual Periodicity Periodicy { get; set; }
     }
 }

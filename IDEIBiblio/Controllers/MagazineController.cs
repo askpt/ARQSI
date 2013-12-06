@@ -42,7 +42,7 @@ namespace IDEIBiblio.Controllers
         {
             ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "Name");
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name");
-            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Address");
+            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Name");
             ViewBag.PeriodicityID = new SelectList(db.Periodicities, "PeriodicityID", "Name");
             return View();
         }
@@ -63,7 +63,7 @@ namespace IDEIBiblio.Controllers
 
             ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "Name", magazine.AuthorID);
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", magazine.CategoryID);
-            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Address", magazine.EditorID);
+            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Name", magazine.EditorID);
             ViewBag.PeriodicityID = new SelectList(db.Periodicities, "PeriodicityID", "Name", magazine.PeriodicityID);
             return View(magazine);
         }
@@ -82,7 +82,7 @@ namespace IDEIBiblio.Controllers
             }
             ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "Name", magazine.AuthorID);
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", magazine.CategoryID);
-            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Address", magazine.EditorID);
+            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Name", magazine.EditorID);
             ViewBag.PeriodicityID = new SelectList(db.Periodicities, "PeriodicityID", "Name", magazine.PeriodicityID);
             return View(magazine);
         }
@@ -102,7 +102,7 @@ namespace IDEIBiblio.Controllers
             }
             ViewBag.AuthorID = new SelectList(db.Authors, "AuthorID", "Name", magazine.AuthorID);
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Name", magazine.CategoryID);
-            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Address", magazine.EditorID);
+            ViewBag.EditorID = new SelectList(db.Editors, "EditorID", "Name", magazine.EditorID);
             ViewBag.PeriodicityID = new SelectList(db.Periodicities, "PeriodicityID", "Name", magazine.PeriodicityID);
             return View(magazine);
         }
