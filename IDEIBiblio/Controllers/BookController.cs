@@ -16,6 +16,7 @@ namespace IDEIBiblio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Books/
+        [Authorize(Roles = "ManagerRole,CostumerRole")]
         public ActionResult Index()
         {
             var books = db.Books.Include(b => b.Editor);
@@ -23,6 +24,7 @@ namespace IDEIBiblio.Controllers
             return View(books.ToList());
         }
 
+        [Authorize(Roles = "ManagerRole,CostumerRole")]
         // GET: /Books/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,6 +40,7 @@ namespace IDEIBiblio.Controllers
             return View(book);
         }
 
+        [Authorize(Roles = "ManagerRole")]
         // GET: /Books/Create
         public ActionResult Create()
         {
@@ -48,14 +51,12 @@ namespace IDEIBiblio.Controllers
             return View();
         }
 
-
-        
-
         // POST: /Books/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create([Bind(Include = "Category,EditorID,AuthorID,CategoryID,Editor,Author,Category,Price,Title,Year,ISBN")] Book book)
         {
             if (ModelState.IsValid)
@@ -74,6 +75,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Books/Edit/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -96,6 +98,7 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit([Bind(Include = "BookID,Category,EditorID,AuthorID,CategoryID,Price,Title,Year,ISBN")] Book book)
         {
             if (ModelState.IsValid)
@@ -112,6 +115,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Books/Delete/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -129,6 +133,7 @@ namespace IDEIBiblio.Controllers
         // POST: /Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult DeleteConfirmed(int id)
         {
             Book book = db.Books.Find(id);
