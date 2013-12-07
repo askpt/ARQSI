@@ -12,17 +12,20 @@ namespace IDEIBiblioWS
     {
         public float GetBookPriceByID(int idBook)
         {
-            throw new NotImplementedException();
+            DBAccess db = new DBAccess();
+            return db.GetBookPriceByID(idBook);
         }
 
         public float GetBookPriceByISBN(int ISBN)
         {
-            throw new NotImplementedException();
+            DBAccess db = new DBAccess();
+            return db.GetBookPriceByISBN(ISBN);
         }
 
         public float GetMagazinePriceByID(int idMagazine)
         {
-            throw new NotImplementedException();
+            DBAccess db = new DBAccess();
+            return db.GetMagazinePriceByID(idMagazine);
         }
 
     }
