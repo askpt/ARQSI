@@ -178,6 +178,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MagazineController.cs" />
     <Compile Include="Controllers\PeriodicityController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\BookStoreInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,6 +227,10 @@
     <Compile Include="Migrations\201312061235064_UpdateAspNetUsers_AspNetRoles1.Designer.cs">
       <DependentUpon>201312061235064_UpdateAspNetUsers_AspNetRoles1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312062357188_AddedUsers.cs" />
+    <Compile Include="Migrations\201312062357188_AddedUsers.Designer.cs">
+      <DependentUpon>201312062357188_AddedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -241,6 +246,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Periodicity.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -676,6 +682,11 @@
     <Content Include="Views\Magazine\Details.cshtml" />
     <Content Include="Views\Magazine\Edit.cshtml" />
     <Content Include="Views\Magazine\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -717,6 +728,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312061235064_UpdateAspNetUsers_AspNetRoles1.resx">
       <DependentUpon>201312061235064_UpdateAspNetUsers_AspNetRoles1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312062357188_AddedUsers.resx">
+      <DependentUpon>201312062357188_AddedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

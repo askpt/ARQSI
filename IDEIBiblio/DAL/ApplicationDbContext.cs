@@ -17,5 +17,6 @@ namespace IDEIBiblio.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<Periodicity> Periodicities { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
