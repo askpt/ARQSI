@@ -6,12 +6,38 @@ using System.Web;
 
 namespace IDEIBiblioWS
 {
+    public enum Connection
+	{
+	    DefaultConnection,
+        Gandalf
+	}
+
     public class DBAccess
     {
-        private const string connection = @"Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\Shop.mdf;Initial Catalog=IDEIBiblio;Integrated Security=True";
+        private const string DefaultConnection = @"Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\Shop.mdf;Initial Catalog=IDEIBiblio;Integrated Security=True";
+        private const string Gandalf = @"Data Source=gandalf.dei.isep.ipp.pt\sqlexpress;Initial Catalog=ARQSI061;Persist Security Info=True;User ID=ARQSI061;Password=ARQSI061";
+
+        private Connection configuredConnection;
+
+        public DBAccess(Connection configuredConnection)
+        {
+            this.configuredConnection = configuredConnection;
+        }
+        
         protected SqlConnection GetConnection(bool open)
         {
-            SqlConnection cnx = new SqlConnection(connection);
+            SqlConnection cnx;
+            switch (configuredConnection)
+            {
+                case Connection.DefaultConnection:
+                    cnx = new SqlConnection(DefaultConnection);
+                    break;
+                case Connection.Gandalf:
+                    cnx = new SqlConnection(Gandalf);
+                    break;
+                default:
+                    return null;
+            }
             if (open)
             {
                 cnx.Open();
