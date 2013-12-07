@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -21,9 +20,11 @@ namespace IDEIBiblioWS
             throw new NotImplementedException();
         }
 
-        public float GetMagazinePriceByID(int idMagazine) 
+        public float GetMagazinePriceByID(int idMagazine)
         {
             throw new NotImplementedException();
         }
+
     }
 }
+
