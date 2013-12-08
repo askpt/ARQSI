@@ -14,10 +14,12 @@ namespace IDEIBiblio.Models
         [ScaffoldColumn(false)]
         public string Username { get; set; }
 
+        [Display(Name="First Name")]
         [Required(ErrorMessage = "First name is mandatory")]
         [StringLength(200)]
         public string FirstName { get; set; }
 
+        [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Last name is mandatory")]
         [StringLength(200)]
         public string LastName { get; set; }
@@ -30,6 +32,7 @@ namespace IDEIBiblio.Models
         [StringLength(200)]
         public string City { get; set; }
 
+        [Display(Name = "Postal Code")]
         [Required(ErrorMessage = "Postal code is mandatory")]
         [StringLength(10)]
         public string PostalCode { get; set; }
@@ -40,6 +43,7 @@ namespace IDEIBiblio.Models
 
         //[RegularExpression(@"A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}", ErrorMessage = "Enter a valid email")]
         [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "Email is mandatory")]
         public string Email { get; set; }
 
         [ScaffoldColumn(false)]
