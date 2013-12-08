@@ -142,14 +142,6 @@ namespace IDEIBiblio.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: /Books/Suggested
-        public ActionResult Suggested()
-        {
-            var books = db.Books.Include(b => b.Editor);
-            books = db.Books.Include(b => b.Category);
-            return View(books.ToList());
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

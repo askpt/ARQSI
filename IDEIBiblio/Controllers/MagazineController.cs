@@ -141,13 +141,6 @@ namespace IDEIBiblio.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: /Magazine/Suggested
-        public ActionResult Suggested()
-        {
-            var magazines = db.Magazines.Include(m => m.Author).Include(m => m.Category).Include(m => m.Editor).Include(m => m.Periodicy);
-            return View(magazines.ToList());
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
