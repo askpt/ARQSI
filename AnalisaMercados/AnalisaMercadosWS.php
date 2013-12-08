@@ -6,7 +6,9 @@
 	$server->configureWSDL('AnalisaMercadosWS', 'urn:AnalisaMercadosWS');
 	$server->soap_defencoding = 'UTF-8';
 
-	$in = array('price' => 'xsd:float');
+	$in = array('ISBN' => 'xsd:int',
+				'price' => 'xsd:float'
+				);
 
 	$out = array('return' => 'xsd:float');
 
@@ -19,12 +21,23 @@
 		'encoded'
 	);
 
-	function AnalisaMercados($price)
+	function ModifiedPrice($price)
+	{
+		$discounts = array('0' => 0.95, 
+						   '1' => 0.90,
+						   '2' => 0.85,
+						   '3' => 0.80,
+						   '4' => 0.75);
+		$dis_ind = rand(0,4);
+		return $price * $discounts[$dis_ind];
+	}
+
+	function AnalisaMercados($ISBN, $price)
 	{
 		$flag = rand(0,1);
 		if ($flag == 1) 
 		{
-			return $price * 0.99;		
+			return ModifiedPrice($price);
 		}
 		else
 		{
