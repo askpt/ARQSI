@@ -9,7 +9,8 @@ namespace IDEIBiblio.EmailNotifications
 {
     public class EmailNotifications
     {
-        public static void SendEmail(string toEmail, int orderID, float totalPrice, IList<Book> books, IList<Magazine> magazines)
+        #region const values
+        protected static SmtpClient CreateSmtpClient()
         {
             SmtpClient client = new SmtpClient()
             {
@@ -20,14 +21,42 @@ namespace IDEIBiblio.EmailNotifications
                 Credentials = new System.Net.NetworkCredential() //without credentials for safety purposes
             };
 
-            // Specify the e-mail sender.
-            // Create a mailing address that includes a UTF8 character
-            // in the display name.
-            MailAddress from = new MailAddress("andres.silva010@gmail.com", "André Silva", System.Text.Encoding.UTF8);
+            return client;
+        }
+
+        // Specify the e-mail sender.
+        // Create a mailing address that includes a UTF8 character
+        // in the display name.
+        private static MailAddress _from = new MailAddress("andres.silva010@gmail.com", "André Silva", System.Text.Encoding.UTF8);
+        #endregion
+
+        public static void SendEmailBecauseRegister(string toEmail, string userName)
+        {
+            SmtpClient client = CreateSmtpClient();
+
             // Set destinations for the e-mail message.
             MailAddress to = new MailAddress(toEmail);
             // Specify the message content.
-            MailMessage message = new MailMessage(from, to);
+            MailMessage message = new MailMessage(_from, to);
+
+            message.Body = "User ID: " + userName;
+            message.Body += "Email: " + toEmail;
+            message.BodyEncoding = System.Text.Encoding.UTF8;
+            message.Subject = "IDEIBiblio Register";
+            message.SubjectEncoding = System.Text.Encoding.UTF8;
+
+            // method to identify this send operation.
+            client.Send(message);
+        }
+
+        public static void SendEmailBecauseOrder(string toEmail, int orderID, float totalPrice, IList<Book> books, IList<Magazine> magazines)
+        {
+            SmtpClient client = CreateSmtpClient();
+
+            // Set destinations for the e-mail message.
+            MailAddress to = new MailAddress(toEmail);
+            // Specify the message content.
+            MailMessage message = new MailMessage(_from, to);
 
             message.Body = "Order ID: " + orderID;
             message.Body += "\nTotal Price: " + totalPrice;
@@ -48,7 +77,7 @@ namespace IDEIBiblio.EmailNotifications
                     message.Body += "\n" + item.Title;
                 }
             }
-            
+
             message.BodyEncoding = System.Text.Encoding.UTF8;
             message.Subject = "IDEIBiblio Order";
             message.SubjectEncoding = System.Text.Encoding.UTF8;
