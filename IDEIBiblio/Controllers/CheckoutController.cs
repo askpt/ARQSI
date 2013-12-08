@@ -39,7 +39,7 @@ namespace IDEIBiblio.Controllers
                 // processing the order
                 var cart = ShoppingCart.GetCart(this.HttpContext);
                 cart.CreateOrder(order);
-                return RedirectToAction("Order completed", new { id = order.OrderId });
+                return RedirectToAction("OrderCompleted", new { id = order.OrderId });
             }
             catch
             {

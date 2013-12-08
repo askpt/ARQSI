@@ -38,7 +38,7 @@ namespace IDEIBiblio.Models
         [StringLength(20)]
         public string Country { get; set; }
 
-        [RegularExpression(@"A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}", ErrorMessage = "Enter a valid email")]
+        //[RegularExpression(@"A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}", ErrorMessage = "Enter a valid email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
