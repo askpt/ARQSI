@@ -9,10 +9,10 @@ namespace IDEIBiblio.Models
     {
         public int OrderDetailId { get; set; }
         public int OrderId { get; set; }
-        public int IProductId { get; set; }
+        public int BookId { get; set; }
         public int NumberOfItems { get; set; }
         public decimal UnitaryPrice { get; set; }
-        public virtual IProduct IProduct { get; set; }
+        public virtual Book Book { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -11,9 +11,9 @@ namespace IDEIBiblio.Models
         [Key]
         public int RecordId { get; set; }
         public string CartId { get; set; }
-        public int IProductId { get; set; }
+        public int BookId { get; set; }
         public int NumberOfItems { get; set; }
         public System.DateTime DateCreated { get; set; }
-        public virtual IProduct IProduct { get; set; }
+        public virtual Book Book { get; set; }
     }
 }
