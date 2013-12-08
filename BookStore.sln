@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDEIBiblio", "IDEIBiblio\ID
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDEIBiblioWS", "IDEIBiblioWS\IDEIBiblioWS.csproj", "{40175B3B-F0B1-4A57-9394-F5ED786816CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalisaMercadosCliente", "AnalisaMercadosCliente\AnalisaMercadosCliente.csproj", "{302E458C-E8FA-400B-AA85-C068C0AAE1FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{40175B3B-F0B1-4A57-9394-F5ED786816CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40175B3B-F0B1-4A57-9394-F5ED786816CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40175B3B-F0B1-4A57-9394-F5ED786816CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302E458C-E8FA-400B-AA85-C068C0AAE1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302E458C-E8FA-400B-AA85-C068C0AAE1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302E458C-E8FA-400B-AA85-C068C0AAE1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302E458C-E8FA-400B-AA85-C068C0AAE1FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

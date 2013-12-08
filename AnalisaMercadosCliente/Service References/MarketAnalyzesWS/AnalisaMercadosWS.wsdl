@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:AnalisaMercadosWS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:AnalisaMercadosWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:AnalisaMercadosWS">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AnalisaMercadosRequest">
+    <wsdl:part name="price" type="xsd:float" />
+  </wsdl:message>
+  <wsdl:message name="AnalisaMercadosResponse">
+    <wsdl:part name="return" type="xsd:float" />
+  </wsdl:message>
+  <wsdl:portType name="AnalisaMercadosWSPortType">
+    <wsdl:operation name="AnalisaMercados">
+      <wsdl:input message="tns:AnalisaMercadosRequest" />
+      <wsdl:output message="tns:AnalisaMercadosResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AnalisaMercadosWSBinding" type="tns:AnalisaMercadosWSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="AnalisaMercados">
+      <soap:operation soapAction="urn:AnalisaMercadosWS/AnalisaMercados" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:AnalisaMercadosWS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:AnalisaMercadosWS" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AnalisaMercadosWS">
+    <wsdl:port name="AnalisaMercadosWSPort" binding="tns:AnalisaMercadosWSBinding">
+      <soap:address location="http://uvm061.dei.isep.ipp.pt/~askpt/ARQSI/AnalisaMercados/AnalisaMercadosWS.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
