@@ -22,7 +22,7 @@ namespace IDEIBiblio.Controllers
 
 
         [HttpPost]
-        public ActionResult ShowsAddressAndPayment()
+        public ActionResult ShowsAddressAndPayment(FormCollection values)
         {
             var order = new Order();
             TryUpdateModel(order);
