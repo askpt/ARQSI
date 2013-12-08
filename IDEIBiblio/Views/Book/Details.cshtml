@@ -8,7 +8,7 @@
 
 <div>
     <h4>Book</h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -71,8 +71,11 @@
 <p>
     @if (User.IsInRole("ManagerRole"))
     {
-    @Html.ActionLink("Edit | ", "Edit", new { id = Model.BookID }) 
+        @Html.ActionLink("Edit | ", "Edit", new { id = Model.BookID })
     }
-    @Html.ActionLink("Back to List | ", "Index") 
-    @Html.ActionLink("Add to cart", "AddBookToCart", "ShoppingCart", new { id = Model.BookID }, null)
+    @if (User.IsInRole("CostumerRole"))
+    {
+        @Html.ActionLink("Add to cart | ", "AddBookToCart", "ShoppingCart", new { id = Model.BookID }, null)
+    }
+    @Html.ActionLink("Back to List", "Index")
 </p>

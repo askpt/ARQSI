@@ -8,7 +8,7 @@
 
 <div>
     <h4>Magazine</h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -88,7 +88,11 @@
 <p>
     @if (User.IsInRole("ManagerRole"))
     {
-    @Html.ActionLink("Edit | ", "Edit", new { id = Model.MagazineID })
+        @Html.ActionLink("Edit | ", "Edit", new { id = Model.MagazineID })
+    }
+    @if (User.IsInRole("CostumerRole"))
+    {
+
     }
     @Html.ActionLink("Back to List", "Index")
 </p>

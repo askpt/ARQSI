@@ -15,6 +15,12 @@
                     @Html.ActionLink("Manage Products", "ManageProducts", "Manager", null, htmlAttributes: new { title = "Manage Products" })
                 </li>
             }
+            @if (User.IsInRole("CostumerRole"))
+            {
+                <li>
+                    @Html.ActionLink("Shopping Cart", "Index", "ShoppingCart", null, htmlAttributes: new { title = "Your Shopping Cart" })
+                </li>
+            }
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
     }
