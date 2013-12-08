@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <None Include="Properties\PublishProfiles\DEI.pubxml" />
     <None Include="Service References\MarketAnalyzesWS\configuration91.svcinfo" />
     <None Include="Service References\MarketAnalyzesWS\configuration.svcinfo" />
     <None Include="Service References\MarketAnalyzesWS\Reference.svcmap">
