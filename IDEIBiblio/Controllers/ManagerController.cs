@@ -10,6 +10,7 @@ namespace IDEIBiblio.Controllers
     {
         //
         // GET: /Manager/ManageProducts
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult ManageProducts()
         {
             return View();

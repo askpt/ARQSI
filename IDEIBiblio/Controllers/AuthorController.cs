@@ -16,14 +16,14 @@ namespace IDEIBiblio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Author/
-        [Authorize(Roles = "ManagerRole,CostumerRole")]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Index()
         {
             return View(db.Authors.ToList());
         }
 
         // GET: /Author/Details/5
-        [Authorize(Roles = "ManagerRole,CostumerRole")]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Details(int? id)
         {
             if (id == null)

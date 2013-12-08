@@ -16,7 +16,7 @@ namespace IDEIBiblio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Magazine/
-         [Authorize(Roles = "ManagerRole,CostumerRole")]
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var magazines = db.Magazines.Include(m => m.Author).Include(m => m.Category).Include(m => m.Editor).Include(m => m.Periodicy);
@@ -24,7 +24,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Magazine/Details/5
-         [Authorize(Roles = "ManagerRole,CostumerRole")]
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

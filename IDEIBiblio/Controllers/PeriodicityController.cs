@@ -16,12 +16,14 @@ namespace IDEIBiblio.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: /Periodicity/
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Index()
         {
             return View(db.Periodicities.ToList());
         }
 
         // GET: /Periodicity/Details/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Periodicity/Create
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Create()
         {
             return View();
@@ -47,7 +50,8 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="PeriodicityID,Name,NumberofDays")] Periodicity periodicity)
+        [Authorize(Roles = "ManagerRole")]
+        public ActionResult Create([Bind(Include = "PeriodicityID,Name,NumberofDays")] Periodicity periodicity)
         {
             if (ModelState.IsValid)
             {
@@ -60,6 +64,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Periodicity/Edit/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,7 +84,8 @@ namespace IDEIBiblio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="PeriodicityID,Name,NumberofDays")] Periodicity periodicity)
+        [Authorize(Roles = "ManagerRole")]
+        public ActionResult Edit([Bind(Include = "PeriodicityID,Name,NumberofDays")] Periodicity periodicity)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +97,7 @@ namespace IDEIBiblio.Controllers
         }
 
         // GET: /Periodicity/Delete/5
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace IDEIBiblio.Controllers
         // POST: /Periodicity/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ManagerRole")]
         public ActionResult DeleteConfirmed(int id)
         {
             Periodicity periodicity = db.Periodicities.Find(id);

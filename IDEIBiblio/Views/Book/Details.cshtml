@@ -69,7 +69,10 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BookID }) |
-    @Html.ActionLink("Back to List", "Index") |
+    @if (User.IsInRole("ManagerRole"))
+    {
+    @Html.ActionLink("Edit | ", "Edit", new { id = Model.BookID }) 
+    }
+    @Html.ActionLink("Back to List | ", "Index") 
     @Html.ActionLink("Add to cart", "AddBookToCart", "ShoppingCart", new { id = Model.BookID }, null)
 </p>
