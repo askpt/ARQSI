@@ -177,6 +177,7 @@
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MagazineController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\PeriodicityController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -695,6 +696,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Book\Suggested.cshtml" />
     <Content Include="Views\Magazine\Suggested.cshtml" />
+    <Content Include="Views\Manager\ManageProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
