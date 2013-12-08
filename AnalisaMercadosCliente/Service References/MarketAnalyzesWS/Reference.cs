@@ -18,11 +18,11 @@ namespace AnalisaMercadosCliente.MarketAnalyzesWS {
         [System.ServiceModel.OperationContractAttribute(Action="urn:AnalisaMercadosWS/AnalisaMercados", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        float AnalisaMercados(float price);
+        float AnalisaMercados(int ISBN, float price);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:AnalisaMercadosWS/AnalisaMercados", ReplyAction="*")]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        System.Threading.Tasks.Task<float> AnalisaMercadosAsync(float price);
+        System.Threading.Tasks.Task<float> AnalisaMercadosAsync(int ISBN, float price);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -52,12 +52,12 @@ namespace AnalisaMercadosCliente.MarketAnalyzesWS {
                 base(binding, remoteAddress) {
         }
         
-        public float AnalisaMercados(float price) {
-            return base.Channel.AnalisaMercados(price);
+        public float AnalisaMercados(int ISBN, float price) {
+            return base.Channel.AnalisaMercados(ISBN, price);
         }
         
-        public System.Threading.Tasks.Task<float> AnalisaMercadosAsync(float price) {
-            return base.Channel.AnalisaMercadosAsync(price);
+        public System.Threading.Tasks.Task<float> AnalisaMercadosAsync(int ISBN, float price) {
+            return base.Channel.AnalisaMercadosAsync(ISBN, price);
         }
     }
 }

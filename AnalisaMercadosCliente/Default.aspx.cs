@@ -25,7 +25,14 @@ namespace AnalisaMercadosCliente
             List<Book> bookList = GetBooks();
             List<Book> bookListUpd = MarketAnalise(bookList);
 
-            txtUpdBooks.Text = CreateString(bookListUpd);
+            if (bookListUpd.Count > 0)
+            {
+                txtUpdBooks.Text = CreateString(bookListUpd);
+            }
+            else
+            {
+                txtUpdBooks.Text = "No Updated Books";
+            }
         }
 
         private List<Book> MarketAnalise(List<Book> bookList)
@@ -37,19 +44,15 @@ namespace AnalisaMercadosCliente
                 int id = item.ID;
                 string title = item.Title;
                 float price = item.Price;
+                int isbn = item.ISBN;
 
                 AnalisaMercadosWSPortTypeClient client = new AnalisaMercadosWSPortTypeClient();
-                float newPrice = client.AnalisaMercados(price);
+                float newPrice = client.AnalisaMercados(isbn, price);
                 if (newPrice != price)
                 {
-                    Book newBook = new Book() { ID = id, Title = title, Price = newPrice };
+                    Book newBook = new Book() { ID = id, Title = title, Price = newPrice, ISBN = isbn };
                     returnList.Add(newBook);
                 }
-                else
-                {
-                    returnList.Add(item);
-                }
-
             }
 
             return returnList;
@@ -60,7 +63,7 @@ namespace AnalisaMercadosCliente
             string camp = "";
             foreach (Book item in list)
             {
-                camp += item.ID + " | " + item.Title + " | " + item.Price + "\n";
+                camp += String.Format("{0} | {1} | {2} | {3:0.00}\n", item.ID, item.ISBN, item.Title, item.Price);
             }
 
             return camp;
@@ -114,7 +117,10 @@ namespace AnalisaMercadosCliente
 
                     string title = reader["Title"].ToString();
 
-                    Book tmp = new Book() { ID = id, Title = title, Price = price };
+                    string isbnToParse = reader["ISBN"].ToString();
+                    int isbn = int.Parse(isbnToParse);
+
+                    Book tmp = new Book() { ID = id, Title = title, Price = price, ISBN = isbn };
                     books.Add(tmp);
                 }
                 catch (Exception)
