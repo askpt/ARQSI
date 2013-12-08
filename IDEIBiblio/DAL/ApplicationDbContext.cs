@@ -11,6 +11,7 @@ namespace IDEIBiblio.DAL
         {
 
         }
+
         public DbSet<Author> Authors { get; set; }
         public DbSet<Editor> Editors { get; set; }
         public DbSet<Book> Books { get; set; }
@@ -18,5 +19,9 @@ namespace IDEIBiblio.DAL
         public DbSet<Periodicity> Periodicities { get; set; }
         public DbSet<Magazine> Magazines { get; set; }
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }
