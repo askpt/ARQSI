@@ -52,7 +52,7 @@ namespace IDEIBiblio.Controllers
         public ActionResult RemoveBookFromCart(int id)
         {
             var cart = ShoppingCart.GetCart(this.HttpContext);
-            string bookTitle = context.Carts.Single(item => item.BookId == id).Book.Title;
+            string bookTitle = context.Carts.Single(item => item.RecordId == id).Book.Title;
             int itemCount = cart.RemoveFromCart(id);
 
             // output to user

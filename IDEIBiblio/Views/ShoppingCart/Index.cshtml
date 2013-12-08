@@ -6,25 +6,22 @@
 
 <script type="text/javascript">
     $(function () {
-        // Document.ready -> link up remove event handler
-        $(".RemoveLink").click(function () {
-            // Get the id from the link
+        $(".RemoveLink").click(function ()
+        {
             var recordToDelete = $(this).attr("data-id");
 
-            if (recordToDelete != '') {
-
-                // Perform the ajax post
-                $.post("/ShoppingCart/RemoveFromCart", { "id": recordToDelete },
-                    function (data) {
-                        // Successful requests get here
-                        // Update the page elements
+            if (recordToDelete != '')
+            {
+                $.post("@Url.Content("~/ShoppingCart/RemoveBookFromCart")", { "id": recordToDelete },
+                    function (data)
+                    {  
                         if (data.ItemCount == 0) {
                             $('#row-' + data.DeleteId).fadeOut('slow');
                         } else {
                             $('#item-count-' + data.DeleteId).text(data.ItemCount);
                         }
 
-                        $('#cart-total').text(data.CartTotal);
+                        $('#cart-total').text(data.c);
                         $('#update-message').text(data.Message);
                         $('#cart-status').text('Cart (' + data.CartCount + ')');
                     });
@@ -76,7 +73,7 @@
     {
         <tr id="row-@item.RecordId">
             <td>
-                @Html.ActionLink(item.Book.Title, "Details", "Store", new { id = item.BookId }, null)
+                @Html.ActionLink(item.Book.Title, "Details", "Book", new { id = item.BookId }, null)
             </td>
             <td>
                 @item.Book.Price
@@ -85,7 +82,7 @@
                 @item.NumberOfItems
             </td>
             <td>
-                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove from cart</a>
+                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove</a> 
             </td>
         </tr>
     }
