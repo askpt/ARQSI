@@ -7,9 +7,12 @@ namespace IDEIBiblio.Models
 {
     public class OrderDetail
     {
-        public IProduct Product { get; set; }
+        public int OrderDetailId { get; set; }
+        public int OrderId { get; set; }
+        public int IProductId { get; set; }
         public int NumberOfItems { get; set; }
-        public Order Order { get; set; }
-        public float PriceUn { get; set; }
+        public decimal UnitaryPrice { get; set; }
+        public virtual IProduct IProduct { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; }
     }
 }
