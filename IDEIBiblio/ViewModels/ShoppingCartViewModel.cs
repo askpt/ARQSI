@@ -10,6 +10,7 @@ namespace IDEIBiblio.ViewModels
 {
     public class ShoppingCartViewModel
     {
+        public int ShoppingCartViewModelId { get; set; }
         public List<Cart> CartItems { get; set; }
         public decimal CartTotal { get; set; }
     }

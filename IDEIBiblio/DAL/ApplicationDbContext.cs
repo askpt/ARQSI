@@ -1,6 +1,7 @@
 ﻿using IDEIBiblio.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using IDEIBiblio.ViewModels;
 
 namespace IDEIBiblio.DAL
 {
@@ -23,5 +24,7 @@ namespace IDEIBiblio.DAL
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+
+        public DbSet<ShoppingCartViewModel> ShoppingCartViewModels { get; set; }
     }
 }

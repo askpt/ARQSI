@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201312062357188_AddedUsers.Designer.cs">
       <DependentUpon>201312062357188_AddedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312081537311_AddedShoppingCartViewModel.cs" />
+    <Compile Include="Migrations\201312081537311_AddedShoppingCartViewModel.Designer.cs">
+      <DependentUpon>201312081537311_AddedShoppingCartViewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -697,10 +701,10 @@
     <Content Include="Views\Book\Suggested.cshtml" />
     <Content Include="Views\Magazine\Suggested.cshtml" />
     <Content Include="Views\Manager\ManageProducts.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -742,6 +746,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312062357188_AddedUsers.resx">
       <DependentUpon>201312062357188_AddedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312081537311_AddedShoppingCartViewModel.resx">
+      <DependentUpon>201312081537311_AddedShoppingCartViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -156,6 +156,7 @@ namespace IDEIBiblio.Models
             // summing up each item price multiplied by unitary price
             decimal? total = (decimal)(from cartItems in context.Carts where cartItems.CartId == ShoppingCartId select (int?)cartItems.NumberOfItems * cartItems.Book.Price).Sum();
             return total ?? decimal.Zero;
+            //return 0;
         }
 
 
