@@ -6,15 +6,12 @@
 
 <script type="text/javascript">
     $(function () {
-        $(".RemoveLink").click(function ()
-        {
+        $(".RemoveLink").click(function () {
             var recordToDelete = $(this).attr("data-id");
 
-            if (recordToDelete != '')
-            {
+            if (recordToDelete != '') {
                 $.post("@Url.Content("~/ShoppingCart/RemoveBookFromCart")", { "id": recordToDelete },
-                    function (data)
-                    {  
+                    function (data) {
                         if (data.ItemCount == 0) {
                             $('#row-' + data.DeleteId).fadeOut('slow');
                         } else {
@@ -51,9 +48,12 @@
 <h3>
     <em>Review</em> your cart:
 </h3>
-<p class="button">
-    @Html.ActionLink("Checkout >>", "ShowsAddressAndPayment", "Checkout")
-</p>
+@if (Model.CartItems.Count > 0)
+{
+    <p class="button">
+        @Html.ActionLink("Checkout >>", "ShowsAddressAndPayment", "Checkout")
+    </p>
+}
 <div id="update-message">
 </div>
 <table>
@@ -82,7 +82,7 @@
                 @item.NumberOfItems
             </td>
             <td>
-                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove</a> 
+                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove</a>
             </td>
         </tr>
     }
