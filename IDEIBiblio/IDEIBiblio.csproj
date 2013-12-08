@@ -181,6 +181,7 @@
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\BookStoreInitializer.cs" />
+    <Compile Include="EmailNotifications\EmailNotifications.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
