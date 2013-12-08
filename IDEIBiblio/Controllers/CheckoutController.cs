@@ -21,5 +21,46 @@ namespace IDEIBiblio.Controllers
         }
 
 
+        [HttpPost]
+        public ActionResult ShowsAddressAndPayment()
+        {
+            var order = new Order();
+            TryUpdateModel(order);
+
+            try
+            {
+                order.Username = User.Identity.Name;
+                order.OrderDate = DateTime.Now;
+
+                // saving the order
+                context.Orders.Add(order);
+                context.SaveChanges();
+
+                // processing the order
+                var cart = ShoppingCart.GetCart(this.HttpContext);
+                cart.CreateOrder(order);
+                return RedirectToAction("Order completed", new { id = order.OrderId });
+            }
+            catch
+            {
+                return View(order);
+            }
+        }
+
+
+        public ActionResult OrderCompleted(int id)
+        {
+            bool orderIsValid = context.Orders.Any(o => o.OrderId == id && o.Username == User.Identity.Name);
+
+            if(orderIsValid)
+            {
+                return View(id);
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+     
 	}
 }
