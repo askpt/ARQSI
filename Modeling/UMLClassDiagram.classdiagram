@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7afbd188-7cf2-467d-82e5-e888598f605f" name="UMLClassDiagram" linkedPackageId="e5c45709-b442-4d4d-be72-645a838c4342" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="e802f1f7-887d-4c9f-b656-55f70e5023f8">
-      <profileInstance Id="68bd109e-4144-45ab-8eec-10368d3aad54" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="ea9854bc-4f25-4141-85cb-80b87c64f72c">
-      <profileInstance Id="37a54d1d-7fdd-4803-9cb8-66f42befed4b" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7afbd188-7cf2-467d-82e5-e888598f605f" name="UMLClassDiagram" linkedPackageId="e5c45709-b442-4d4d-be72-645a838c4342" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="5035f44c-b4f5-4482-9878-595117ad132e" name="Author" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -269,17 +255,26 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="82bb1f64-e20b-4d4f-babd-3aeba12eb5ae" name="Book" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="82bb1f64-e20b-4d4f-babd-3aeba12eb5ae" name="BookId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b0f804eb-c573-4a40-a403-e5a1505923b9" />
           </property>
-          <property Id="89369b09-f2af-43b7-8558-d6747fa3cbb0" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="89369b09-f2af-43b7-8558-d6747fa3cbb0" name="OrderId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="a27753f1-0d10-4e7a-aaec-1e67b1b8d858" />
           </property>
           <property Id="b7dc51b6-4741-4cd6-aa6f-e116747e582f" name="NumberOfItems" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="5f8acb93-c58a-4bc4-94fe-f165529b0a8e" />
           </property>
-          <property Id="dca38ed2-24d3-46ad-9ca4-a353c74d60eb" name="PriceUn" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="dca38ed2-24d3-46ad-9ca4-a353c74d60eb" name="UnitaryPrice" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="2119fd02-423b-4fbe-acf8-e1b346a03832" />
+          </property>
+          <property Id="a5a897c3-92ab-43e0-b8bf-3662bd6763fa" name="OrderDetailId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="20dc7bb9-a3df-4c38-bf50-eecd590cc4fa" />
+          </property>
+          <property Id="85dfc6cc-f8d5-4c8b-9a51-d16ef03381c7" name="Book" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4326c744-7b13-4d19-90f0-c46ce375a9a4" />
+          </property>
+          <property Id="aacc2663-3235-4361-b17c-a0cf22130588" name="Order" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="70de1bc2-9620-4a6c-80ef-f32a13b42e1d" />
           </property>
         </ownedAttributesInternal>
       </class>
@@ -287,6 +282,44 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="fec9951b-9a5a-436d-80b5-2825355049ef" name="Order" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="9b06148b-c552-4e85-ae4b-aac3d3e2f3f1" />
+        <ownedAttributesInternal>
+          <property Id="889560c3-8a09-4dcd-9fde-bb727ef57021" name="OrderId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="95bedfbc-603d-464d-a859-4503eb928d51" />
+          </property>
+          <property Id="5da00fa1-8ead-4e45-b33b-66a13992b2fb" name="Username" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c98fc057-bf77-4c2d-8fa3-434f78f09577" />
+          </property>
+          <property Id="573a2fba-7cfb-4a5d-93c0-6a9bb3692e87" name="FirstName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6243b12c-271a-481b-8761-1ecf9c33c3f4" />
+          </property>
+          <property Id="0767a5e1-bc59-4b4f-88e2-d7a52eb3ee30" name="LastName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f2dce1ba-ea17-4a87-b42e-15ee47472cf7" />
+          </property>
+          <property Id="de41e960-2352-437d-91b3-6575a7633348" name="Address" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5b7bc2c3-c409-4dd6-8048-6434ffa0603c" />
+          </property>
+          <property Id="b2dbda09-d611-4a29-bd43-f0f1f3a765e3" name="City" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f4756a2d-aa0e-4831-a0a3-1ee619c9d0c3" />
+          </property>
+          <property Id="0d66ea02-861f-4a6b-bcd8-6a4fdf55f529" name="PostalCode" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="96441b69-9e82-4fd4-ac21-4ff15025440e" />
+          </property>
+          <property Id="6b834ac8-2a14-484c-985d-1d28c34344ab" name="Country" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fc75fe73-202b-4890-ab19-421cb978ca94" />
+          </property>
+          <property Id="f4278750-66a5-4961-a06a-4e1da45f49a0" name="Email" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="decc416e-9048-4ded-925e-872c5a619f74" />
+          </property>
+          <property Id="7c910765-afeb-4533-be26-61ae97982924" name="Total" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="88eb4d20-4e9a-4e59-8011-fa4468868c72" />
+          </property>
+          <property Id="51391948-3afd-47d1-8c6d-ab4753b13dbc" name="OrderDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="54f3bcc4-2648-4b5a-b8c8-91f66478164a" />
+          </property>
+          <property Id="d7a718fd-29cb-49ba-bdfe-b52fde0298ba" name="OrderDetails" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="47e7b331-9c65-4bf6-89eb-cc49bd874119" />
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -314,8 +347,50 @@
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2b6a3202-29bf-4222-b105-29d22037d197" name="Cart" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b7587415-a972-4eab-987f-789bca0aa5d0" />
+        <ownedAttributesInternal>
+          <property Id="a36f602f-9e67-40eb-953f-795d13c1a659" name="RecordId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="445f36c0-d8e1-4d79-807f-e16a6af66244" />
+          </property>
+          <property Id="18e6728a-867d-4126-be28-422d344c7114" name="CartId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3af77b51-738c-42d3-b4ac-cabec4592807" />
+          </property>
+          <property Id="865d8fb2-7a73-4ecb-8c94-e8327c9ecbee" name="AlbumId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="281181e9-d7ae-4282-a232-b04a5e231586" />
+          </property>
+          <property Id="e80eefa7-6887-4ed0-805d-8fdac63644e8" name="BookId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9b513295-1246-45e4-afc9-498c62aede37" />
+          </property>
+          <property Id="9a9bc929-d380-40d3-881d-29c6b967050c" name="NumberOfItems" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="57ecdaa2-d4d1-49e2-8766-6428e23baeea" />
+          </property>
+          <property Id="9bf5a895-1949-4e7f-a8f4-77bb21b59d9d" name="DateCreated" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9c1f5179-5620-42b6-a35a-2c772202195c" />
+          </property>
+          <property Id="4f2ed265-1be3-41d6-a105-a4fba837d387" name="Book" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="606d5f38-78cd-48de-a5b0-d2cffe2fde7b" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="e5c45709-b442-4d4d-be72-645a838c4342" name="Modeling">
     <elementDefinition Id="1beba76b-40eb-43f3-9cbe-db2a77800d32" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e802f1f7-887d-4c9f-b656-55f70e5023f8">
+        <profileInstance Id="68bd109e-4144-45ab-8eec-10368d3aad54" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ea9854bc-4f25-4141-85cb-80b87c64f72c">
+        <profileInstance Id="37a54d1d-7fdd-4803-9cb8-66f42befed4b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
