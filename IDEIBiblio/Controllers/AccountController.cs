@@ -46,6 +46,9 @@ namespace IDEIBiblio.Controllers
         {
             if (ModelState.IsValid)
             {
+                // trasnfering the shopping cart to the user
+                MigrateShoppingCart(model.UserName);
+
                 var user = await UserManager.FindAsync(model.UserName, model.Password);
                 if (user != null)
                 {
@@ -83,6 +86,8 @@ namespace IDEIBiblio.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // trasnfering the shopping cart to the user
+                    MigrateShoppingCart(model.UserName);
                     await SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
@@ -320,6 +325,13 @@ namespace IDEIBiblio.Controllers
                 UserManager = null;
             }
             base.Dispose(disposing);
+        }
+
+        private void MigrateShoppingCart(string username)
+        {
+            var cart = ShoppingCart.GetCart(this.HttpContext);
+            cart.MoveCartWhenUserLogsIn(username);
+            Session[ShoppingCart.CartSessionKey] = username;
         }
 
         #region Helpers
