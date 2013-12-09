@@ -32,7 +32,7 @@ namespace IDEIBiblio.Controllers
                                }).OrderByDescending(i => i.score);
 
             // if it's not possible (e.g, user that never shopped before)
-            if(orderedList != null)
+            if(orderedList.ToList().Count > 0)
             {
                 // below needs fix
                 // ViewData["Books"] = orderedList.ToList();
