@@ -112,14 +112,6 @@ namespace IDEIBiblio.Migrations
                 new Magazine { Title="A Mística", AuthorID=2, CategoryID=2, EditorID=2, Issue="Ano 2013", Number="2", PeriodicityID=2, Price=3.99f, Publish= new DateTime(2013,2,19)},
                 new Magazine { Title="Almanaque da Arbitragem", AuthorID=4, CategoryID=3, EditorID=1, Issue="Ano 2012", Number="30", PeriodicityID=1, Price=1.99f, Publish= new DateTime(2012,5,20)}
                 );
-
-            // initializing DB with Users
-            context.Users.AddOrUpdate(
-              u => u.UserName,
-              new User { UserName="Admin", Email="admin@ideibiblio.pt", Role="AdminRole"},
-              new User { UserName="Manager", Email="manager@ideibiblio.pt", Role="ManagerRole"},
-              new User { UserName="Costumer1", Email="want_to_buy_books@gmail.pt", Role="CostumerRole"}
-              );
         }
     }
 }

@@ -181,7 +181,6 @@
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\PeriodicityController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\BookStoreInitializer.cs" />
     <Compile Include="EmailNotifications\EmailNotifications.cs" />
     <Compile Include="Global.asax.cs">
@@ -247,6 +246,10 @@
     <Compile Include="Migrations\201312082216364_UpdateOrder1.Designer.cs">
       <DependentUpon>201312082216364_UpdateOrder1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312091037534_RemUsers.cs" />
+    <Compile Include="Migrations\201312091037534_RemUsers.Designer.cs">
+      <DependentUpon>201312091037534_RemUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -263,7 +266,6 @@
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Periodicity.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
@@ -702,11 +704,6 @@
     <Content Include="Views\Magazine\Details.cshtml" />
     <Content Include="Views\Magazine\Edit.cshtml" />
     <Content Include="Views\Magazine\Index.cshtml" />
-    <Content Include="Views\User\Create.cshtml" />
-    <Content Include="Views\User\Delete.cshtml" />
-    <Content Include="Views\User\Details.cshtml" />
-    <Content Include="Views\User\Edit.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Manager\ManageProducts.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Checkout\ShowsAddressAndPayment.cshtml" />
@@ -764,6 +761,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312082216364_UpdateOrder1.resx">
       <DependentUpon>201312082216364_UpdateOrder1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312091037534_RemUsers.resx">
+      <DependentUpon>201312091037534_RemUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
