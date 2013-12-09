@@ -20,8 +20,32 @@ namespace IDEIBiblio.Controllers
         {
             var books = db.Books.Include(b => b.Editor);
             books = db.Books.Include(b => b.Category);
-            ViewData["Books"] = books.ToList();
+           
+            // trying to build a suggestion list
+            var orderDetailsList = db.OrderDetails.ToList();
+            var orderedList = (from o in orderDetailsList
+                               group o by new { o.BookId } into oo
+                               select new
+                               {
+                                   oo.Key.BookId,
+                                   score = oo.Sum(s => s.NumberOfItems)
+                               }).OrderByDescending(i => i.score);
 
+            // if it's not possible (e.g, user that never shopped before)
+            if(orderedList != null)
+            {
+                // below needs fix
+                // ViewData["Books"] = orderedList.ToList();
+               
+                // line below is temporary until above is fixed
+                ViewData["Books"] = books.ToList();
+            }
+            else
+            {
+                ViewData["Books"] = books.ToList();
+            }
+           
+            // magazines still need suggestion list
             var magazines = db.Magazines.Include(m => m.Author).Include(m => m.Category).Include(m => m.Editor).Include(m => m.Periodicy);
             ViewData["Magazines"] = magazines.ToList();
 
