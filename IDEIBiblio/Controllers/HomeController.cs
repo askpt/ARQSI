@@ -38,7 +38,12 @@ namespace IDEIBiblio.Controllers
                 // ViewData["Books"] = orderedList.ToList();
                
                 // line below is temporary until above is fixed
-                ViewData["Books"] = books.ToList();
+                List<Book> finalBookList = new List<Book>();
+                foreach (var item in orderedList)
+                {
+                    finalBookList.Add(db.Books.Find(item.BookId));
+                }
+                ViewData["Books"] = finalBookList;
             }
             else
             {
