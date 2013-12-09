@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using IDEIBiblio.Models;
 using IDEIBiblio.DAL;
+using IDEIBiblio.EmailNotifications;
 
 namespace IDEIBiblio.Controllers
 {
@@ -33,12 +34,16 @@ namespace IDEIBiblio.Controllers
                 order.OrderDate = DateTime.Now;
 
                 // saving the order
-                context.Orders.Add(order);
-                context.SaveChanges();
+                //context.Orders.Add(order);
+                //context.SaveChanges();
 
                 // processing the order
                 var cart = ShoppingCart.GetCart(this.HttpContext);
                 cart.CreateOrder(order);
+
+                // sending emaik
+                EmailNotifications.EmailNotifications.SendEmailBecauseOrder(order.Email, order.OrderId, (float)order.Total, new List<Book>(), new List<Magazine>());
+
                 return RedirectToAction("OrderCompleted", new { id = order.OrderId });
             }
             catch

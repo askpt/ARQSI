@@ -18,16 +18,15 @@ namespace IDEIBiblio.EmailNotifications
                 Port = 587,
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new System.Net.NetworkCredential() //without credentials for safety purposes
+                Credentials = new System.Net.NetworkCredential("idei.biblio2013@gmail.com", "antasaarder2013") //please don't hack my account, you'll ruin my business!!
             };
-
             return client;
         }
 
         // Specify the e-mail sender.
         // Create a mailing address that includes a UTF8 character
         // in the display name.
-        private static MailAddress _from = new MailAddress("andres.silva010@gmail.com", "André Silva", System.Text.Encoding.UTF8);
+        private static MailAddress _from = new MailAddress("idei.biblio2013@gmail.com", "IDEIBiblio no reply", System.Text.Encoding.UTF8);
         #endregion
 
         public static void SendEmailBecauseRegister(string toEmail, string userName)

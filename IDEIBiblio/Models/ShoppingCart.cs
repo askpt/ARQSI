@@ -186,7 +186,8 @@ namespace IDEIBiblio.Models
                     BookId = item.BookId,
                     OrderId = order.OrderId,
                     UnitaryPrice = (decimal)item.Book.Price,
-                    NumberOfItems = item.NumberOfItems
+                    NumberOfItems = item.NumberOfItems,
+        
                 };
                 
                 // updating total cost
@@ -196,7 +197,8 @@ namespace IDEIBiblio.Models
             }
 
             order.Total = orderTotal;
-            context.SaveChanges();
+            context.Orders.Add(order);
+            //context.SaveChanges();
             RemoveAllItems();
             return order.OrderId;
         }
