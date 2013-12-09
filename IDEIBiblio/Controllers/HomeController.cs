@@ -55,7 +55,7 @@ namespace IDEIBiblio.Controllers
         [AllowAnonymous]
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Academic project in the scope of Systems Architecture (ARQSI)";
 
             return View();
         }
@@ -63,7 +63,7 @@ namespace IDEIBiblio.Controllers
         [AllowAnonymous]
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Authors";
 
             return View();
         }
