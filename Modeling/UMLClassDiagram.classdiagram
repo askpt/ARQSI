@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7afbd188-7cf2-467d-82e5-e888598f605f" name="UMLClassDiagram" linkedPackageId="e5c45709-b442-4d4d-be72-645a838c4342" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7afbd188-7cf2-467d-82e5-e888598f605f" name="UMLClassDiagram" linkedPackageId="e5c45709-b442-4d4d-be72-645a838c4342" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="5035f44c-b4f5-4482-9878-595117ad132e" name="Author" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -232,31 +232,6 @@
           </property>
           <property Id="d7a718fd-29cb-49ba-bdfe-b52fde0298ba" name="OrderDetails" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="47e7b331-9c65-4bf6-89eb-cc49bd874119" />
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="b6669e28-48a4-435c-b361-2f9e43d73f22" name="User" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="1a726e2c-7a96-44ab-aa67-96f5c62fe3ec" />
-        <ownedAttributesInternal>
-          <property Id="97af743b-0be9-4480-9a0a-27bf59814722" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="d725bf9d-8013-44e0-9f93-da75ca07d214" />
-          </property>
-          <property Id="1493f678-ab94-47a4-8df9-f9bed202a198" name="Phone" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="bdecae0c-64d4-46d5-af72-12ea64f81c5c" />
-          </property>
-          <property Id="c1fe88b1-5dae-45df-a61c-3f0a7eafd702" name="Email" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="fa227e8e-e207-41e1-b585-28798b9a6c90" />
-          </property>
-          <property Id="bd2a3c46-1e08-4ae7-b808-af3f7beafb0e" name="DateCreated" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="11883bca-26ac-4a48-9d1e-6c4bc78f8f43" />
-          </property>
-          <property Id="bac4402c-c965-401f-9568-49a192dfea85" name="Role" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="ff989f4f-b7f8-462e-a62f-0be3aa827582" />
-          </property>
-          <property Id="53fccc98-aa35-4200-8acd-4f758739c803" name="Password" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="19a6b2bd-f457-42eb-b6ce-4f13b672caaa" />
           </property>
         </ownedAttributesInternal>
       </class>
